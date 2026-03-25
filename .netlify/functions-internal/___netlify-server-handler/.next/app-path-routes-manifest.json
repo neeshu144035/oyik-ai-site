@@ -1,0 +1,21 @@
+{
+  "/_global-error/page": "/_global-error",
+  "/_not-found/page": "/_not-found",
+  "/about/page": "/about",
+  "/contact/page": "/contact",
+  "/cookies/page": "/cookies",
+  "/faq/page": "/faq",
+  "/favicon.ico/route": "/favicon.ico",
+  "/how-it-works/page": "/how-it-works",
+  "/page": "/",
+  "/privacy/page": "/privacy",
+  "/robots.txt/route": "/robots.txt",
+  "/services/ai-marketing/page": "/services/ai-marketing",
+  "/services/chat/page": "/services/chat",
+  "/services/email/page": "/services/email",
+  "/services/page": "/services",
+  "/services/reminders/page": "/services/reminders",
+  "/services/voice/page": "/services/voice",
+  "/sitemap.xml/route": "/sitemap.xml",
+  "/terms/page": "/terms"
+}

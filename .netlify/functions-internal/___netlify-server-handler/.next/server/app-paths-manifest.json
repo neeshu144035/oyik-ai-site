@@ -1,0 +1,21 @@
+{
+  "/_global-error/page": "app/_global-error/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/about/page": "app/about/page.js",
+  "/contact/page": "app/contact/page.js",
+  "/cookies/page": "app/cookies/page.js",
+  "/faq/page": "app/faq/page.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/how-it-works/page": "app/how-it-works/page.js",
+  "/page": "app/page.js",
+  "/privacy/page": "app/privacy/page.js",
+  "/robots.txt/route": "app/robots.txt/route.js",
+  "/services/ai-marketing/page": "app/services/ai-marketing/page.js",
+  "/services/chat/page": "app/services/chat/page.js",
+  "/services/email/page": "app/services/email/page.js",
+  "/services/page": "app/services/page.js",
+  "/services/reminders/page": "app/services/reminders/page.js",
+  "/services/voice/page": "app/services/voice/page.js",
+  "/sitemap.xml/route": "app/sitemap.xml/route.js",
+  "/terms/page": "app/terms/page.js"
+}

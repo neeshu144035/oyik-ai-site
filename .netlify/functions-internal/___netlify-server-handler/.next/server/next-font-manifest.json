@@ -1,0 +1,82 @@
+{
+  "app": {
+    "[project]/src/app/_not-found/page": [
+      "static/media/0c795a286deabae8-s.p.14tvuu96~wkr0.woff2",
+      "static/media/5c285b27cdda1fe8-s.p.0yo6-5yoeeudq.woff2",
+      "static/media/70bc3e132a0a741e-s.p.1409xf.ylxg8g.woff2"
+    ],
+    "[project]/src/app/about/page": [
+      "static/media/0c795a286deabae8-s.p.14tvuu96~wkr0.woff2",
+      "static/media/5c285b27cdda1fe8-s.p.0yo6-5yoeeudq.woff2",
+      "static/media/70bc3e132a0a741e-s.p.1409xf.ylxg8g.woff2"
+    ],
+    "[project]/src/app/contact/page": [
+      "static/media/0c795a286deabae8-s.p.14tvuu96~wkr0.woff2",
+      "static/media/5c285b27cdda1fe8-s.p.0yo6-5yoeeudq.woff2",
+      "static/media/70bc3e132a0a741e-s.p.1409xf.ylxg8g.woff2"
+    ],
+    "[project]/src/app/cookies/page": [
+      "static/media/0c795a286deabae8-s.p.14tvuu96~wkr0.woff2",
+      "static/media/5c285b27cdda1fe8-s.p.0yo6-5yoeeudq.woff2",
+      "static/media/70bc3e132a0a741e-s.p.1409xf.ylxg8g.woff2"
+    ],
+    "[project]/src/app/faq/page": [
+      "static/media/0c795a286deabae8-s.p.14tvuu96~wkr0.woff2",
+      "static/media/5c285b27cdda1fe8-s.p.0yo6-5yoeeudq.woff2",
+      "static/media/70bc3e132a0a741e-s.p.1409xf.ylxg8g.woff2"
+    ],
+    "[project]/src/app/how-it-works/page": [
+      "static/media/0c795a286deabae8-s.p.14tvuu96~wkr0.woff2",
+      "static/media/5c285b27cdda1fe8-s.p.0yo6-5yoeeudq.woff2",
+      "static/media/70bc3e132a0a741e-s.p.1409xf.ylxg8g.woff2"
+    ],
+    "[project]/src/app/page": [
+      "static/media/0c795a286deabae8-s.p.14tvuu96~wkr0.woff2",
+      "static/media/5c285b27cdda1fe8-s.p.0yo6-5yoeeudq.woff2",
+      "static/media/70bc3e132a0a741e-s.p.1409xf.ylxg8g.woff2"
+    ],
+    "[project]/src/app/privacy/page": [
+      "static/media/0c795a286deabae8-s.p.14tvuu96~wkr0.woff2",
+      "static/media/5c285b27cdda1fe8-s.p.0yo6-5yoeeudq.woff2",
+      "static/media/70bc3e132a0a741e-s.p.1409xf.ylxg8g.woff2"
+    ],
+    "[project]/src/app/services/ai-marketing/page": [
+      "static/media/0c795a286deabae8-s.p.14tvuu96~wkr0.woff2",
+      "static/media/5c285b27cdda1fe8-s.p.0yo6-5yoeeudq.woff2",
+      "static/media/70bc3e132a0a741e-s.p.1409xf.ylxg8g.woff2"
+    ],
+    "[project]/src/app/services/chat/page": [
+      "static/media/0c795a286deabae8-s.p.14tvuu96~wkr0.woff2",
+      "static/media/5c285b27cdda1fe8-s.p.0yo6-5yoeeudq.woff2",
+      "static/media/70bc3e132a0a741e-s.p.1409xf.ylxg8g.woff2"
+    ],
+    "[project]/src/app/services/email/page": [
+      "static/media/0c795a286deabae8-s.p.14tvuu96~wkr0.woff2",
+      "static/media/5c285b27cdda1fe8-s.p.0yo6-5yoeeudq.woff2",
+      "static/media/70bc3e132a0a741e-s.p.1409xf.ylxg8g.woff2"
+    ],
+    "[project]/src/app/services/page": [
+      "static/media/0c795a286deabae8-s.p.14tvuu96~wkr0.woff2",
+      "static/media/5c285b27cdda1fe8-s.p.0yo6-5yoeeudq.woff2",
+      "static/media/70bc3e132a0a741e-s.p.1409xf.ylxg8g.woff2"
+    ],
+    "[project]/src/app/services/reminders/page": [
+      "static/media/0c795a286deabae8-s.p.14tvuu96~wkr0.woff2",
+      "static/media/5c285b27cdda1fe8-s.p.0yo6-5yoeeudq.woff2",
+      "static/media/70bc3e132a0a741e-s.p.1409xf.ylxg8g.woff2"
+    ],
+    "[project]/src/app/services/voice/page": [
+      "static/media/0c795a286deabae8-s.p.14tvuu96~wkr0.woff2",
+      "static/media/5c285b27cdda1fe8-s.p.0yo6-5yoeeudq.woff2",
+      "static/media/70bc3e132a0a741e-s.p.1409xf.ylxg8g.woff2"
+    ],
+    "[project]/src/app/terms/page": [
+      "static/media/0c795a286deabae8-s.p.14tvuu96~wkr0.woff2",
+      "static/media/5c285b27cdda1fe8-s.p.0yo6-5yoeeudq.woff2",
+      "static/media/70bc3e132a0a741e-s.p.1409xf.ylxg8g.woff2"
+    ]
+  },
+  "appUsingSizeAdjust": true,
+  "pages": {},
+  "pagesUsingSizeAdjust": false
+}
