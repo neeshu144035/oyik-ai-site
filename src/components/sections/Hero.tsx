@@ -26,7 +26,7 @@ export default function Hero() {
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
 
-  const titleWords = ["AI", "employees", "for", "real", "estate", "teams."];
+  const titleWords = ["The", "AI", "Edge", "For", "Modern", "Realty."];
 
   return (
     <section 
@@ -41,20 +41,16 @@ export default function Hero() {
         }}
       />
 
-      {/* Cinematic Video Background Layer */}
+      {/* High-Fi Realistic AI Image Background Layer */}
       <motion.div 
-        style={{ y: bgY }} 
-        className="absolute inset-0 z-0 w-full h-full scale-[1.1] pointer-events-none origin-top"
+        style={{ y: bgY, willChange: "transform" }} 
+        className="absolute inset-0 z-0 w-full h-full scale-105 pointer-events-none origin-top"
       >
-        <video 
-          autoPlay 
-          loop 
-          muted 
-          playsInline 
-          className="absolute inset-0 w-full h-full object-cover opacity-30 mix-blend-screen"
-        >
-          <source src="https://cdn.pixabay.com/video/2023/10/22/185890-876615707_large.mp4" type="video/mp4" />
-        </video>
+        <img 
+          src="/media/hero_bg.png" 
+          alt="Futuristic Luxury Real Estate Skyline"
+          className="absolute inset-0 w-full h-full object-cover opacity-40 mix-blend-screen transition-opacity duration-1000"
+        />
         
         {/* Deep atmospheric gradients covering the video */}
         <div className="absolute inset-0 bg-gradient-to-t from-[#020818] via-[#020818]/60 to-transparent z-10" />
@@ -92,20 +88,21 @@ export default function Hero() {
             </motion.div>
 
             {/* Orchestrated Staggered Title */}
-            <h1 className="text-6xl sm:text-7xl lg:text-[5.5rem] font-display font-extrabold leading-[1.05] tracking-tighter text-foreground">
+            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-display font-extrabold leading-tight tracking-tight text-foreground">
               {titleWords.map((word, i) => (
                 <motion.span
                   key={i}
-                  initial={{ opacity: 0, y: 40, rotateX: -20 }}
+                  initial={{ opacity: 0, y: 30, rotateX: -15 }}
                   animate={{ opacity: 1, y: 0, rotateX: 0 }}
                   transition={{ 
-                    duration: 0.9, 
-                    delay: 0.1 + i * 0.08, 
+                    duration: 0.8, 
+                    delay: 0.1 + i * 0.06, 
                     ease: [0.22, 1, 0.36, 1] 
                   }}
-                  className={`inline-block mr-4 mb-2 ${
-                    word === "real" || word === "estate" 
-                      ? "text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent drop-shadow-[0_0_20px_rgba(0,245,255,0.3)]" 
+                  style={{ willChange: "transform, opacity" }}
+                  className={`inline-block mr-3 mb-1 ${
+                    word === "AI" || word === "Realty." 
+                      ? "text-transparent bg-clip-text bg-gradient-to-br from-primary to-accent drop-shadow-[0_0_15px_rgba(0,245,255,0.4)]" 
                       : ""
                   }`}
                 >
@@ -116,12 +113,13 @@ export default function Hero() {
 
             {/* Subtle fade-in paragraph */}
             <motion.p
-              initial={{ opacity: 0, filter: "blur(10px)" }}
-              animate={{ opacity: 1, filter: "blur(0px)" }}
-              transition={{ duration: 1, delay: 0.7, ease: [0.22, 1, 0.36, 1] }}
-              className="text-xl sm:text-2xl text-muted-foreground leading-relaxed max-w-xl font-light"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
+              style={{ willChange: "transform, opacity" }}
+              className="text-lg sm:text-xl text-muted-foreground leading-relaxed max-w-lg font-light"
             >
-              Qualify leads, book viewings, and respond in seconds. An autonomous AI workforce that never sleeps.
+              Qualify leads, book viewings, and respond in seconds. An autonomous AI workforce that guarantees you never miss a deal.
             </motion.p>
 
             {/* Primary Action Buttons */}
