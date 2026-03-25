@@ -20,7 +20,7 @@ const services = [
       "Books viewings: checks calendar availability and schedules",
     ],
     benefit: "Your team focuses on closings—while the chatbot handles the repetitive back-and-forth.",
-    image: "https://images.unsplash.com/photo-1614729939124-032f0b5610ce?q=80&w=1200&auto=format&fit=crop"
+    image: "/media/chat_hologram_ui.png"
   },
   {
     id: "voice",
@@ -34,7 +34,7 @@ const services = [
       "Transfers to your sales team instantly when requested",
     ],
     benefit: "Handle 100s of calls simultaneously without adding headcount.",
-    image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1200&auto=format&fit=crop"
+    image: "/media/voice_agent_ui.png"
   },
   {
     id: "reminders",
@@ -47,7 +47,7 @@ const services = [
       "Reschedule flows when a customer can't attend",
     ],
     benefit: "Eliminate manual chase-ups and keep operations running smoothly.",
-    image: "https://images.unsplash.com/photo-1600607687920-4e2a09be1546?q=80&w=1200&auto=format&fit=crop" // Modern luxury interior
+    image: "/media/reminders_ui.png"
   },
   {
     id: "email",
@@ -60,7 +60,7 @@ const services = [
       "Routes complex cases to your team with a full summary",
     ],
     benefit: "Never let a hot lead go cold in your inbox.",
-    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1200&auto=format&fit=crop" // Space tech data
+    image: "/media/email_automation.png"
   },
   {
     id: "ai-marketing",
@@ -73,7 +73,7 @@ const services = [
       "Output formats for Reels/TikTok/YouTube Shorts + ads",
     ],
     benefit: "Scale your video marketing without studio time.",
-    image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=1200&auto=format&fit=crop" // luxury mansion exterior
+    image: "/media/hero_bg.png"
   },
 ];
 
@@ -82,7 +82,7 @@ export default function ServicesPage() {
     <div className="flex flex-col w-full pb-24">
       {/* Header */}
       <section className="pt-32 pb-24 bg-background relative overflow-hidden border-b border-border/50">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2600&auto=format&fit=crop')] bg-cover bg-center opacity-10 mix-blend-screen" />
+        <div className="absolute inset-0 bg-[url('/media/hero_bg.png')] bg-cover bg-center opacity-10 mix-blend-screen" />
         <div className="absolute inset-0 bg-gradient-to-b from-background/50 via-background to-background" />
         
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center max-w-4xl pt-10">

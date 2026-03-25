@@ -176,27 +176,30 @@ export default function Hero() {
                   y: { duration: 6, repeat: Infinity, ease: "easeInOut" },
                   opacity: { duration: 1, delay: 0.8 }
                 }}
-                className="absolute top-[10%] -left-4 sm:-left-12 w-64 p-5 rounded-2xl bg-card/60 backdrop-blur-2xl border border-primary/30 shadow-[0_20px_50px_rgba(0,0,0,0.5)] z-20"
+                className="absolute top-[10%] -left-4 sm:-left-12 w-64 p-5 rounded-2xl bg-card/60 backdrop-blur-2xl border border-primary/30 shadow-[0_20px_50px_rgba(0,0,0,0.5)] z-20 overflow-hidden"
               >
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center text-primary shadow-[0_0_20px_rgba(0,245,255,0.4)]">
-                    <MessageSquare size={20} />
+                <div className="absolute inset-0 bg-[url('/media/chat_hologram_ui.png')] bg-cover bg-center opacity-20 mix-blend-screen"></div>
+                <div className="relative z-10">
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center text-primary shadow-[0_0_20px_rgba(0,245,255,0.4)]">
+                      <MessageSquare size={20} />
+                    </div>
+                    <div>
+                      <span className="text-sm font-bold text-foreground block">Client Match</span>
+                      <span className="text-xs text-primary/80 block uppercase tracking-wider mt-0.5">Automated</span>
+                    </div>
                   </div>
-                  <div>
-                    <span className="text-sm font-bold text-foreground block">Client Match</span>
-                    <span className="text-xs text-primary/80 block uppercase tracking-wider mt-0.5">Automated</span>
+                  <div className="space-y-2.5">
+                    <div className="h-2 w-full bg-border/50 rounded-full overflow-hidden">
+                      <motion.div 
+                        className="h-full bg-primary"
+                        initial={{ width: "0%" }}
+                        animate={{ width: "85%" }}
+                        transition={{ duration: 1.5, delay: 1.5, ease: "easeOut" }}
+                      />
+                    </div>
+                    <div className="h-2 w-3/4 bg-border/50 rounded-full" />
                   </div>
-                </div>
-                <div className="space-y-2.5">
-                  <div className="h-2 w-full bg-border/50 rounded-full overflow-hidden">
-                    <motion.div 
-                      className="h-full bg-primary"
-                      initial={{ width: "0%" }}
-                      animate={{ width: "85%" }}
-                      transition={{ duration: 1.5, delay: 1.5, ease: "easeOut" }}
-                    />
-                  </div>
-                  <div className="h-2 w-3/4 bg-border/50 rounded-full" />
                 </div>
               </motion.div>
 
@@ -208,30 +211,33 @@ export default function Hero() {
                   y: { duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 },
                   opacity: { duration: 1, delay: 1.1 }
                 }}
-                className="absolute bottom-[20%] -right-4 sm:-right-8 w-72 p-6 rounded-2xl bg-card/60 backdrop-blur-2xl border border-accent/40 shadow-[0_20px_50px_rgba(0,0,0,0.5)] z-30"
+                className="absolute bottom-[20%] -right-4 sm:-right-8 w-72 p-6 rounded-2xl bg-card/60 backdrop-blur-2xl border border-accent/40 shadow-[0_20px_50px_rgba(0,0,0,0.5)] z-30 overflow-hidden"
               >
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-accent/20 flex items-center justify-center text-accent shadow-[0_0_20px_rgba(37,99,235,0.4)] shrink-0">
-                    <Calendar size={20} />
-                  </div>
-                  <div className="w-full">
-                     <div className="flex justify-between items-center mb-1">
-                       <span className="text-sm font-bold text-foreground">Viewing Set</span>
-                       <span className="text-[10px] text-accent font-mono border border-accent/30 px-1.5 py-0.5 rounded">SYNC IN</span>
-                     </div>
-                     <p className="text-xs text-muted-foreground font-light mb-3">Penthouse 4B • Tomorrow, 2PM</p>
-                     
-                     {/* Audio Waveform Simulator */}
-                     <div className="flex items-center gap-1 h-6 items-end mt-2">
-                       {[...Array(15)].map((_, i) => (
-                          <motion.div 
-                            key={i} 
-                            className="w-1.5 bg-accent/80 rounded-t-sm" 
-                            animate={{ height: ["20%", `${Math.random() * 80 + 20}%`, "20%"] }} 
-                            transition={{ duration: 1.2, repeat: Infinity, delay: i * 0.05, ease: "easeInOut" }}
-                          />
-                       ))}
-                     </div>
+                <div className="absolute inset-0 bg-[url('/media/reminders_ui.png')] bg-cover bg-center opacity-25 mix-blend-screen"></div>
+                <div className="relative z-10">
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 rounded-xl bg-accent/20 flex items-center justify-center text-accent shadow-[0_0_20px_rgba(37,99,235,0.4)] shrink-0">
+                      <Calendar size={20} />
+                    </div>
+                    <div className="w-full">
+                       <div className="flex justify-between items-center mb-1">
+                         <span className="text-sm font-bold text-foreground">Viewing Set</span>
+                         <span className="text-[10px] text-accent font-mono border border-accent/30 px-1.5 py-0.5 rounded">SYNC IN</span>
+                       </div>
+                       <p className="text-xs text-muted-foreground font-light mb-3">Penthouse 4B • Tomorrow, 2PM</p>
+                       
+                       {/* Audio Waveform Simulator */}
+                       <div className="flex items-center gap-1 h-6 items-end mt-2">
+                         {[...Array(15)].map((_, i) => (
+                            <motion.div 
+                              key={i} 
+                              className="w-1.5 bg-accent/80 rounded-t-sm" 
+                              animate={{ height: ["20%", `${Math.random() * 80 + 20}%`, "20%"] }} 
+                              transition={{ duration: 1.2, repeat: Infinity, delay: i * 0.05, ease: "easeInOut" }}
+                            />
+                         ))}
+                       </div>
+                    </div>
                   </div>
                 </div>
               </motion.div>

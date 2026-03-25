@@ -13,7 +13,7 @@ const products = [
     colSpan: "lg:col-span-8",
     color: "rgba(0, 245, 255, 0.15)", // Primary
     href: "/services/chat",
-    bgPattern: "radial-gradient(circle at 80% 20%, rgba(0, 245, 255, 0.15), transparent 50%)"
+    imagePath: "/media/chat_hologram_ui.png"
   },
   {
     title: "Voice \nAgents",
@@ -22,7 +22,7 @@ const products = [
     colSpan: "lg:col-span-4",
     color: "rgba(37, 99, 235, 0.15)", // Accent
     href: "/services/voice",
-    bgPattern: "radial-gradient(circle at 10% 90%, rgba(37, 99, 235, 0.2), transparent 60%)"
+    imagePath: "/media/voice_agent_ui.png"
   },
   {
     title: "Smart \nReminders",
@@ -31,7 +31,7 @@ const products = [
     colSpan: "lg:col-span-4",
     color: "rgba(124, 58, 237, 0.15)", // Purple
     href: "/services/reminders",
-    bgPattern: "radial-gradient(circle at 50% 50%, rgba(124, 58, 237, 0.15), transparent 70%)"
+    imagePath: "/media/reminders_ui.png"
   },
   {
     title: "Inbox \nAutomation",
@@ -40,7 +40,7 @@ const products = [
     colSpan: "lg:col-span-4",
     color: "rgba(0, 245, 255, 0.1)",
     href: "/services/email",
-    bgPattern: "radial-gradient(circle at 0% 0%, rgba(0, 245, 255, 0.15), transparent 80%)"
+    imagePath: "/media/email_automation.png"
   },
   {
     title: "AI Avatar \nMarketing",
@@ -49,7 +49,7 @@ const products = [
     colSpan: "lg:col-span-4",
     color: "rgba(37, 99, 235, 0.1)",
     href: "/services/ai-marketing",
-    bgPattern: "radial-gradient(circle at 100% 100%, rgba(37, 99, 235, 0.2), transparent 60%)"
+    imagePath: "/media/hero_bg.png"
   }
 ];
 
@@ -113,7 +113,7 @@ function BentoCard({ product, index }: { product: any, index: number }) {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <motion.div
+    <motion.div 
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
@@ -126,10 +126,10 @@ function BentoCard({ product, index }: { product: any, index: number }) {
       onMouseLeave={() => setIsHovered(false)}
       className={`group relative overflow-hidden rounded-[2rem] bg-secondary/40 backdrop-blur-xl border border-border hover:border-border/80 transition-all duration-500 p-8 flex flex-col justify-between ${product.colSpan}`}
     >
-      {/* Dynamic Background Mesh */}
+      {/* Generated AI Image Background */}
       <div 
-        className="absolute inset-0 opacity-40 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"
-        style={{ background: product.bgPattern }}
+        className="absolute inset-0 opacity-20 group-hover:opacity-40 transition-opacity duration-700 pointer-events-none bg-cover bg-center mix-blend-screen"
+        style={{ backgroundImage: `url(${product.imagePath})` }}
       />
       
       {/* Animated noise texture specific to cards */}
