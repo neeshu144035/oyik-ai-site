@@ -1,0 +1,8 @@
+1:"$Sreact.fragment"
+2:I[46655,["/_next/static/chunks/0ryh1.5c7q28n.js","/_next/static/chunks/17zth5h4zigcr.js","/_next/static/chunks/0d3shmwh5_nmn.js","/_next/static/chunks/01qv0udogdgbj.js"],"default"]
+3:I[12083,["/_next/static/chunks/0ryh1.5c7q28n.js","/_next/static/chunks/17zth5h4zigcr.js","/_next/static/chunks/0d3shmwh5_nmn.js","/_next/static/chunks/01qv0udogdgbj.js"],"default"]
+4:I[99053,["/_next/static/chunks/0ryh1.5c7q28n.js","/_next/static/chunks/17zth5h4zigcr.js","/_next/static/chunks/0d3shmwh5_nmn.js","/_next/static/chunks/01qv0udogdgbj.js"],"default"]
+5:I[97367,["/_next/static/chunks/0ryh1.5c7q28n.js","/_next/static/chunks/17zth5h4zigcr.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"OutletBoundary"]
+6:"$Sreact.suspense"
+0:{"rsc":["$","$1","c",{"children":[["$","div",null,{"className":"flex flex-col w-full pt-20","children":[["$","div",null,{"className":"container mx-auto px-4 text-center mt-12 mb-8","children":[["$","h1",null,{"className":"text-5xl font-display font-bold text-foreground","children":["Launch Process & ",["$","span",null,{"className":"text-gradient","children":"Integrations"}]]}],["$","p",null,{"className":"text-xl text-muted-foreground mt-4 max-w-2xl mx-auto","children":"We handle the technical heavy lifting so your agency can focus on closing deals. Typical setup takes between 7 to 14 days."}]]}],["$","$L2",null,{}],["$","div",null,{"className":"bg-card/30","children":["$","$L3",null,{}]}],["$","$L4",null,{}]]}],[["$","script","script-0",{"src":"/_next/static/chunks/01qv0udogdgbj.js","async":true}]],["$","$L5",null,{"children":["$","$6",null,{"name":"Next.MetadataOutlet","children":"$@7"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"SSsKTmZQfeaXgGlTe_k_e"}
+7:null

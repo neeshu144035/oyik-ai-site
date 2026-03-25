@@ -1,114 +1,164 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { MessageSquare, PhoneCall, BellRing, Mailbox, Video } from "lucide-react";
+import { MessageSquare, PhoneCall, BellRing, Mailbox, Video, ArrowUpRight } from "lucide-react";
 import Link from "next/link";
+import { useState } from "react";
 
 const products = [
   {
-    title: "AI Chat (Website + Social)",
-    description: "Instant replies in your tone of voice. Answers questions, shares listing details, captures leads, and books viewings.",
+    title: "AI Chat \n(Web & Social)",
+    description: "Instant, brand-aligned replies. Qualifies leads & books viewings autonomously.",
     icon: MessageSquare,
-    colSpan: "lg:col-span-2",
-    color: "from-primary/20",
-    href: "/services/chat"
+    colSpan: "lg:col-span-8",
+    color: "rgba(0, 245, 255, 0.15)", // Primary
+    href: "/services/chat",
+    bgPattern: "radial-gradient(circle at 80% 20%, rgba(0, 245, 255, 0.15), transparent 50%)"
   },
   {
-    title: "Voice Agents",
-    description: "Human-sounding AI that handles multiple calls at once—answers, qualifies, and books viewings.",
+    title: "Voice \nAgents",
+    description: "Human-sounding AI handling 100s of concurrent inbound/outbound calls.",
     icon: PhoneCall,
-    colSpan: "lg:col-span-1",
-    color: "from-accent/20",
-    href: "/services/voice"
+    colSpan: "lg:col-span-4",
+    color: "rgba(37, 99, 235, 0.15)", // Accent
+    href: "/services/voice",
+    bgPattern: "radial-gradient(circle at 10% 90%, rgba(37, 99, 235, 0.2), transparent 60%)"
   },
   {
-    title: "Reminders",
-    description: "Automated reminders by SMS/email/call for rent due, deposits, and upcoming viewings.",
+    title: "Smart \nReminders",
+    description: "Automated chasing for rent, deposits, and viewing attendances.",
     icon: BellRing,
-    colSpan: "lg:col-span-1",
-    color: "from-[#7C3AED]/20",
-    href: "/services/reminders"
+    colSpan: "lg:col-span-4",
+    color: "rgba(124, 58, 237, 0.15)", // Purple
+    href: "/services/reminders",
+    bgPattern: "radial-gradient(circle at 50% 50%, rgba(124, 58, 237, 0.15), transparent 70%)"
   },
   {
-    title: "Email Automation",
-    description: "Intelligent, customizable replies that handle common enquiries and keep threads moving.",
+    title: "Inbox \nAutomation",
+    description: "Detects intent and drafts contextual replies for sales & lettings.",
     icon: Mailbox,
-    colSpan: "lg:col-span-1",
-    color: "from-primary/20",
-    href: "/services/email"
+    colSpan: "lg:col-span-4",
+    color: "rgba(0, 245, 255, 0.1)",
+    href: "/services/email",
+    bgPattern: "radial-gradient(circle at 0% 0%, rgba(0, 245, 255, 0.15), transparent 80%)"
   },
   {
-    title: "AI Marketing",
-    description: "We create AI avatar videos that present listings and your brand without filming.",
+    title: "AI Avatar \nMarketing",
+    description: "Generate listing videos featuring your digital clone—zero filming required.",
     icon: Video,
-    colSpan: "lg:col-span-1",
-    color: "from-accent/20",
-    href: "/services/ai-marketing"
+    colSpan: "lg:col-span-4",
+    color: "rgba(37, 99, 235, 0.1)",
+    href: "/services/ai-marketing",
+    bgPattern: "radial-gradient(circle at 100% 100%, rgba(37, 99, 235, 0.2), transparent 60%)"
   }
 ];
 
 export default function Products() {
   return (
-    <section className="py-24 bg-secondary relative z-10">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-4xl sm:text-5xl font-display font-bold text-foreground mb-6"
-          >
-            The Core <span className="text-gradient">Products</span>
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-lg text-muted-foreground"
-          >
-            Choose one service or combine them for a full "AI front desk" for real estate. Every channel, fully automated.
-          </motion.p>
-        </div>
+    <section className="py-24 relative z-10 overflow-hidden bg-background">
+      
+      {/* Background Decor */}
+      <div className="absolute top-0 right-0 w-[50vw] h-[50vw] bg-primary/5 rounded-full blur-[150px] pointer-events-none translate-x-1/3 -translate-y-1/3" />
+      <div className="absolute bottom-0 left-0 w-[40vw] h-[40vw] bg-accent/5 rounded-full blur-[130px] pointer-events-none -translate-x-1/3 translate-y-1/3" />
 
-        {/* Bento Grid layout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {products.map((product, idx) => (
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        
+        <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+          <div className="max-w-3xl">
             <motion.div
-              key={idx}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: idx * 0.1, duration: 0.5 }}
-              className={`group relative overflow-hidden rounded-3xl glass-card border border-border/50 hover:border-primary/50 transition-colors p-8 flex flex-col ${product.colSpan}`}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-border bg-secondary/50 backdrop-blur-sm mb-6"
             >
-              {/* Card gradient bg */}
-              <div className={`absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl ${product.color} to-transparent opacity-50 blur-3xl group-hover:opacity-100 transition-opacity duration-500`} />
-              
-              <div className="relative z-10 flex-grow flex flex-col items-start">
-                <div className="w-14 h-14 rounded-2xl bg-background border border-border flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                  <product.icon className="w-7 h-7 text-foreground" />
-                </div>
-                <h3 className="text-2xl font-display font-bold text-foreground mb-4">{product.title}</h3>
-                <p className="text-muted-foreground leading-relaxed flex-grow">
-                  {product.description}
-                </p>
-                <Link
-                  href={product.href}
-                  className="mt-8 inline-flex items-center text-sm font-semibold text-primary hover:text-accent transition-colors"
-                >
-                  Learn more
-                  <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                  </svg>
-                </Link>
-              </div>
+              <div className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
+              <span className="text-xs font-semibold text-muted-foreground tracking-widest uppercase">The Ecosystem</span>
             </motion.div>
+
+            <motion.h2
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+              className="text-5xl md:text-6xl lg:text-7xl font-display font-extrabold text-foreground leading-[1.05] tracking-tight"
+            >
+              Autonomous front desk for <span className="text-gradient hover:drop-shadow-[0_0_15px_rgba(37,99,235,0.4)] transition-all">agents.</span>
+            </motion.h2>
+          </div>
+          
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+          >
+             <p className="text-lg text-muted-foreground max-w-sm">Mix and match AI capabilities to build your perfect automated workflow.</p>
+          </motion.div>
+        </div>
+
+        {/* Premium Bento Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-8 lg:grid-cols-12 gap-5 auto-rows-[300px]">
+          {products.map((product, idx) => (
+            <BentoCard key={idx} product={product} index={idx} />
           ))}
         </div>
 
       </div>
     </section>
+  );
+}
+
+function BentoCard({ product, index }: { product: any, index: number }) {
+  const [isHovered, setIsHovered] = useState(false);
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-50px" }}
+      transition={{ 
+        duration: 0.8, 
+        delay: index * 0.1, 
+        ease: [0.22, 1, 0.36, 1] 
+      }}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      className={`group relative overflow-hidden rounded-[2rem] bg-secondary/40 backdrop-blur-xl border border-border hover:border-border/80 transition-all duration-500 p-8 flex flex-col justify-between ${product.colSpan}`}
+    >
+      {/* Dynamic Background Mesh */}
+      <div 
+        className="absolute inset-0 opacity-40 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"
+        style={{ background: product.bgPattern }}
+      />
+      
+      {/* Animated noise texture specific to cards */}
+      <div className="absolute inset-0 opacity-10 mix-blend-overlay pointer-events-none" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 200 200\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'noiseFilter\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.85\' numOctaves=\'3\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23noiseFilter)\'/%3E%3C/svg%3E")' }} />
+
+      {/* Header section */}
+      <div className="relative z-10 flex justify-between items-start w-full">
+        <div className="w-14 h-14 rounded-2xl bg-background/50 border border-border/50 backdrop-blur-md flex items-center justify-center group-hover:scale-110 group-hover:bg-background transition-all duration-500 shadow-xl">
+          <product.icon className={`w-6 h-6 transition-colors duration-500 ${isHovered ? 'text-primary' : 'text-foreground'}`} />
+        </div>
+        
+        <Link
+          href={product.href}
+          className="w-10 h-10 rounded-full bg-background/30 border border-border backdrop-blur-md flex items-center justify-center -rotate-45 group-hover:rotate-0 group-hover:bg-primary group-hover:text-primary-foreground group-hover:border-primary transition-all duration-500"
+        >
+           <ArrowUpRight className="w-5 h-5" />
+        </Link>
+      </div>
+
+      {/* Content section */}
+      <div className="relative z-10 w-full mt-auto">
+        <h3 className="text-3xl font-display font-extrabold text-white mb-3 tracking-tight whitespace-pre-line leading-none">
+          {product.title}
+        </h3>
+        <p className="text-muted-foreground leading-relaxed text-sm md:text-base max-w-sm group-hover:text-foreground/80 transition-colors duration-500">
+          {product.description}
+        </p>
+      </div>
+
+    </motion.div>
   );
 }
