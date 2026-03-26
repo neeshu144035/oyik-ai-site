@@ -51,39 +51,39 @@
 }
 
 :root, .dark {
-  --background: #020818;
-  --foreground: #F0F4FF;
-  --card: #0A1628;
-  --card-foreground: #F0F4FF;
-  --popover: #0A1628;
-  --popover-foreground: #F0F4FF;
-  --primary: #00F5FF;
-  --primary-foreground: #020818;
-  --secondary: #050D1F;
-  --secondary-foreground: #F0F4FF;
-  --muted: #050D1F;
-  --muted-foreground: #8B9EC7;
-  --accent: #2563EB;
-  --accent-foreground: #F0F4FF;
+  --background: #FFFFFF;
+  --foreground: #0F172A;
+  --card: #FFFFFF;
+  --card-foreground: #0F172A;
+  --popover: #FFFFFF;
+  --popover-foreground: #0F172A;
+  --primary: #4338CA;
+  --primary-foreground: #FFFFFF;
+  --secondary: #F8FAFC;
+  --secondary-foreground: #1E293B;
+  --muted: #F1F5F9;
+  --muted-foreground: #64748B;
+  --accent: #EEF2FF;
+  --accent-foreground: #4338CA;
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.985 0 0);
-  --border: rgba(0, 245, 255, 0.12);
-  --input: rgba(0, 245, 255, 0.12);
-  --ring: rgba(0, 245, 255, 0.5);
-  --chart-1: #00F5FF;
-  --chart-2: #2563EB;
-  --chart-3: #7C3AED;
-  --chart-4: #020818;
-  --chart-5: #050D1F;
+  --border: #E2E8F0;
+  --input: #E2E8F0;
+  --ring: rgba(67, 56, 202, 0.4);
+  --chart-1: #4338CA;
+  --chart-2: #3B82F6;
+  --chart-3: #8B5CF6;
+  --chart-4: #FFFFFF;
+  --chart-5: #F8FAFC;
   --radius: 0.75rem;
-  --sidebar: #050D1F;
-  --sidebar-foreground: #F0F4FF;
-  --sidebar-primary: #00F5FF;
-  --sidebar-primary-foreground: #020818;
-  --sidebar-accent: #2563EB;
-  --sidebar-accent-foreground: #F0F4FF;
-  --sidebar-border: rgba(0, 245, 255, 0.12);
-  --sidebar-ring: rgba(0, 245, 255, 0.5);
+  --sidebar: #F8FAFC;
+  --sidebar-foreground: #0F172A;
+  --sidebar-primary: #4338CA;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #EEF2FF;
+  --sidebar-accent-foreground: #4338CA;
+  --sidebar-border: #E2E8F0;
+  --sidebar-ring: rgba(67, 56, 202, 0.4);
 
   /* Premium Animation Easing Curves */
   --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
@@ -97,11 +97,11 @@
   }
   body {
     @apply bg-background text-foreground font-sans selection:bg-primary/20 selection:text-primary;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.025'/%3E%3C/svg%3E");
+    background-image: radial-gradient(circle at top center, rgba(67, 56, 202, 0.03) 0%, transparent 70%);
     background-attachment: fixed;
   }
   h1, h2, h3, h4, h5, h6 {
-    @apply font-display tracking-tight text-foreground;
+    @apply tracking-tight text-foreground font-bold;
   }
 }
 
@@ -115,15 +115,10 @@
     background-image: linear-gradient(to right, theme('colors.accent'), #7C3AED);
   }
   .glass-card {
-    @apply bg-card/60 backdrop-blur-xl border border-border shadow-2xl relative overflow-hidden;
+    @apply bg-white/80 backdrop-blur-xl border border-border shadow-sm relative overflow-hidden transition-all duration-300;
   }
-  .glass-card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    box-shadow: inset 0 0 40px rgba(0, 245, 255, 0.05);
-    pointer-events: none;
-    z-index: 0;
+  .glass-card:hover {
+    @apply shadow-[0_20px_40px_-15px_rgba(67,56,202,0.1)] -translate-y-1;
   }
   .glow-border {
     position: relative;
@@ -135,18 +130,17 @@
     inset: -1px;
     border-radius: inherit;
     padding: 1px;
-    background: linear-gradient(to bottom right, theme('colors.primary'), theme('colors.accent'), transparent);
+    background: linear-gradient(to bottom right, rgba(67, 56, 202, 0.2), transparent);
     -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
-    opacity: 0.5;
+    opacity: 1;
     transition: opacity 0.3s ease;
   }
   .glow-border:hover::before {
-    opacity: 1;
+    background: linear-gradient(to bottom right, rgba(67, 56, 202, 0.5), transparent);
   }
   .glow-border-intense::before {
-    opacity: 0.8;
-    background: linear-gradient(to right, theme('colors.primary'), theme('colors.accent'), #7C3AED);
+    background: linear-gradient(to right, rgba(67, 56, 202, 0.3), transparent);
   }
 }

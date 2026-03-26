@@ -22,7 +22,7 @@ const services = [
       "Sends confirmations by email + SMS with viewing time, property details, and Google Maps location"
     ],
     benefit: "Your team focuses on closings—while the chatbot handles the repetitive back-and-forth.",
-    image: "/media/chat_hologram_ui.png"
+    image: "/media/ai_chat_ui_light_1774519717225.png"
   },
   {
     id: "voice",
@@ -39,7 +39,7 @@ const services = [
       "Calls new leads automatically after they submit a form or ad lead"
     ],
     benefit: "Handle multiple calls at once and reach inquiries instantly.",
-    image: "/media/voice_agent_ui.png"
+    image: "/media/voice_agent_ui_light_1774519815031.png"
   },
   {
     id: "reminders",
@@ -54,7 +54,7 @@ const services = [
       "Optional outbound voice reminders for higher response rates"
     ],
     benefit: "Eliminate manual chase-ups and prioritize confirmed appointments.",
-    image: "/media/reminders_ui.png"
+    image: "/media/reminders_calendar_ui_light_1774519912843.png"
   },
   {
     id: "email",
@@ -68,7 +68,7 @@ const services = [
       "Captures key details and triggers next steps (e.g., booking link, document checklist)"
     ],
     benefit: "Never let a hot lead go cold in your inbox.",
-    image: "/media/email_automation.png"
+    image: "/media/email_automation_ui_light_1774519948355.png"
   },
   {
     id: "ai-marketing",
@@ -82,7 +82,7 @@ const services = [
       "Output formats for Reels/TikTok/YouTube Shorts + ads"
     ],
     benefit: "Scale your video marketing without studio time.",
-    image: "/media/hero_bg_phase8.png"
+    image: "/media/ai_marketing_ui_light_1774519968668.png"
   },
 ];
 
@@ -91,7 +91,7 @@ export default function ServicesPage() {
     <div className="flex flex-col w-full pb-24">
       {/* Header */}
       <section className="pt-32 pb-24 bg-background relative overflow-hidden border-b border-border/50">
-        <div className="absolute inset-0 bg-[url('/media/hero_bg_phase8.png')] bg-cover bg-center opacity-10 mix-blend-screen" />
+        <div className="absolute inset-0 bg-[url('/media/ai_marketing_ui_light_1774519968668.png')] bg-cover bg-center opacity-10 mix-blend-screen" />
         <div className="absolute inset-0 bg-gradient-to-b from-background/50 via-background to-background" />
         
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center max-w-4xl pt-10">

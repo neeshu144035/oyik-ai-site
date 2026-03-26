@@ -1,16 +1,11 @@
 import type { Metadata } from "next";
-import { Syne, DM_Sans, JetBrains_Mono } from "next/font/google";
+import { Inter, JetBrains_Mono } from "next/font/google";
 import Navbar from "@/components/shared/Navbar";
 import Footer from "@/components/shared/Footer";
 import SmoothScroll from "@/components/shared/SmoothScroll";
 import "./globals.css";
 
-const fontSyne = Syne({
-  variable: "--font-syne",
-  subsets: ["latin"],
-});
-
-const fontSans = DM_Sans({
+const fontInter = Inter({
   variable: "--font-sans",
   subsets: ["latin"],
 });
@@ -79,7 +74,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${fontSyne.variable} ${fontSans.variable} ${fontMono.variable} dark antialiased`}
+      className={`${fontInter.variable} ${fontMono.variable} antialiased`}
       suppressHydrationWarning
     >
       <head>
