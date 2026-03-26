@@ -3,6 +3,9 @@
 # dependencies
 /node_modules
 /.pnp
+
+# netlify
+.netlify/
 .pnp.*
 .yarn/*
 !.yarn/patches
