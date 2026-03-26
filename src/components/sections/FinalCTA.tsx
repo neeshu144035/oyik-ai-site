@@ -10,7 +10,7 @@ export default function FinalCTA() {
       
       {/* Background Ambience */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-[80vw] bg-cyan-500/10 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute inset-0 bg-[url('/grain.png')] opacity-20 mix-blend-overlay pointer-events-none" />
+      <div className="absolute inset-0 bg-white/5 opacity-20 mix-blend-overlay pointer-events-none" />
 
       <div className="container mx-auto px-6 lg:px-10 relative z-10">
         <motion.div 
