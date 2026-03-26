@@ -120,8 +120,10 @@ export default function Hero() {
   return (
     <section className="relative w-full bg-background pt-32 pb-24 overflow-hidden flex flex-col items-center">
       
-      {/* FULL SCREEN CENTRIC 3D BACKGROUND */}
+      {/* FULL SCREEN CENTRIC 3D BACKGROUND & GRID */}
       <div className="absolute inset-0 z-0 pointer-events-none opacity-80 h-[100vh]">
+        {/* Subtle dot pattern to remove "boring white" feel completely */}
+        <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "radial-gradient(#4338CA 1.5px, transparent 1.5px)", backgroundSize: "32px 32px" }}></div>
         <Canvas camera={{ position: [0, 0, 5], fov: 45 }}>
           <ambientLight intensity={1.5} />
           <directionalLight position={[10, 10, 5]} intensity={2} color="#4338CA" />
@@ -138,7 +140,7 @@ export default function Hero() {
       <div className="container relative z-10 mx-auto px-6 lg:px-10 flex flex-col items-center justify-center text-center">
         
         {/* TOP: Hyper-Legible Copy Block */}
-        <div className="flex flex-col items-center justify-center w-full max-w-5xl min-h-[70vh] z-20">
+        <div className="flex flex-col items-center justify-center w-full max-w-6xl min-h-[70vh] z-20">
           
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -197,15 +199,15 @@ export default function Hero() {
           </motion.div>
         </div>
 
-        {/* BOTTOM: Ultra-Realistic Video Simulator */}
+        {/* BOTTOM: Ultra-Realistic Video Simulator - WIDENED EXACTLY AS REQUESTED */}
         <motion.div 
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
-          className="w-full max-w-5xl z-30 perspective-[1000px] mt-10"
+          className="w-full max-w-[95vw] lg:max-w-[1400px] z-30 perspective-[1000px] mt-10"
         >
           {/* The primary screen/canvas - High Visibility Wrapper */}
-          <div className="relative w-full aspect-[16/9] sm:aspect-[21/9] rounded-[2rem] bg-white border-2 border-neutral-200 shadow-[0_30px_80px_-15px_rgba(0,0,0,0.15)] overflow-hidden transform-style-3d group">
+          <div className="relative w-full h-auto rounded-[2rem] bg-white border-2 border-neutral-200 shadow-[0_30px_80px_-15px_rgba(0,0,0,0.15)] overflow-hidden transform-style-3d group">
             
             {/* Media Carousel */}
             <AnimatePresence mode="wait">
@@ -220,9 +222,9 @@ export default function Hero() {
                 <img 
                   src={SIMULATED_WORKFLOW[activeStep].image} 
                   alt="AI Workflow Step" 
-                  className="w-full h-full object-cover object-top"
+                  className="w-full h-auto object-contain block"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-white/90 via-transparent to-transparent z-10" />
+                <div className="absolute inset-0 bg-gradient-to-t from-white/90 via-transparent to-transparent z-10 pointer-events-none" />
               </motion.div>
             </AnimatePresence>
 

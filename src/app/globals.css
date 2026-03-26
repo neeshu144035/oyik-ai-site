@@ -51,7 +51,7 @@
 }
 
 :root, .dark {
-  --background: #FFFFFF;
+  --background: #FAFAFC;
   --foreground: #000000;
   --card: #FFFFFF;
   --card-foreground: #000000;
