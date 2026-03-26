@@ -112,7 +112,7 @@
   }
   .text-gradient-secondary {
     @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(to right, theme('colors.accent'), #7C3AED);
+    background-image: linear-gradient(to right, theme('colors.accent'), #4338CA);
   }
   .glass-card {
     @apply bg-white/80 backdrop-blur-xl border border-border shadow-sm relative overflow-hidden transition-all duration-300;

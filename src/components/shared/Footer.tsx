@@ -21,7 +21,7 @@ export default function Footer() {
               <span className="font-display font-bold text-3xl tracking-tight text-primary">
                 .AI
               </span>
-              <div className="w-2 h-2 rounded-sm bg-primary ml-1 shadow-[0_0_10px_2px_rgba(0,245,255,0.5)]" />
+              <div className="w-2 h-2 rounded-sm bg-primary ml-1 shadow-[0_0_10px_2px_rgba(67,56,202,0.5)]" />
             </Link>
             <p className="text-muted-foreground text-sm leading-relaxed max-w-sm">
               The Intelligence Behind Every Real Estate Decision. Reply instantly, qualify leads, and book viewings automatically—across all channels.

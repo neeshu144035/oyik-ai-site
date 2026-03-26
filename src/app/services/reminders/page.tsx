@@ -12,10 +12,10 @@ export default function RemindersServicePage() {
     <div className="flex flex-col w-full">
       {/* Hero */}
       <section className="pt-32 pb-20 bg-background relative overflow-hidden border-b border-border/50">
-        <div className="absolute top-1/4 right-1/4 w-[500px] h-[500px] bg-[#7C3AED]/10 rounded-full blur-[120px] pointer-events-none" />
+        <div className="absolute top-1/4 right-1/4 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[120px] pointer-events-none" />
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center relative z-10">
           <div className="flex flex-col gap-6">
-            <div className="inline-flex w-fit px-4 py-1.5 rounded-full bg-secondary border border-border text-sm font-semibold text-[#7C3AED]">
+            <div className="inline-flex w-fit px-4 py-1.5 rounded-full bg-secondary border border-border text-sm font-semibold text-primary">
               Reminders (Rent, Deposits, Viewings)
             </div>
             <h1 className="text-4xl sm:text-5xl font-display font-bold text-foreground leading-tight">
@@ -25,7 +25,7 @@ export default function RemindersServicePage() {
               Send timely, customizable reminders across SMS, email, WhatsApp, or voice. Free your property managers from endless follow-ups.
             </p>
             <div className="flex gap-4 mt-4">
-              <Link href="/contact" className="px-8 py-4 rounded-full bg-[#7C3AED] text-white font-semibold flex items-center gap-2 hover:bg-[#7C3AED]/90 transition-all shadow-lg hover:shadow-[#7C3AED]/30">
+              <Link href="/contact" className="px-8 py-4 rounded-full bg-primary text-primary-foreground font-semibold flex items-center gap-2 hover:bg-primary/90 transition-all shadow-lg hover:shadow-primary/30">
                 Setup Reminders
                 <ArrowRight className="w-5 h-5" />
               </Link>
@@ -35,10 +35,10 @@ export default function RemindersServicePage() {
           {/* Timeline UI */}
           <div className="relative h-[450px] rounded-[2rem] glass-card border flex flex-col p-8 shadow-2xl bg-card">
             <h3 className="text-xl font-display font-semibold mb-6">Viewing Auto-Flow</h3>
-            <div className="relative border-l-2 border-[#7C3AED]/30 ml-3 space-y-8">
+            <div className="relative border-l-2 border-primary/30 ml-3 space-y-8">
               
               <div className="relative">
-                <div className="absolute -left-6 bg-card border-2 border-[#7C3AED] w-4 h-4 rounded-full shadow-[0_0_10px_theme('colors.purple.500')]" />
+                <div className="absolute -left-6 bg-card border-2 border-primary w-4 h-4 rounded-full shadow-[0_0_10px_rgba(67,56,202,0.5)]" />
                 <div className="pl-4">
                   <p className="text-xs font-bold font-mono text-muted-foreground mb-1">T-24 Hours</p>
                   <div className="bg-secondary p-3 rounded-xl border border-border text-sm max-w-xs">
@@ -48,7 +48,7 @@ export default function RemindersServicePage() {
               </div>
 
               <div className="relative">
-                <div className="absolute -left-6 bg-card border-2 border-[#7C3AED] w-4 h-4 rounded-full shadow-[0_0_10px_theme('colors.purple.500')]" />
+                <div className="absolute -left-6 bg-card border-2 border-primary w-4 h-4 rounded-full shadow-[0_0_10px_rgba(67,56,202,0.5)]" />
                 <div className="pl-4">
                   <p className="text-xs font-bold font-mono text-muted-foreground mb-1">T-2 Hours</p>
                   <div className="bg-secondary p-3 rounded-xl border border-border text-sm max-w-xs">
@@ -85,7 +85,7 @@ export default function RemindersServicePage() {
               "Outbound voice call reminders for urgent or high-value cases"
             ].map((feature, idx) => (
               <div key={idx} className="flex gap-4 p-6 glass-card rounded-2xl border border-border/50">
-                <BellRing className="w-6 h-6 text-[#7C3AED] shrink-0" />
+                <BellRing className="w-6 h-6 text-primary shrink-0" />
                 <p className="text-foreground">{feature}</p>
               </div>
             ))}

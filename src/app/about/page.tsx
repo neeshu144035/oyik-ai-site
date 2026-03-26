@@ -50,7 +50,7 @@ export default function AboutPage() {
               </p>
             </div>
             <div className="p-8 rounded-3xl glass-card flex flex-col gap-4 text-center items-center">
-              <div className="w-16 h-16 rounded-full bg-[#7C3AED]/10 flex items-center justify-center text-[#7C3AED] mb-2">
+              <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-2">
                 <Target size={28} />
               </div>
               <h3 className="text-2xl font-display font-bold text-foreground">Focus wins</h3>

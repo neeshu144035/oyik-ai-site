@@ -199,7 +199,7 @@ export default function Hero() {
                   {index !== SIMULATED_WORKFLOW.length - 1 && (
                     <div className="absolute top-6 left-[50%] w-full h-[2px] bg-white/5">
                       {index < activeStep && (
-                        <motion.div layoutId="line" className="h-full bg-cyan-400 w-full shadow-[0_0_10px_rgba(0,245,255,0.8)]" />
+                        <motion.div layoutId="line" className="h-full bg-primary w-full shadow-[0_0_10px_rgba(67,56,202,0.6)]" />
                       )}
                     </div>
                   )}
