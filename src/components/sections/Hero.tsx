@@ -24,10 +24,12 @@ function FuturisticRings() {
   const ring2Ref = useRef<THREE.Mesh>(null);
   const coreRef = useRef<THREE.Mesh>(null);
   
+  // Enforcing the 'animate' skill: organic, purposeful pacing - avoiding fast jitter
   useFrame((state) => {
     const t = state.clock.getElapsedTime();
     if (groupRef.current) {
-      groupRef.current.position.y = Math.sin(t * 1.5) * 0.1; // Elegant slow float
+      // Slower, breath-like floating motion
+      groupRef.current.position.y = Math.sin(t * 0.5) * 0.15; 
     }
     // Sophisticated, decoupled rotation speeds for that "quantum computer" feel
     if (ring1Ref.current) {
@@ -39,62 +41,71 @@ function FuturisticRings() {
       ring2Ref.current.rotation.z = t * 0.05;
     }
     if (coreRef.current) {
-      coreRef.current.rotation.x = t * 0.2;
-      coreRef.current.rotation.y = t * 0.3;
+      // Extremely subtle, organic core rotation
+      coreRef.current.rotation.x = t * 0.05;
+      coreRef.current.rotation.y = t * 0.1;
     }
   });
 
   return (
-    // Positioned left (-2) but scaled up (2.2) so it spans under the text and partially under the image
-    <group ref={groupRef} position={[-2, 0, -4]} scale={2.2}>
+    // Positioned deeply on the left side but scaled massive to span beautifully under all elements
+    <group ref={groupRef} position={[-3, 0, -5]} scale={2.5}>
       
-      {/* Outer orbital ring - Realistic Chrome/Metallic */}
+      {/* Outer orbital ring - Polished White Silver (matches white bg perfectly) */}
       <mesh ref={ring2Ref} rotation={[Math.PI / 4, 0, 0]}>
-        <torusGeometry args={[2.5, 0.02, 32, 100]} />
+        <torusGeometry args={[2.5, 0.015, 64, 128]} />
         <meshStandardMaterial 
-          color="#1e1e1e" 
-          metalness={0.9} 
-          roughness={0.1} 
-          envMapIntensity={2} 
+          color="#ffffff" 
+          metalness={1} 
+          roughness={0.05} 
+          envMapIntensity={3} 
         />
       </mesh>
 
-      {/* Inner fast ring - Glowing Indigo */}
+      {/* Inner fast ring - Vibrant Glowing Indigo */}
       <mesh ref={ring1Ref}>
-        <torusGeometry args={[1.6, 0.015, 32, 100]} />
+        <torusGeometry args={[1.5, 0.01, 64, 128]} />
         <meshStandardMaterial 
           color="#4338CA" 
           transparent 
-          opacity={0.8} 
-          emissive="#4338CA" 
+          opacity={0.9} 
+          emissive="#6366f1" 
           emissiveIntensity={2} 
         />
       </mesh>
 
-      {/* Realistic Glass Abstract Core */}
-      <Float speed={1.5} rotationIntensity={0.5} floatIntensity={1}>
+      {/* Realistic Iridescent Prism Core */}
+      <Float speed={1.5} rotationIntensity={0.2} floatIntensity={1}>
         <mesh ref={coreRef}>
-          <octahedronGeometry args={[1, 0]} />
-          {/* Stunning realistic refraction material */}
+          <octahedronGeometry args={[1.1, 0]} />
+          {/* Stunning realistic refraction material giving rainbow prism light split */}
           <MeshTransmissionMaterial 
             backside
-            samples={4}
-            thickness={1}
-            roughness={0.1}
+            samples={6}
+            thickness={2.5}
+            roughness={0.05}
             transmission={1}
             ior={1.4}
-            chromaticAberration={0.06}
-            backsideThickness={1}
+            chromaticAberration={0.8}
+            backsideThickness={1.5}
             color="#ffffff"
             resolution={1024}
+            clearcoat={1}
+            clearcoatRoughness={0.1}
           />
         </mesh>
       </Float>
       
-      {/* Central inner glow for the glass refraction to scatter beautifully */}
+      {/* Core Energy Source - A gorgeous Indigo/Sky Blue gradient glow */}
       <mesh>
-        <sphereGeometry args={[0.4, 32, 32]} />
-        <meshStandardMaterial color="#4338CA" emissive="#4338CA" emissiveIntensity={3} transparent opacity={0.5} />
+        <sphereGeometry args={[0.45, 32, 32]} />
+        <meshStandardMaterial 
+          color="#38bdf8" 
+          emissive="#4338CA" 
+          emissiveIntensity={4} 
+          transparent 
+          opacity={0.6} 
+        />
       </mesh>
     </group>
   );
