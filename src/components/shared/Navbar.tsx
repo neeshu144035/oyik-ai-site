@@ -28,7 +28,7 @@ export default function Navbar() {
   return (
     <header 
       className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 border-b ${
-        scrolled ? "bg-white/80 backdrop-blur-2xl py-4 border-slate-200 shadow-sm" : "bg-transparent py-6 border-transparent"
+        scrolled ? "bg-white/80 backdrop-blur-2xl py-4 border-neutral-200 shadow-sm" : "bg-transparent py-6 border-transparent"
       }`}
     >
       <div className="container mx-auto px-6 lg:px-10 flex items-center justify-between">
@@ -38,14 +38,14 @@ export default function Navbar() {
              <div className="absolute inset-0 bg-primary translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
              <div className="w-2 h-2 rounded-full bg-primary group-hover:bg-white transition-colors duration-300 relative z-10" />
           </div>
-          <span className="font-bold text-xl text-slate-900 tracking-tight">
+          <span className="font-bold text-xl text-black tracking-tight">
             OYIK<span className="text-primary">.</span>AI
           </span>
         </Link>
 
         {/* Desktop Navigation */}
         <nav className="hidden lg:flex items-center gap-10">
-          <ul className="flex items-center gap-8 bg-white/60 border border-slate-200 rounded-full px-8 py-2.5 backdrop-blur-md shadow-sm">
+          <ul className="flex items-center gap-8 bg-white/60 border border-neutral-200 rounded-full px-8 py-2.5 backdrop-blur-md shadow-sm">
             {links.map((link) => {
               const isActive = pathname === link.href;
               return (
@@ -53,7 +53,7 @@ export default function Navbar() {
                   <Link 
                     href={link.href}
                     className={`text-sm font-medium tracking-wide transition-colors duration-300 ${
-                      isActive ? "text-primary" : "text-slate-600 hover:text-primary"
+                      isActive ? "text-primary" : "text-neutral-600 hover:text-primary"
                     }`}
                   >
                     {link.label}
@@ -75,7 +75,7 @@ export default function Navbar() {
 
         {/* Mobile Menu Toggle */}
         <button 
-          className="lg:hidden relative z-20 text-slate-800 p-2"
+          className="lg:hidden relative z-20 text-neutral-800 p-2"
           onClick={() => setIsOpen(!isOpen)}
         >
           {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -100,7 +100,7 @@ export default function Navbar() {
               <Link 
                 href={link.href}
                 onClick={() => setIsOpen(false)}
-                className="text-3xl font-bold text-slate-900 tracking-tight active:text-primary"
+                className="text-3xl font-bold text-black tracking-tight active:text-primary"
               >
                 {link.label}
               </Link>

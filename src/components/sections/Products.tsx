@@ -56,17 +56,17 @@ export default function Products() {
   });
 
   return (
-    <section ref={containerRef} className="relative bg-slate-50 py-32 px-6 lg:px-10 z-20">
+    <section ref={containerRef} className="relative bg-background py-32 px-6 lg:px-10 z-20">
       
       {/* Proof Point Banner */}
       <div className="container mx-auto mb-20">
         <div className="max-w-4xl mx-auto p-[1px] rounded-2xl bg-gradient-to-r from-indigo-500/0 via-indigo-400/30 to-blue-500/0">
-          <div className="bg-white/90 backdrop-blur-xl px-8 py-6 rounded-2xl border border-slate-200 flex flex-col md:flex-row items-center gap-6 shadow-sm">
+          <div className="bg-white/90 backdrop-blur-xl px-8 py-6 rounded-2xl border border-neutral-200 flex flex-col md:flex-row items-center gap-6 shadow-sm">
             <div className="w-12 h-12 shrink-0 rounded-full bg-indigo-50 flex items-center justify-center">
                <Zap className="text-primary w-6 h-6" />
             </div>
-            <p className="text-slate-600 font-medium text-sm sm:text-base leading-relaxed">
-              <span className="text-slate-900 font-bold">Speed-to-lead matters:</span> the odds of contacting an inbound lead drop by ~100× when response slips from 5 minutes to 30 minutes, and qualification odds drop ~21×.
+            <p className="text-neutral-600 font-medium text-sm sm:text-base leading-relaxed">
+              <span className="text-black font-bold">Speed-to-lead matters:</span> the odds of contacting an inbound lead drop by ~100× when response slips from 5 minutes to 30 minutes, and qualification odds drop ~21×.
             </p>
           </div>
         </div>
@@ -74,10 +74,10 @@ export default function Products() {
 
       {/* Section Header: What we do */}
       <div className="container mx-auto max-w-5xl text-center mb-24">
-        <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-slate-900 tracking-tight leading-tight mb-8">
+        <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-black tracking-tight leading-tight mb-8">
           Everything a high-performing real estate team does—<span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-indigo-500">automated.</span>
         </h2>
-        <p className="text-xl sm:text-2xl text-slate-600 font-medium leading-snug max-w-3xl mx-auto">
+        <p className="text-xl sm:text-2xl text-neutral-600 font-medium leading-snug max-w-3xl mx-auto">
           Oyik Real Estate builds AI chat and voice systems that answer property questions, capture lead details, qualify buyers/tenants, and book viewings automatically. When a customer wants a human, we route the conversation or call to your sales team.
         </p>
       </div>
@@ -91,7 +91,7 @@ export default function Products() {
           return (
             <div 
               key={idx}
-              className="sticky top-32 flex flex-col lg:flex-row items-center gap-12 lg:gap-24 min-h-[70vh] w-full rounded-[40px] bg-white border border-slate-200 p-8 sm:p-16 mb-24 shadow-[0_-10px_40px_rgba(0,0,0,0.05)] overflow-hidden"
+              className="sticky top-32 flex flex-col lg:flex-row items-center gap-12 lg:gap-24 min-h-[70vh] w-full rounded-[40px] bg-white border border-neutral-200 p-8 sm:p-16 mb-24 shadow-[0_-10px_40px_rgba(0,0,0,0.05)] overflow-hidden"
               style={{
                 top: `calc(10vh + ${idx * 40}px)`,
               }}
@@ -110,11 +110,11 @@ export default function Products() {
                   </span>
                 </div>
 
-                <h3 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight mb-6">
+                <h3 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-black tracking-tight mb-6">
                   {product.title}
                 </h3>
                 
-                <p className="text-xl text-slate-600 font-medium leading-[1.6] mb-10">
+                <p className="text-xl text-neutral-600 font-medium leading-[1.6] mb-10">
                   {product.description}
                 </p>
 
@@ -130,7 +130,7 @@ export default function Products() {
               </div>
 
               {/* Image Side - Ultra Realistic Simulated Window */}
-              <div className="w-full lg:w-1/2 relative h-[400px] lg:h-[600px] rounded-[30px] bg-slate-50 overflow-hidden border border-slate-200 shadow-[0_20px_50px_rgba(0,0,0,0.1)] transform-style-3d group perspective-[2000px]">
+              <div className="w-full lg:w-1/2 relative h-[400px] lg:h-[600px] rounded-[30px] bg-background overflow-hidden border border-border shadow-[0_20px_50px_rgba(0,0,0,0.1)] transform-style-3d group perspective-[2000px]">
                 {/* Simulated Glass Reflection */}
                 <div className="absolute inset-0 bg-gradient-to-br from-white/40 via-transparent to-transparent z-20 pointer-events-none rounded-[30px]" />
                 
@@ -140,9 +140,9 @@ export default function Products() {
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
                 />
 
-                <div className="absolute bottom-6 left-6 right-6 z-30 flex items-center gap-3 backdrop-blur-md bg-white/90 border border-slate-200 shadow-sm rounded-2xl p-4 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                <div className="absolute bottom-6 left-6 right-6 z-30 flex items-center gap-3 backdrop-blur-md bg-white/90 border border-neutral-200 shadow-sm rounded-2xl p-4 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
                   <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                  <span className="text-xs text-slate-800 uppercase tracking-widest font-mono font-bold">System Online</span>
+                  <span className="text-xs text-neutral-800 uppercase tracking-widest font-mono font-bold">System Online</span>
                 </div>
               </div>
 

@@ -52,23 +52,23 @@
 
 :root, .dark {
   --background: #FFFFFF;
-  --foreground: #0F172A;
+  --foreground: #000000;
   --card: #FFFFFF;
-  --card-foreground: #0F172A;
+  --card-foreground: #000000;
   --popover: #FFFFFF;
-  --popover-foreground: #0F172A;
+  --popover-foreground: #000000;
   --primary: #4338CA;
   --primary-foreground: #FFFFFF;
-  --secondary: #F8FAFC;
-  --secondary-foreground: #1E293B;
-  --muted: #F1F5F9;
-  --muted-foreground: #64748B;
+  --secondary: #F5F5F5;
+  --secondary-foreground: #171717;
+  --muted: #E5E5E5;
+  --muted-foreground: #525252;
   --accent: #EEF2FF;
   --accent-foreground: #4338CA;
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.985 0 0);
-  --border: #E2E8F0;
-  --input: #E2E8F0;
+  --border: #E5E5E5;
+  --input: #E5E5E5;
   --ring: rgba(67, 56, 202, 0.4);
   --chart-1: #4338CA;
   --chart-2: #3B82F6;
@@ -76,13 +76,13 @@
   --chart-4: #FFFFFF;
   --chart-5: #F8FAFC;
   --radius: 0.75rem;
-  --sidebar: #F8FAFC;
-  --sidebar-foreground: #0F172A;
+  --sidebar: #F5F5F5;
+  --sidebar-foreground: #000000;
   --sidebar-primary: #4338CA;
   --sidebar-primary-foreground: #FFFFFF;
   --sidebar-accent: #EEF2FF;
   --sidebar-accent-foreground: #4338CA;
-  --sidebar-border: #E2E8F0;
+  --sidebar-border: #E5E5E5;
   --sidebar-ring: rgba(67, 56, 202, 0.4);
 
   /* Premium Animation Easing Curves */

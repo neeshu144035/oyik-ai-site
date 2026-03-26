@@ -3,10 +3,11 @@
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight, Play, CheckCircle2, MessageSquare, CalendarCheck, Send } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
+import * as THREE from "three";
 
-import { Canvas } from "@react-three/fiber";
-import { Float, Environment, MeshDistortMaterial } from "@react-three/drei";
+import { Canvas, useFrame } from "@react-three/fiber";
+import { Float, Environment, MeshTransmissionMaterial } from "@react-three/drei";
 import { Suspense } from "react";
 
 // Cinematic split-screen automated workflow simulation with UI Generative Assets
@@ -15,6 +16,89 @@ const SIMULATED_WORKFLOW = [
   { id: 2, text: "Viewing booked", icon: CalendarCheck, image: "/media/reminders_calendar_ui_light_1774519912843.png" },
   { id: 3, text: "Confirmation sent", icon: Send, image: "/media/email_automation_ui_light_1774519948355.png" }
 ];
+
+// Elegant, Futuristic Spinning Rings Component
+function FuturisticRings() {
+  const groupRef = useRef<THREE.Group>(null);
+  const ring1Ref = useRef<THREE.Mesh>(null);
+  const ring2Ref = useRef<THREE.Mesh>(null);
+  const coreRef = useRef<THREE.Mesh>(null);
+  
+  useFrame((state) => {
+    const t = state.clock.getElapsedTime();
+    if (groupRef.current) {
+      groupRef.current.position.y = Math.sin(t * 1.5) * 0.1; // Elegant slow float
+    }
+    // Sophisticated, decoupled rotation speeds for that "quantum computer" feel
+    if (ring1Ref.current) {
+      ring1Ref.current.rotation.x = t * 0.15;
+      ring1Ref.current.rotation.y = t * 0.1;
+    }
+    if (ring2Ref.current) {
+      ring2Ref.current.rotation.y = t * -0.1;
+      ring2Ref.current.rotation.z = t * 0.05;
+    }
+    if (coreRef.current) {
+      coreRef.current.rotation.x = t * 0.2;
+      coreRef.current.rotation.y = t * 0.3;
+    }
+  });
+
+  return (
+    // Positioned left (-2) but scaled up (2.2) so it spans under the text and partially under the image
+    <group ref={groupRef} position={[-2, 0, -4]} scale={2.2}>
+      
+      {/* Outer orbital ring - Realistic Chrome/Metallic */}
+      <mesh ref={ring2Ref} rotation={[Math.PI / 4, 0, 0]}>
+        <torusGeometry args={[2.5, 0.02, 32, 100]} />
+        <meshStandardMaterial 
+          color="#1e1e1e" 
+          metalness={0.9} 
+          roughness={0.1} 
+          envMapIntensity={2} 
+        />
+      </mesh>
+
+      {/* Inner fast ring - Glowing Indigo */}
+      <mesh ref={ring1Ref}>
+        <torusGeometry args={[1.6, 0.015, 32, 100]} />
+        <meshStandardMaterial 
+          color="#4338CA" 
+          transparent 
+          opacity={0.8} 
+          emissive="#4338CA" 
+          emissiveIntensity={2} 
+        />
+      </mesh>
+
+      {/* Realistic Glass Abstract Core */}
+      <Float speed={1.5} rotationIntensity={0.5} floatIntensity={1}>
+        <mesh ref={coreRef}>
+          <octahedronGeometry args={[1, 0]} />
+          {/* Stunning realistic refraction material */}
+          <MeshTransmissionMaterial 
+            backside
+            samples={4}
+            thickness={1}
+            roughness={0.1}
+            transmission={1}
+            ior={1.4}
+            chromaticAberration={0.06}
+            backsideThickness={1}
+            color="#ffffff"
+            resolution={1024}
+          />
+        </mesh>
+      </Float>
+      
+      {/* Central inner glow for the glass refraction to scatter beautifully */}
+      <mesh>
+        <sphereGeometry args={[0.4, 32, 32]} />
+        <meshStandardMaterial color="#4338CA" emissive="#4338CA" emissiveIntensity={3} transparent opacity={0.5} />
+      </mesh>
+    </group>
+  );
+}
 
 export default function Hero() {
   const [activeStep, setActiveStep] = useState(0);
@@ -27,52 +111,23 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative min-h-[100vh] flex items-center justify-center bg-slate-50 pt-24 pb-16 overflow-hidden">
+    <section className="relative min-h-[100vh] flex items-center justify-center bg-background pt-24 pb-16 overflow-hidden">
       
       {/* 3D Web Experience: R3F Spatial Canvas */}
       <div className="absolute inset-0 z-0 pointer-events-none opacity-60">
         <Canvas camera={{ position: [0, 0, 5], fov: 45 }}>
-          <ambientLight intensity={0.8} />
-          <directionalLight position={[10, 10, 5]} intensity={1.5} color="#4338ca" />
+          <ambientLight intensity={1.5} />
+          <directionalLight position={[10, 10, 5]} intensity={2} color="#4338CA" />
           <Suspense fallback={null}>
-            <Float speed={2} rotationIntensity={1.5} floatIntensity={2}>
-              <mesh position={[2, 0, -2]} scale={1.8}>
-                <octahedronGeometry args={[1, 0]} />
-                <MeshDistortMaterial 
-                  color="#ffffff" 
-                  envMapIntensity={2} 
-                  clearcoat={1} 
-                  clearcoatRoughness={0.1} 
-                  metalness={0.9}
-                  roughness={0.1}
-                  distort={0.4}
-                  speed={2}
-                />
-              </mesh>
-            </Float>
-            <Float speed={1.5} rotationIntensity={2} floatIntensity={1.5}>
-              <mesh position={[-3, -1, -4]} scale={1.2}>
-                <torusKnotGeometry args={[1, 0.3, 100, 16]} />
-                <MeshDistortMaterial 
-                  color="#EEF2FF" 
-                  envMapIntensity={1} 
-                  clearcoat={1} 
-                  clearcoatRoughness={0.2} 
-                  metalness={0.8}
-                  roughness={0.2}
-                  distort={0.2}
-                  speed={3}
-                />
-              </mesh>
-            </Float>
+            <FuturisticRings />
             <Environment preset="city" />
           </Suspense>
         </Canvas>
       </div>
 
       {/* Immersive Background Glows */}
-      <div className="absolute top-0 right-0 w-[50vw] h-[50vw] bg-indigo-500/5 rounded-full blur-[150px] pointer-events-none translate-x-[20%] -translate-y-[20%]" />
-      <div className="absolute bottom-0 left-0 w-[60vw] h-[40vw] bg-blue-500/5 rounded-full blur-[150px] pointer-events-none -translate-x-[20%] translate-y-[20%]" />
+      <div className="absolute top-0 right-0 w-[50vw] h-[50vw] bg-primary/5 rounded-full blur-[150px] pointer-events-none translate-x-[20%] -translate-y-[20%]" />
+      <div className="absolute bottom-0 left-0 w-[60vw] h-[40vw] bg-primary/5 rounded-full blur-[150px] pointer-events-none -translate-x-[20%] translate-y-[20%]" />
 
       <div className="container relative z-10 mx-auto px-6 lg:px-10 h-full flex flex-col justify-center">
         
@@ -95,7 +150,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
-              className="text-5xl sm:text-6xl md:text-7xl lg:text-[76px] font-extrabold text-slate-900 leading-[1.05] tracking-tight mb-8"
+              className="text-5xl sm:text-6xl md:text-7xl lg:text-[76px] font-extrabold text-black leading-[1.05] tracking-tight mb-8"
             >
               AI employees for{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-indigo-500">
@@ -107,7 +162,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-              className="text-xl sm:text-2xl text-slate-600 font-medium leading-snug tracking-tight mb-10 max-w-xl"
+              className="text-xl sm:text-2xl text-neutral-600 font-medium leading-snug tracking-tight mb-10 max-w-xl"
             >
               Reply instantly, qualify every lead, and book viewings automatically—across your website, social media DMs, email, and phone calls.
             </motion.p>
@@ -128,7 +183,7 @@ export default function Hero() {
               </Link>
               
               <button
-                className="w-full sm:w-auto px-8 py-5 rounded-full bg-white border border-slate-200 text-slate-800 font-semibold text-lg hover:bg-slate-50 hover:border-slate-300 transition-all duration-300 flex items-center justify-center gap-4 shadow-sm group"
+                className="w-full sm:w-auto px-8 py-5 rounded-full bg-white border border-neutral-200 text-neutral-800 font-semibold text-lg hover:bg-neutral-50 hover:border-neutral-300 transition-all duration-300 flex items-center justify-center gap-4 shadow-sm group"
               >
                 <div className="w-10 h-10 rounded-full bg-indigo-50 flex items-center justify-center border border-indigo-100 group-hover:bg-indigo-100 transition-colors duration-300 text-primary">
                    <Play className="w-4 h-4" />
@@ -141,7 +196,7 @@ export default function Hero() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1, delay: 0.6 }}
-              className="text-sm text-slate-500 font-medium pl-3 border-l-[3px] border-indigo-200"
+              className="text-sm text-neutral-500 font-medium pl-3 border-l-[3px] border-indigo-200"
             >
               No extra hiring. Works 24/7. Connects to your calendar and listings.
             </motion.p>
@@ -156,7 +211,7 @@ export default function Hero() {
             className="lg:col-span-6 flex flex-col w-full z-10 perspective-[1000px]"
           >
             {/* The primary screen/canvas */}
-            <div className="relative w-full aspect-[4/3] sm:aspect-video lg:aspect-[4/3] rounded-3xl bg-white border border-slate-200 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.1)] overflow-hidden transform-style-3d rotate-y-[-5deg] rotate-x-[2deg]">
+            <div className="relative w-full aspect-[4/3] sm:aspect-video lg:aspect-[4/3] rounded-3xl bg-white border border-neutral-200 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.1)] overflow-hidden transform-style-3d rotate-y-[-5deg] rotate-x-[2deg]">
               
               {/* Media Carousel */}
               <AnimatePresence mode="popLayout">
@@ -166,7 +221,7 @@ export default function Hero() {
                   animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
                   exit={{ opacity: 0, scale: 0.95, filter: "blur(10px)" }}
                   transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-                  className="absolute inset-0 bg-slate-50"
+                  className="absolute inset-0 bg-background"
                 >
                   <img 
                     src={SIMULATED_WORKFLOW[activeStep].image} 
@@ -179,7 +234,7 @@ export default function Hero() {
 
               {/* Internal Floating Tracking UI */}
               <div className="absolute bottom-6 left-6 right-6 z-20 flex items-center justify-between pt-4">
-                <div className="flex bg-white/90 backdrop-blur-xl border border-slate-200 shadow-sm rounded-full px-4 py-2 gap-2">
+                <div className="flex bg-white/90 backdrop-blur-xl border border-neutral-200 shadow-sm rounded-full px-4 py-2 gap-2">
                   <span className="text-xs text-primary font-mono font-bold tracking-widest uppercase flex items-center gap-2">
                     <span className="relative flex h-2 w-2">
                       <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
@@ -210,12 +265,12 @@ export default function Hero() {
                       ? "bg-primary text-white shadow-[0_10px_20px_-5px_rgba(67,56,202,0.4)]" 
                       : index < activeStep 
                         ? "bg-indigo-50 border-indigo-100 border text-primary" 
-                        : "bg-white border-slate-200 border text-slate-400"
+                        : "bg-white border-neutral-200 border text-neutral-400"
                   }`}>
                     {index < activeStep ? <CheckCircle2 size={20} /> : <step.icon size={20} />}
                   </div>
                   <span className={`text-[11px] sm:text-xs font-bold tracking-wider uppercase text-center max-w-[100px] transition-colors duration-500 ${
-                    index === activeStep ? "text-primary" : "text-slate-500"
+                    index === activeStep ? "text-primary" : "text-neutral-500"
                   }`}>
                     {step.text}
                   </span>
@@ -231,7 +286,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.8 }}
-          className="w-full mt-20 pt-8 border-t border-slate-200 grid grid-cols-2 lg:grid-cols-5 gap-6"
+          className="w-full mt-20 pt-8 border-t border-neutral-200 grid grid-cols-2 lg:grid-cols-5 gap-6"
         >
           {[
             "More viewings booked without chasing",
@@ -244,7 +299,7 @@ export default function Hero() {
               <div className="w-8 h-8 rounded-full bg-indigo-50 border border-indigo-100 flex items-center justify-center">
                 <CheckCircle2 size={14} className="text-primary" />
               </div>
-              <p className="text-sm font-medium text-slate-600 leading-relaxed pr-4">
+              <p className="text-sm font-medium text-neutral-600 leading-relaxed pr-4">
                 {bullet}
               </p>
             </div>
