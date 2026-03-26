@@ -36,7 +36,7 @@ export default function MarketingServicePage() {
           <div className="relative aspect-[9/16] max-w-sm mx-auto rounded-[2rem] glass-card border p-2 shadow-2xl bg-card">
             <div className="w-full h-full rounded-[1.5rem] bg-secondary overflow-hidden relative">
               {/* Fake Video bg */}
-              <div className="absolute inset-0 bg-[url('/media/hero_bg.png')] bg-cover bg-center opacity-60 mix-blend-overlay" />
+              <div className="absolute inset-0 bg-[url('/media/hero_bg_phase8.png')] bg-cover bg-center opacity-60 mix-blend-overlay" />
               
               {/* Fake Avatar */}
               <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[80%] aspect-[3/4] bg-gradient-to-t from-background to-transparent pointer-events-none z-10" />

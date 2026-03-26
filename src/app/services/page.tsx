@@ -82,7 +82,7 @@ const services = [
       "Output formats for Reels/TikTok/YouTube Shorts + ads"
     ],
     benefit: "Scale your video marketing without studio time.",
-    image: "/media/hero_bg.png"
+    image: "/media/hero_bg_phase8.png"
   },
 ];
 
@@ -91,7 +91,7 @@ export default function ServicesPage() {
     <div className="flex flex-col w-full pb-24">
       {/* Header */}
       <section className="pt-32 pb-24 bg-background relative overflow-hidden border-b border-border/50">
-        <div className="absolute inset-0 bg-[url('/media/hero_bg.png')] bg-cover bg-center opacity-10 mix-blend-screen" />
+        <div className="absolute inset-0 bg-[url('/media/hero_bg_phase8.png')] bg-cover bg-center opacity-10 mix-blend-screen" />
         <div className="absolute inset-0 bg-gradient-to-b from-background/50 via-background to-background" />
         
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center max-w-4xl pt-10">
