@@ -17,41 +17,38 @@ const SIMULATED_WORKFLOW = [
   { id: 3, text: "Confirmation sent", icon: Send, image: "/media/email_automation_ui_light_1774519948355.png" }
 ];
 
-// Elegant, Futuristic Spinning Rings Component
+// Elegant, Futuristic Spinning Rings Component - Centered & Faster
 function FuturisticRings() {
   const groupRef = useRef<THREE.Group>(null);
   const ring1Ref = useRef<THREE.Mesh>(null);
   const ring2Ref = useRef<THREE.Mesh>(null);
   const coreRef = useRef<THREE.Mesh>(null);
   
-  // Enforcing the 'animate' skill: organic, purposeful pacing - avoiding fast jitter
+  // Pumping up speed slightly for that attractive Gen-Z tech energy
   useFrame((state) => {
     const t = state.clock.getElapsedTime();
     if (groupRef.current) {
-      // Slower, breath-like floating motion
-      groupRef.current.position.y = Math.sin(t * 0.5) * 0.15; 
+      groupRef.current.position.y = Math.sin(t * 1.5) * 0.15; // Floating
     }
-    // Sophisticated, decoupled rotation speeds for that "quantum computer" feel
     if (ring1Ref.current) {
-      ring1Ref.current.rotation.x = t * 0.15;
-      ring1Ref.current.rotation.y = t * 0.1;
+      ring1Ref.current.rotation.x = t * 0.35;
+      ring1Ref.current.rotation.y = t * 0.2;
     }
     if (ring2Ref.current) {
-      ring2Ref.current.rotation.y = t * -0.1;
-      ring2Ref.current.rotation.z = t * 0.05;
+      ring2Ref.current.rotation.y = t * -0.2;
+      ring2Ref.current.rotation.z = t * 0.15;
     }
     if (coreRef.current) {
-      // Extremely subtle, organic core rotation
-      coreRef.current.rotation.x = t * 0.05;
-      coreRef.current.rotation.y = t * 0.1;
+      coreRef.current.rotation.x = t * 0.15;
+      coreRef.current.rotation.y = t * 0.2;
     }
   });
 
   return (
-    // Positioned deeply on the left side but scaled massive to span beautifully under all elements
-    <group ref={groupRef} position={[-3, 0, -5]} scale={2.5}>
+    // Centered and massive, completely filling the Hero background
+    <group ref={groupRef} position={[0, 0, -4]} scale={3.5}>
       
-      {/* Outer orbital ring - Polished White Silver (matches white bg perfectly) */}
+      {/* Outer orbital ring - Polished White Silver */}
       <mesh ref={ring2Ref} rotation={[Math.PI / 4, 0, 0]}>
         <torusGeometry args={[2.5, 0.015, 64, 128]} />
         <meshStandardMaterial 
@@ -75,10 +72,9 @@ function FuturisticRings() {
       </mesh>
 
       {/* Realistic Iridescent Prism Core */}
-      <Float speed={1.5} rotationIntensity={0.2} floatIntensity={1}>
+      <Float speed={2} rotationIntensity={0.5} floatIntensity={1}>
         <mesh ref={coreRef}>
           <octahedronGeometry args={[1.1, 0]} />
-          {/* Stunning realistic refraction material giving rainbow prism light split */}
           <MeshTransmissionMaterial 
             backside
             samples={6}
@@ -96,7 +92,7 @@ function FuturisticRings() {
         </mesh>
       </Float>
       
-      {/* Core Energy Source - A gorgeous Indigo/Sky Blue gradient glow */}
+      {/* Core Energy Source - Indigo & Sky Blue */}
       <mesh>
         <sphereGeometry args={[0.45, 32, 32]} />
         <meshStandardMaterial 
@@ -104,7 +100,7 @@ function FuturisticRings() {
           emissive="#4338CA" 
           emissiveIntensity={4} 
           transparent 
-          opacity={0.6} 
+          opacity={0.7} 
         />
       </mesh>
     </group>
@@ -117,15 +113,15 @@ export default function Hero() {
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveStep((prev) => (prev + 1) % SIMULATED_WORKFLOW.length);
-    }, 4000); // 4 seconds per simulated step
+    }, 3000); // Increased step speed for higher energy flow
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <section className="relative min-h-[100vh] flex items-center justify-center bg-background pt-24 pb-16 overflow-hidden">
+    <section className="relative w-full bg-background pt-32 pb-24 overflow-hidden flex flex-col items-center">
       
-      {/* 3D Web Experience: R3F Spatial Canvas */}
-      <div className="absolute inset-0 z-0 pointer-events-none opacity-60">
+      {/* FULL SCREEN CENTRIC 3D BACKGROUND */}
+      <div className="absolute inset-0 z-0 pointer-events-none opacity-80 h-[100vh]">
         <Canvas camera={{ position: [0, 0, 5], fov: 45 }}>
           <ambientLight intensity={1.5} />
           <directionalLight position={[10, 10, 5]} intensity={2} color="#4338CA" />
@@ -137,167 +133,153 @@ export default function Hero() {
       </div>
 
       {/* Immersive Background Glows */}
-      <div className="absolute top-0 right-0 w-[50vw] h-[50vw] bg-primary/5 rounded-full blur-[150px] pointer-events-none translate-x-[20%] -translate-y-[20%]" />
-      <div className="absolute bottom-0 left-0 w-[60vw] h-[40vw] bg-primary/5 rounded-full blur-[150px] pointer-events-none -translate-x-[20%] translate-y-[20%]" />
+      <div className="absolute top-[10%] w-[50vw] h-[50vw] bg-primary/5 rounded-full blur-[150px] pointer-events-none translate-x-[20%] -translate-y-[20%]" />
 
-      <div className="container relative z-10 mx-auto px-6 lg:px-10 h-full flex flex-col justify-center">
+      <div className="container relative z-10 mx-auto px-6 lg:px-10 flex flex-col items-center justify-center text-center">
         
-        <div className="grid lg:grid-cols-12 gap-16 lg:gap-12 items-center">
+        {/* TOP: Hyper-Legible Copy Block */}
+        <div className="flex flex-col items-center justify-center w-full max-w-5xl min-h-[70vh] z-20">
           
-          {/* LEFT: Hyper-Legible Exact Copy Block */}
-          <div className="lg:col-span-6 flex flex-col items-start pt-10 lg:pt-0 z-20">
-            
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-indigo-200 bg-white/60 backdrop-blur-md mb-8 shadow-sm"
-            >
-              <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-              <span className="text-xs font-semibold text-primary tracking-wider uppercase">Advanced Automation Engine</span>
-            </motion.div>
-
-            <motion.h1 
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
-              className="text-5xl sm:text-6xl md:text-7xl lg:text-[76px] font-extrabold text-black leading-[1.05] tracking-tight mb-8"
-            >
-              AI employees for{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-indigo-500">
-                real estate teams.
-              </span>
-            </motion.h1>
-
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-              className="text-xl sm:text-2xl text-neutral-600 font-medium leading-snug tracking-tight mb-10 max-w-xl"
-            >
-              Reply instantly, qualify every lead, and book viewings automatically—across your website, social media DMs, email, and phone calls.
-            </motion.p>
-
-            {/* CTAs */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-              className="flex flex-col sm:flex-row items-center gap-5 w-full sm:w-auto mb-6"
-            >
-              <Link
-                href="/contact"
-                className="w-full sm:w-auto px-10 py-5 rounded-full bg-primary text-white font-extrabold text-lg flex items-center justify-center gap-3 hover:bg-indigo-700 transition-all duration-300 shadow-[0_10px_30px_-10px_rgba(67,56,202,0.5)] hover:shadow-[0_15px_40px_-10px_rgba(67,56,202,0.6)] hover:-translate-y-1 group"
-              >
-                Book a demo
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1.5 transition-transform duration-300" />
-              </Link>
-              
-              <button
-                className="w-full sm:w-auto px-8 py-5 rounded-full bg-white border border-neutral-200 text-neutral-800 font-semibold text-lg hover:bg-neutral-50 hover:border-neutral-300 transition-all duration-300 flex items-center justify-center gap-4 shadow-sm group"
-              >
-                <div className="w-10 h-10 rounded-full bg-indigo-50 flex items-center justify-center border border-indigo-100 group-hover:bg-indigo-100 transition-colors duration-300 text-primary">
-                   <Play className="w-4 h-4" />
-                </div>
-                Watch overview (90 sec)
-              </button>
-            </motion.div>
-
-            <motion.p 
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 1, delay: 0.6 }}
-              className="text-sm text-neutral-500 font-medium pl-3 border-l-[3px] border-indigo-200"
-            >
-              No extra hiring. Works 24/7. Connects to your calendar and listings.
-            </motion.p>
-
-          </div>
-
-          {/* RIGHT: Ultra-Realistic Split-Screen Video Simulator */}
-          <motion.div 
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1.2, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:col-span-6 flex flex-col w-full z-10 perspective-[1000px]"
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-indigo-200 bg-white/80 backdrop-blur-md mb-8 shadow-md"
           >
-            {/* The primary screen/canvas */}
-            <div className="relative w-full aspect-[4/3] sm:aspect-video lg:aspect-[4/3] rounded-3xl bg-white border border-neutral-200 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.1)] overflow-hidden transform-style-3d rotate-y-[-5deg] rotate-x-[2deg]">
-              
-              {/* Media Carousel */}
-              <AnimatePresence mode="popLayout">
-                <motion.div
-                  key={activeStep}
-                  initial={{ opacity: 0, scale: 1.05, filter: "blur(10px)" }}
-                  animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
-                  exit={{ opacity: 0, scale: 0.95, filter: "blur(10px)" }}
-                  transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-                  className="absolute inset-0 bg-background"
-                >
-                  <img 
-                    src={SIMULATED_WORKFLOW[activeStep].image} 
-                    alt="AI Workflow Step" 
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-white/80 via-transparent to-transparent z-10" />
-                </motion.div>
-              </AnimatePresence>
+            <div className="w-2.5 h-2.5 rounded-full bg-primary animate-pulse" />
+            <span className="text-xs font-bold text-primary tracking-widest uppercase">Advanced Automation Engine</span>
+          </motion.div>
 
-              {/* Internal Floating Tracking UI */}
-              <div className="absolute bottom-6 left-6 right-6 z-20 flex items-center justify-between pt-4">
-                <div className="flex bg-white/90 backdrop-blur-xl border border-neutral-200 shadow-sm rounded-full px-4 py-2 gap-2">
-                  <span className="text-xs text-primary font-mono font-bold tracking-widest uppercase flex items-center gap-2">
-                    <span className="relative flex h-2 w-2">
-                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-                      <span className="relative inline-flex rounded-full h-2 w-2 bg-indigo-600"></span>
-                    </span>
-                    Live Link
-                  </span>
-                </div>
-              </div>
-            </div>
+          <motion.h1 
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
+            className="text-6xl sm:text-7xl md:text-8xl font-black text-black leading-[1.02] tracking-tighter mb-10 drop-shadow-sm"
+          >
+            AI employees for{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-indigo-500">
+              real estate teams.
+            </span>
+          </motion.h1>
 
-            {/* Stepper Logic directly synchronized to user flow request */}
-            <div className="flex justify-between items-center mt-8 px-2">
-              {SIMULATED_WORKFLOW.map((step, index) => (
-                <div key={step.id} className="flex flex-col items-center flex-1 relative">
-                  {/* Connecting Line */}
-                  {index !== SIMULATED_WORKFLOW.length - 1 && (
-                    <div className="absolute top-6 left-[50%] w-full h-[2px] bg-white/5">
-                      {index < activeStep && (
-                        <motion.div layoutId="line" className="h-full bg-primary w-full shadow-[0_0_10px_rgba(67,56,202,0.6)]" />
-                      )}
-                    </div>
-                  )}
-                  
-                  {/* Icon Node */}
-                  <div className={`w-12 h-12 rounded-2xl flex items-center justify-center mb-3 transition-all duration-500 relative z-10 ${
-                    index === activeStep 
-                      ? "bg-primary text-white shadow-[0_10px_20px_-5px_rgba(67,56,202,0.4)]" 
-                      : index < activeStep 
-                        ? "bg-indigo-50 border-indigo-100 border text-primary" 
-                        : "bg-white border-neutral-200 border text-neutral-400"
-                  }`}>
-                    {index < activeStep ? <CheckCircle2 size={20} /> : <step.icon size={20} />}
-                  </div>
-                  <span className={`text-[11px] sm:text-xs font-bold tracking-wider uppercase text-center max-w-[100px] transition-colors duration-500 ${
-                    index === activeStep ? "text-primary" : "text-neutral-500"
-                  }`}>
-                    {step.text}
-                  </span>
-                </div>
-              ))}
-            </div>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+            className="text-2xl sm:text-3xl text-neutral-600 font-semibold leading-tight tracking-tight mb-12 max-w-3xl drop-shadow-sm"
+          >
+            Reply instantly, qualify every lead, and book viewings automatically—across your website, social media DMs, email, and phone calls.
+          </motion.p>
+
+          {/* CTAs */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+            className="flex flex-col sm:flex-row items-center gap-6 w-full sm:w-auto mb-8"
+          >
+            <Link
+              href="/contact"
+              className="w-full sm:w-auto px-12 py-5 rounded-full bg-primary text-white font-extrabold text-xl flex items-center justify-center gap-3 hover:bg-indigo-700 transition-all duration-300 shadow-[0_10px_30px_-10px_rgba(67,56,202,0.5)] hover:shadow-[0_15px_40px_-10px_rgba(67,56,202,0.6)] hover:-translate-y-1 group"
+            >
+              Book a demo
+              <ArrowRight className="w-6 h-6 group-hover:translate-x-1.5 transition-transform duration-300" />
+            </Link>
             
+            <button
+              className="w-full sm:w-auto px-10 py-5 rounded-full bg-white/90 backdrop-blur-sm border-2 border-neutral-200 text-neutral-900 font-bold text-xl hover:bg-white hover:border-neutral-300 transition-all duration-300 flex items-center justify-center gap-4 shadow-md group"
+            >
+              <div className="w-10 h-10 rounded-full bg-indigo-50 flex items-center justify-center border border-indigo-100 group-hover:bg-indigo-100 transition-colors duration-300 text-primary">
+                 <Play className="w-5 h-5" />
+              </div>
+              Watch overview (90 sec)
+            </button>
           </motion.div>
         </div>
 
-        {/* TRUST STRIP (Exactly as requested) */}
+        {/* BOTTOM: Ultra-Realistic Video Simulator */}
+        <motion.div 
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.2, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
+          className="w-full max-w-5xl z-30 perspective-[1000px] mt-10"
+        >
+          {/* The primary screen/canvas - High Visibility Wrapper */}
+          <div className="relative w-full aspect-[16/9] sm:aspect-[21/9] rounded-[2rem] bg-white border-2 border-neutral-200 shadow-[0_30px_80px_-15px_rgba(0,0,0,0.15)] overflow-hidden transform-style-3d group">
+            
+            {/* Media Carousel */}
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={activeStep}
+                initial={{ opacity: 0, scale: 1.05, filter: "blur(5px)" }}
+                animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
+                exit={{ opacity: 0, scale: 0.95, filter: "blur(5px)" }}
+                transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                className="absolute inset-0 bg-background"
+              >
+                <img 
+                  src={SIMULATED_WORKFLOW[activeStep].image} 
+                  alt="AI Workflow Step" 
+                  className="w-full h-full object-cover object-top"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-white/90 via-transparent to-transparent z-10" />
+              </motion.div>
+            </AnimatePresence>
+
+            {/* Internal Floating Tracking UI */}
+            <div className="absolute bottom-6 left-6 right-6 z-20 flex items-center justify-between pt-4">
+              <div className="flex bg-white/95 backdrop-blur-xl border-2 border-neutral-100 shadow-md rounded-full px-5 py-2.5 gap-2">
+                <span className="text-xs text-primary font-mono font-bold tracking-widest uppercase flex items-center gap-3">
+                  <span className="relative flex h-2.5 w-2.5">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-indigo-600"></span>
+                  </span>
+                  Live Interaction
+                </span>
+              </div>
+            </div>
+          </div>
+
+          {/* Stepper Logic */}
+          <div className="flex justify-between items-center mt-12 px-4 max-w-3xl mx-auto hidden sm:flex">
+            {SIMULATED_WORKFLOW.map((step, index) => (
+              <div key={step.id} className="flex flex-col items-center flex-1 relative">
+                {/* Connecting Line */}
+                {index !== SIMULATED_WORKFLOW.length - 1 && (
+                  <div className="absolute top-7 left-[50%] w-full h-[3px] bg-neutral-200 rounded-full">
+                    {index < activeStep && (
+                      <motion.div layoutId="stepline" className="h-full bg-primary w-full shadow-[0_0_10px_rgba(67,56,202,0.5)] rounded-full" />
+                    )}
+                  </div>
+                )}
+                
+                {/* Icon Node */}
+                <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-4 transition-all duration-300 relative z-10 ${
+                  index === activeStep 
+                    ? "bg-primary text-white shadow-[0_10px_20px_-5px_rgba(67,56,202,0.4)] scale-110" 
+                    : index < activeStep 
+                      ? "bg-indigo-50 border-2 border-indigo-100 text-primary" 
+                      : "bg-white border-2 border-neutral-200 text-neutral-400 opacity-60"
+                }`}>
+                  {index < activeStep ? <CheckCircle2 size={24} /> : <step.icon size={24} />}
+                </div>
+                <span className={`text-[12px] sm:text-sm font-bold tracking-wider uppercase text-center max-w-[120px] transition-colors duration-300 ${
+                  index === activeStep ? "text-primary drop-shadow-sm" : "text-neutral-500"
+                }`}>
+                  {step.text}
+                </span>
+              </div>
+            ))}
+          </div>
+          
+        </motion.div>
+
+        {/* TRUST STRIP */}
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.8 }}
-          className="w-full mt-20 pt-8 border-t border-neutral-200 grid grid-cols-2 lg:grid-cols-5 gap-6"
+          className="w-full max-w-6xl mt-24 pt-10 border-t-2 border-neutral-200 grid grid-cols-2 lg:grid-cols-5 gap-8"
         >
           {[
             "More viewings booked without chasing",
@@ -306,11 +288,11 @@ export default function Hero() {
             "Consistent qualification (every time)",
             "Seamless handover to your team when needed"
           ].map((bullet, i) => (
-            <div key={i} className="flex flex-col gap-3">
-              <div className="w-8 h-8 rounded-full bg-indigo-50 border border-indigo-100 flex items-center justify-center">
-                <CheckCircle2 size={14} className="text-primary" />
+            <div key={i} className="flex flex-col gap-4">
+              <div className="w-10 h-10 rounded-full bg-indigo-50 border-2 border-indigo-100 flex items-center justify-center">
+                <CheckCircle2 size={18} className="text-primary" />
               </div>
-              <p className="text-sm font-medium text-neutral-600 leading-relaxed pr-4">
+              <p className="text-base font-bold text-neutral-700 leading-snug">
                 {bullet}
               </p>
             </div>
