@@ -64,8 +64,7 @@ export default function Footer() {
             {[
               { name: "About Us", href: "/about" },
               { name: "How it works", href: "/how-it-works" },
-              { name: "Case Studies", href: "/case-studies" },
-              { name: "Blog", href: "/blog" },
+              { name: "FAQ", href: "/faq" },
               { name: "Contact", href: "/contact" },
             ].map((link) => (
               <Link key={link.name} href={link.href} className="text-sm text-muted-foreground hover:text-primary transition-colors">

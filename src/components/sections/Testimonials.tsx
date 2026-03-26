@@ -1,90 +1,72 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Star } from "lucide-react";
-
-const testimonials = [
-  {
-    quote: "We went from missed enquiries to booked viewings automatically. The agent qualification is flawless.",
-    name: "Sarah Jenkins",
-    role: "Director of Sales, Apex Real Estate",
-    initials: "SJ",
-    color: "bg-primary text-primary-foreground"
-  },
-  {
-    quote: "The voice agent qualifies better than our first call sometimes. It's handling 30% of our inbound load.",
-    name: "David Chen",
-    role: "Head of Lettings, Metro Properties",
-    initials: "DC",
-    color: "bg-accent text-accent-foreground"
-  },
-  {
-    quote: "Our speed-to-lead is now instant. We've seen a 40% increase in matched viewings since integrating Oyik.AI.",
-    name: "Emma Roberts",
-    role: "Managing Partner, Prime Living",
-    initials: "ER",
-    color: "bg-[#7C3AED] text-white"
-  }
-];
+import { Quote } from "lucide-react";
 
 export default function Testimonials() {
   return (
-    <section className="py-24 bg-card/50 relative overflow-hidden border-t border-border/50">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-24 bg-[#010308] relative overflow-hidden">
+      <div className="container mx-auto px-6 lg:px-10 max-w-6xl relative z-10">
         
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <motion.h2
+        <div className="text-center mb-20">
+          <h2 className="text-4xl sm:text-5xl font-display font-black text-white tracking-tight">
+            Built for busy teams.
+          </h2>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-8">
+          
+          <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl sm:text-5xl font-display font-bold text-foreground mb-6"
+            transition={{ duration: 0.8 }}
+            className="p-10 rounded-3xl bg-white/5 border border-white/10 relative overflow-hidden group"
           >
-            Built for <span className="text-gradient">busy teams.</span>
-          </motion.h2>
-          <motion.p
+            <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-500/10 rounded-full blur-[50px] pointer-events-none group-hover:bg-cyan-400/20 transition-colors duration-500" />
+            <Quote className="w-12 h-12 text-cyan-400/40 mb-6" />
+            
+            <p className="text-2xl sm:text-3xl font-display font-bold text-white leading-snug mb-8 relative z-10 tracking-tight">
+              "We went from missed enquiries to booked viewings automatically."
+            </p>
+            
+            <div className="flex items-center gap-4 relative z-10">
+              <div className="w-12 h-12 rounded-full bg-cyan-950 border border-cyan-400/30 flex items-center justify-center font-bold text-cyan-400 text-lg">
+                CN
+              </div>
+              <div>
+                <p className="text-white font-bold">Client Name</p>
+                <p className="text-cyan-400 text-sm font-mono tracking-widest uppercase mt-1">Agency</p>
+              </div>
+            </div>
+          </motion.div>
+
+          <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-lg text-muted-foreground"
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="p-10 rounded-3xl bg-white/5 border border-white/10 relative overflow-hidden group"
           >
-            See how top agencies are using Oyik.AI to scale their operations and close more deals.
-          </motion.p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {testimonials.map((testimonial, idx) => (
-            <motion.div
-              key={idx}
-              initial={{ opacity: 0, y: 20, scale: 0.95 }}
-              whileInView={{ opacity: 1, y: 0, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: idx * 0.1, duration: 0.5 }}
-              className="p-8 rounded-3xl glass-card flex flex-col gap-6"
-            >
-              <div className="flex gap-1 text-[#F59E0B]">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} size={18} fill="currentColor" />
-                ))}
+            <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 rounded-full blur-[50px] pointer-events-none group-hover:bg-blue-400/20 transition-colors duration-500" />
+            <Quote className="w-12 h-12 text-blue-400/40 mb-6" />
+            
+            <p className="text-2xl sm:text-3xl font-display font-bold text-white leading-snug mb-8 relative z-10 tracking-tight">
+              "The voice agent qualifies better than our first call sometimes."
+            </p>
+            
+            <div className="flex items-center gap-4 relative z-10">
+              <div className="w-12 h-12 rounded-full bg-blue-950 border border-blue-400/30 flex items-center justify-center font-bold text-blue-400 text-lg">
+                CN
               </div>
-              
-              <p className="text-lg text-foreground leading-relaxed flex-grow">
-                "{testimonial.quote}"
-              </p>
-
-              <div className="flex items-center gap-4 pt-6 border-t border-border/50 mt-auto">
-                <div className={`w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg ${testimonial.color}`}>
-                  {testimonial.initials}
-                </div>
-                <div>
-                  <h4 className="font-semibold text-foreground">{testimonial.name}</h4>
-                  <p className="text-sm text-muted-foreground">{testimonial.role}</p>
-                </div>
+              <div>
+                <p className="text-white font-bold">Client Name</p>
+                <p className="text-blue-400 text-sm font-mono tracking-widest uppercase mt-1">Lettings</p>
               </div>
-            </motion.div>
-          ))}
-        </div>
+            </div>
+          </motion.div>
 
+        </div>
       </div>
     </section>
   );

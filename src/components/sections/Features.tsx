@@ -63,10 +63,15 @@ export default function Features() {
               ))}
             </ul>
 
-            <div className="mt-10 p-4 border border-border/50 bg-secondary/30 rounded-xl">
-              <p className="text-sm text-muted-foreground italic">
-                "Speed-to-lead matters: the odds of contacting an inbound lead drop by ~100× when response slips from 5 minutes to 30 minutes."
+            <div className="mt-10 p-5 border border-border/50 bg-secondary/30 rounded-xl backdrop-blur-sm relative overflow-hidden">
+              <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-primary to-accent" />
+              <p className="text-sm text-foreground/90 italic leading-relaxed">
+                "Speed-to-lead matters: the odds of contacting an inbound lead drop by ~100× when response slips from 5 minutes to 30 minutes, and qualification odds drop ~21×."
               </p>
+              <div className="mt-3 flex items-center gap-2">
+                <div className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
+                <span className="text-xs font-semibold tracking-wider text-muted-foreground uppercase">Industry Insight</span>
+              </div>
             </div>
           </motion.div>
 

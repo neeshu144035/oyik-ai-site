@@ -1,164 +1,155 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { MessageSquare, PhoneCall, BellRing, Mailbox, Video, ArrowUpRight } from "lucide-react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { MessageSquare, PhoneCall, BellRing, Mailbox, Video, ArrowUpRight, Zap } from "lucide-react";
 import Link from "next/link";
-import { useState } from "react";
+import { useRef } from "react";
 
 const products = [
   {
-    title: "AI Chat \n(Web & Social)",
-    description: "Instant, brand-aligned replies. Qualifies leads & books viewings autonomously.",
+    title: "AI Chat",
+    badge: "Website + Social",
+    description: "Instant replies in your tone of voice. Answers questions, shares listing details and photos in-chat, captures leads, and books viewings.",
     icon: MessageSquare,
-    colSpan: "lg:col-span-8",
-    color: "rgba(0, 245, 255, 0.15)", // Primary
     href: "/services/chat",
-    imagePath: "/media/chat_hologram_ui.png"
+    imagePath: "/media/ai_chat_interface_ui_1774500140177.png"
   },
   {
-    title: "Voice \nAgents",
-    description: "Human-sounding AI handling 100s of concurrent inbound/outbound calls.",
+    title: "Voice Agents",
+    badge: "Inbound + Outbound",
+    description: "Human-sounding AI that handles multiple calls at once—answers property questions, qualifies, books viewings, and transfers to sales when requested.",
     icon: PhoneCall,
-    colSpan: "lg:col-span-4",
-    color: "rgba(37, 99, 235, 0.15)", // Accent
     href: "/services/voice",
-    imagePath: "/media/voice_agent_ui.png"
+    imagePath: "/media/voice_agent_waveform_ui_1774500173864.png"
   },
   {
-    title: "Smart \nReminders",
-    description: "Automated chasing for rent, deposits, and viewing attendances.",
+    title: "Reminders",
+    badge: "Rent + Viewings",
+    description: "Automated reminders by SMS/email/WhatsApp/call for rent due, deposits, and upcoming viewings—reducing no-shows and missed payments.",
     icon: BellRing,
-    colSpan: "lg:col-span-4",
-    color: "rgba(124, 58, 237, 0.15)", // Purple
     href: "/services/reminders",
-    imagePath: "/media/reminders_ui.png"
+    imagePath: "/media/reminders_calendar_ui_1774500199777.png"
   },
   {
-    title: "Inbox \nAutomation",
-    description: "Detects intent and drafts contextual replies for sales & lettings.",
+    title: "Email Automation",
+    badge: "Intelligent Replies",
+    description: "Intelligent, customizable replies that handle common enquiries and keep threads moving—instantly and consistently.",
     icon: Mailbox,
-    colSpan: "lg:col-span-4",
-    color: "rgba(0, 245, 255, 0.1)",
     href: "/services/email",
-    imagePath: "/media/email_automation.png"
+    imagePath: "/media/email_automation_ui_1774500221902.png"
   },
   {
-    title: "AI Avatar \nMarketing",
-    description: "Generate listing videos featuring your digital clone—zero filming required.",
+    title: "AI Marketing",
+    badge: "AI Avatars + Property Videos",
+    description: "Camera-shy or too busy? We create AI avatar videos that present listings and your brand without filming.",
     icon: Video,
-    colSpan: "lg:col-span-4",
-    color: "rgba(37, 99, 235, 0.1)",
     href: "/services/ai-marketing",
-    imagePath: "/media/hero_bg.png"
+    imagePath: "/media/ai_marketing_avatar_ui_1774500244179.png"
   }
 ];
 
 export default function Products() {
+  const containerRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end end"]
+  });
+
   return (
-    <section className="py-24 relative z-10 overflow-hidden bg-background">
+    <section ref={containerRef} className="relative bg-[#000000] py-32 px-6 lg:px-10 z-20">
       
-      {/* Background Decor */}
-      <div className="absolute top-0 right-0 w-[50vw] h-[50vw] bg-primary/5 rounded-full blur-[150px] pointer-events-none translate-x-1/3 -translate-y-1/3" />
-      <div className="absolute bottom-0 left-0 w-[40vw] h-[40vw] bg-accent/5 rounded-full blur-[130px] pointer-events-none -translate-x-1/3 translate-y-1/3" />
-
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
-        <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
-          <div className="max-w-3xl">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-border bg-secondary/50 backdrop-blur-sm mb-6"
-            >
-              <div className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
-              <span className="text-xs font-semibold text-muted-foreground tracking-widest uppercase">The Ecosystem</span>
-            </motion.div>
-
-            <motion.h2
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.8, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-              className="text-5xl md:text-6xl lg:text-7xl font-display font-extrabold text-foreground leading-[1.05] tracking-tight"
-            >
-              Autonomous front desk for <span className="text-gradient hover:drop-shadow-[0_0_15px_rgba(37,99,235,0.4)] transition-all">agents.</span>
-            </motion.h2>
+      {/* Proof Point Banner */}
+      <div className="container mx-auto mb-20">
+        <div className="max-w-4xl mx-auto p-[1px] rounded-2xl bg-gradient-to-r from-cyan-500/0 via-cyan-400/50 to-blue-500/0">
+          <div className="bg-[#02050f]/90 backdrop-blur-xl px-8 py-6 rounded-2xl border border-white/5 flex flex-col md:flex-row items-center gap-6 shadow-[0_20px_40px_rgba(0,0,0,0.5)]">
+            <div className="w-12 h-12 shrink-0 rounded-full bg-cyan-950 flex items-center justify-center">
+               <Zap className="text-cyan-400 w-6 h-6" />
+            </div>
+            <p className="text-slate-300 font-medium text-sm sm:text-base leading-relaxed">
+              <span className="text-white font-bold">Speed-to-lead matters:</span> the odds of contacting an inbound lead drop by ~100× when response slips from 5 minutes to 30 minutes, and qualification odds drop ~21×.
+            </p>
           </div>
-          
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-          >
-             <p className="text-lg text-muted-foreground max-w-sm">Mix and match AI capabilities to build your perfect automated workflow.</p>
-          </motion.div>
         </div>
-
-        {/* Premium Bento Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-8 lg:grid-cols-12 gap-5 auto-rows-[300px]">
-          {products.map((product, idx) => (
-            <BentoCard key={idx} product={product} index={idx} />
-          ))}
-        </div>
-
-      </div>
-    </section>
-  );
-}
-
-function BentoCard({ product, index }: { product: any, index: number }) {
-  const [isHovered, setIsHovered] = useState(false);
-
-  return (
-    <motion.div 
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-50px" }}
-      transition={{ 
-        duration: 0.8, 
-        delay: index * 0.1, 
-        ease: [0.22, 1, 0.36, 1] 
-      }}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-      className={`group relative overflow-hidden rounded-[2rem] bg-secondary/40 backdrop-blur-xl border border-border hover:border-border/80 transition-all duration-500 p-8 flex flex-col justify-between ${product.colSpan}`}
-    >
-      {/* Generated AI Image Background */}
-      <div 
-        className="absolute inset-0 opacity-20 group-hover:opacity-40 transition-opacity duration-700 pointer-events-none bg-cover bg-center mix-blend-screen"
-        style={{ backgroundImage: `url(${product.imagePath})` }}
-      />
-      
-      {/* Animated noise texture specific to cards */}
-      <div className="absolute inset-0 opacity-10 mix-blend-overlay pointer-events-none" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 200 200\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'noiseFilter\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.85\' numOctaves=\'3\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23noiseFilter)\'/%3E%3C/svg%3E")' }} />
-
-      {/* Header section */}
-      <div className="relative z-10 flex justify-between items-start w-full">
-        <div className="w-14 h-14 rounded-2xl bg-background/50 border border-border/50 backdrop-blur-md flex items-center justify-center group-hover:scale-110 group-hover:bg-background transition-all duration-500 shadow-xl">
-          <product.icon className={`w-6 h-6 transition-colors duration-500 ${isHovered ? 'text-primary' : 'text-foreground'}`} />
-        </div>
-        
-        <Link
-          href={product.href}
-          className="w-10 h-10 rounded-full bg-background/30 border border-border backdrop-blur-md flex items-center justify-center -rotate-45 group-hover:rotate-0 group-hover:bg-primary group-hover:text-primary-foreground group-hover:border-primary transition-all duration-500"
-        >
-           <ArrowUpRight className="w-5 h-5" />
-        </Link>
       </div>
 
-      {/* Content section */}
-      <div className="relative z-10 w-full mt-auto">
-        <h3 className="text-3xl font-display font-extrabold text-white mb-3 tracking-tight whitespace-pre-line leading-none">
-          {product.title}
-        </h3>
-        <p className="text-muted-foreground leading-relaxed text-sm md:text-base max-w-sm group-hover:text-foreground/80 transition-colors duration-500">
-          {product.description}
+      {/* Section Header: What we do */}
+      <div className="container mx-auto max-w-5xl text-center mb-24">
+        <h2 className="text-4xl sm:text-5xl md:text-6xl font-display font-black text-white tracking-tight leading-tight mb-8">
+          Everything a high-performing real estate team does—<span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">automated.</span>
+        </h2>
+        <p className="text-xl sm:text-2xl text-slate-400 font-light leading-snug max-w-3xl mx-auto">
+          Oyik Real Estate builds AI chat and voice systems that answer property questions, capture lead details, qualify buyers/tenants, and book viewings automatically. When a customer wants a human, we route the conversation or call to your sales team.
         </p>
       </div>
 
-    </motion.div>
+      {/* Sticky Stacking Cards Ecosystem */}
+      <div className="container mx-auto max-w-6xl relative">
+        {products.map((product, idx) => {
+          // Dynamic scale and opacity calculations to create the "stacking" effect
+          const targetScale = 1 - (products.length - idx) * 0.05;
+          
+          return (
+            <div 
+              key={idx}
+              className="sticky top-32 flex flex-col lg:flex-row items-center gap-12 lg:gap-24 min-h-[70vh] w-full rounded-[40px] bg-[#02050f] border border-white/10 p-8 sm:p-16 mb-24 shadow-[0_-20px_40px_rgba(0,0,0,0.8)] overflow-hidden"
+              style={{
+                top: `calc(10vh + ${idx * 40}px)`,
+              }}
+            >
+              {/* Background ambient lighting */}
+              <div className="absolute top-0 right-0 w-[40vw] h-[40vw] bg-cyan-500/5 rounded-full blur-[120px] pointer-events-none translate-x-[20%] -translate-y-[20%]" />
+
+              {/* Text Side */}
+              <div className="w-full lg:w-1/2 flex flex-col relative z-10">
+                <div className="flex items-center gap-4 mb-8">
+                  <div className="w-16 h-16 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center">
+                    <product.icon className="w-8 h-8 text-cyan-400" />
+                  </div>
+                  <span className="px-4 py-1.5 rounded-full bg-cyan-950/40 border border-cyan-400/30 text-cyan-400 text-sm font-semibold tracking-wider">
+                    {product.badge}
+                  </span>
+                </div>
+
+                <h3 className="text-4xl sm:text-5xl lg:text-6xl font-display font-black text-white tracking-tight mb-6">
+                  {product.title}
+                </h3>
+                
+                <p className="text-xl text-slate-300 font-light leading-[1.6] mb-10">
+                  {product.description}
+                </p>
+
+                <Link
+                  href={product.href}
+                  className="group inline-flex items-center gap-4 px-8 py-4 bg-white text-black rounded-full w-fit hover:bg-cyan-50 transition-colors shadow-[0_10px_30px_rgba(255,255,255,0.1)] hover:shadow-[0_10px_30px_rgba(0,245,255,0.3)] font-semibold"
+                >
+                  See how it works
+                  <div className="w-8 h-8 rounded-full bg-black/10 flex items-center justify-center group-hover:bg-cyan-500/20 group-hover:text-cyan-600 transition-colors">
+                    <ArrowUpRight className="w-4 h-4 group-hover:rotate-45 transition-transform duration-300" />
+                  </div>
+                </Link>
+              </div>
+
+              {/* Image Side - Ultra Realistic Simulated Window */}
+              <div className="w-full lg:w-1/2 relative h-[400px] lg:h-[600px] rounded-[30px] overflow-hidden border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] transform-style-3d group perspective-[2000px]">
+                {/* Simulated Glass Reflection */}
+                <div className="absolute inset-0 bg-gradient-to-br from-white/20 via-transparent to-transparent z-20 pointer-events-none rounded-[30px]" />
+                
+                <img 
+                  src={product.imagePath} 
+                  alt={product.title}
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105 opacity-80"
+                />
+
+                <div className="absolute bottom-6 left-6 right-6 z-30 flex items-center gap-3 backdrop-blur-md bg-black/40 border border-white/10 rounded-2xl p-4 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                  <div className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                  <span className="text-xs text-white uppercase tracking-widest font-mono">System Online</span>
+                </div>
+              </div>
+
+            </div>
+          );
+        })}
+      </div>
+    </section>
   );
 }

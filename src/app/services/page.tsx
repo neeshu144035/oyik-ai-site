@@ -12,12 +12,14 @@ const services = [
     id: "chat",
     title: "AI Chatbots (Website + All Social Media)",
     headline: "Turn every message into a qualified viewing—automatically.",
-    bestFor: "website chat, Instagram, Facebook, WhatsApp.",
+    bestFor: "website chat, Instagram, Facebook, WhatsApp (and other channels you support).",
     bullets: [
-      "Answers property questions instantly (price, location, amenities)",
+      "Answers property questions instantly (price, location, amenities, availability, viewing process)",
       "Shows listing details and property photos inside the chat",
-      "Qualifies with custom questions (budget, smoking/pets)",
-      "Books viewings: checks calendar availability and schedules",
+      "Captures lead details (name, email, phone, requirements, move-in timeline)",
+      "Qualifies with custom questions (budget, employment, smoking/pets, household size—whatever you need)",
+      "Books viewings: checks calendar availability and schedules automatically",
+      "Sends confirmations by email + SMS with viewing time, property details, and Google Maps location"
     ],
     benefit: "Your team focuses on closings—while the chatbot handles the repetitive back-and-forth.",
     image: "/media/chat_hologram_ui.png"
@@ -26,38 +28,44 @@ const services = [
     id: "voice",
     title: "Voice Agents (Inbound + Outbound)",
     headline: "A human-sounding agent that never misses a call.",
-    bestFor: "inbound calls from listings, rapid outbound speed-to-lead.",
+    bestFor: "Inbound calls and speed-to-lead outbound calling.",
     bullets: [
       "Answers property and availability questions naturally",
       "Qualifies with your scripted questions (customizable)",
-      "Captures details (name, email, phone) and books viewings",
+      "Suggests suitable properties based on preferences",
+      "Captures details (name, email, phone) and books viewings directly into your calendar",
+      "Sends confirmation email + SMS with details + Google Maps link",
       "Transfers to your sales team instantly when requested",
+      "Calls new leads automatically after they submit a form or ad lead"
     ],
-    benefit: "Handle 100s of calls simultaneously without adding headcount.",
+    benefit: "Handle multiple calls at once and reach inquiries instantly.",
     image: "/media/voice_agent_ui.png"
   },
   {
     id: "reminders",
     title: "Reminders (Rent, Deposits, Viewings)",
     headline: "Reduce no-shows and late payments with polite automation.",
-    bestFor: "property management, letting agents.",
+    bestFor: "Property management, letting agents, and sales teams.",
     bullets: [
       "Rent due reminders (email/SMS/WhatsApp/call)",
+      "Deposit due reminders",
       "Upcoming viewing reminders (e.g., 24 hours + 2 hours before)",
       "Reschedule flows when a customer can't attend",
+      "Optional outbound voice reminders for higher response rates"
     ],
-    benefit: "Eliminate manual chase-ups and keep operations running smoothly.",
+    benefit: "Eliminate manual chase-ups and prioritize confirmed appointments.",
     image: "/media/reminders_ui.png"
   },
   {
     id: "email",
     title: "Email Automation",
     headline: "Intelligent replies that keep enquiries moving.",
-    bestFor: "info@, lettings@, sales@ inboxes.",
+    bestFor: "Managing high-volume info@, lettings@, or sales@ inboxes.",
     bullets: [
-      "Detects enquiry intent (availability, viewing request, documents)",
+      "Detects enquiry intent (availability, viewing request, documents, pet policy, etc.)",
       "Drafts or sends customizable replies in your brand tone",
       "Routes complex cases to your team with a full summary",
+      "Captures key details and triggers next steps (e.g., booking link, document checklist)"
     ],
     benefit: "Never let a hot lead go cold in your inbox.",
     image: "/media/email_automation.png"
@@ -66,11 +74,12 @@ const services = [
     id: "ai-marketing",
     title: "AI Marketing (AI Avatars + Property Videos)",
     headline: "Property videos without filming.",
-    bestFor: "busy agents, camera-shy teams, consistent social posting.",
+    bestFor: "Busy agents, camera-shy teams, consistent social posting.",
     bullets: [
-      "Create an AI avatar that looks/sounds like you",
+      "Create an AI avatar that looks/sounds like you (or a presenter)",
       "Turn property photos + details into short listing videos",
-      "Output formats for Reels/TikTok/YouTube Shorts + ads",
+      "Produce explainers: 'How to rent with us', 'What to bring to a viewing', 'Neighbourhood highlights'",
+      "Output formats for Reels/TikTok/YouTube Shorts + ads"
     ],
     benefit: "Scale your video marketing without studio time.",
     image: "/media/hero_bg.png"
@@ -87,10 +96,10 @@ export default function ServicesPage() {
         
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center max-w-4xl pt-10">
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-display font-bold text-foreground mb-6 drop-shadow-md">
-            Our <span className="text-gradient">Services</span>
+            <span className="text-gradient">Services</span>
           </h1>
           <p className="text-xl text-muted-foreground">
-            Choose one service or combine them for a full “AI front desk” for real estate. Every channel, fully automated.
+            Choose one service or combine them for a full “AI front desk” for real estate.
           </p>
         </div>
       </section>
@@ -138,7 +147,7 @@ export default function ServicesPage() {
               <div className="relative aspect-square sm:aspect-[4/3] rounded-3xl glass-card glow-border overflow-hidden flex items-center justify-center bg-card group">
                 {/* Image Background */}
                 <div 
-                  className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105 opacity-60 mix-blend-screen"
+                  className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105 opacity-[0.80]"
                   style={{ backgroundImage: `url(${service.image})` }} 
                 />
                 

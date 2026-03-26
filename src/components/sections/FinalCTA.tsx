@@ -2,49 +2,51 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { ArrowRight, CalendarClock } from "lucide-react";
+import { ArrowRight, Calendar } from "lucide-react";
 
 export default function FinalCTA() {
   return (
-    <section className="py-32 relative overflow-hidden bg-background">
-      {/* Background glow effect */}
-      <div className="absolute inset-0 flex items-center justify-center opacity-30 pointer-events-none">
-        <div className="w-[800px] h-[400px] bg-primary/20 rounded-full blur-[150px] mix-blend-screen" />
-      </div>
+    <section className="relative py-32 bg-[#02050f] overflow-hidden">
+      
+      {/* Background Ambience */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-[80vw] bg-cyan-500/10 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute inset-0 bg-[url('/grain.png')] opacity-20 mix-blend-overlay pointer-events-none" />
 
-      <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95, y: 20 }}
+      <div className="container mx-auto px-6 lg:px-10 relative z-10">
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.95, y: 30 }}
           whileInView={{ opacity: 1, scale: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
-          className="max-w-4xl mx-auto rounded-3xl glass-card border border-primary/20 p-12 lg:p-20 text-center relative overflow-hidden glow-border-intense"
+          transition={{ duration: 0.8 }}
+          className="max-w-5xl mx-auto rounded-[40px] bg-gradient-to-br from-cyan-950/40 to-[#02050f] border border-cyan-500/30 p-12 sm:p-20 text-center shadow-[0_0_80px_rgba(0,245,255,0.15)] relative overflow-hidden"
         >
-          {/* inner gradient */}
-          <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent pointer-events-none" />
+          {/* Subtle Grid Pattern */}
+          <div className="absolute inset-0 opacity-[0.05]" 
+            style={{ backgroundImage: 'linear-gradient(#ffffff 1px, transparent 1px), linear-gradient(90deg, #ffffff 1px, transparent 1px)', backgroundSize: '40px 40px' }} 
+          />
 
-          <div className="relative z-10 flex flex-col items-center gap-8">
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold leading-tight text-foreground">
-              Want viewings booked while you're <span className="text-gradient">showing properties?</span>
-            </h2>
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-display font-black text-white tracking-tight mb-8 relative z-10 leading-none">
+            Want viewings booked while you're showing properties?
+          </h2>
+          
+          <p className="text-xl sm:text-2xl text-slate-300 font-light leading-snug max-w-2xl mx-auto mb-12 relative z-10">
+            Book a demo and we'll map your exact flow—from enquiry to confirmed viewing—in one call.
+          </p>
+          
+          <div className="flex flex-col items-center gap-6 relative z-10">
+            <Link
+              href="/contact"
+              className="group flex items-center gap-4 px-12 py-6 bg-cyan-400 text-black rounded-full font-extrabold text-xl hover:bg-white hover:scale-105 transition-all duration-300 shadow-[0_0_40px_rgba(0,245,255,0.4)] hover:shadow-[0_0_60px_rgba(255,255,255,0.6)]"
+            >
+              Book a demo
+              <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform duration-300" />
+            </Link>
             
-            <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl text-center">
-              Book a demo and we'll map your exact flow—from enquiry to confirmed viewing—in one call.
-            </p>
-
-            <div className="flex flex-col sm:flex-row items-center gap-4 mt-6">
-              <Link
-                href="/contact"
-                className="w-full sm:w-auto px-10 py-5 rounded-full bg-primary text-primary-foreground font-semibold text-lg flex items-center justify-center gap-3 hover:bg-primary/90 transition-all shadow-[0_0_25px_rgba(0,245,255,0.5)] hover:shadow-[0_0_40px_rgba(0,245,255,0.7)] hover:scale-105"
-              >
-                Book a demo
-                <ArrowRight className="w-5 h-5" />
-              </Link>
-            </div>
-
-            <div className="flex items-center gap-2 mt-4 text-sm font-medium text-muted-foreground bg-background/50 backdrop-blur-md px-4 py-2 rounded-full border border-border">
-              <CalendarClock size={16} className="text-accent" />
-              Typical setup: 7–14 days (depending on integrations).
+            <div className="flex items-center gap-3 text-slate-400">
+              <Calendar className="w-4 h-4 text-cyan-500" />
+              <span className="text-sm font-medium tracking-wide">
+                Typical setup: 7–14 days <span className="opacity-60">(depending on integrations)</span>.
+              </span>
             </div>
           </div>
         </motion.div>

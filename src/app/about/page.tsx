@@ -15,7 +15,7 @@ export default function AboutPage() {
         <div className="absolute top-[-20%] right-[-10%] w-[800px] h-[800px] bg-primary/5 rounded-full blur-[150px] pointer-events-none" />
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center max-w-3xl">
           <h1 className="text-5xl sm:text-6xl font-display font-bold text-foreground mb-6 leading-tight">
-            About <span className="text-gradient">Oyik.AI</span>
+            About <span className="text-gradient">Oyik Real Estate</span>
           </h1>
           <p className="text-xl text-muted-foreground leading-relaxed">
             Oyik Real Estate is the real estate-focused division of Oyik.ai—built to automate enquiries, qualification, and bookings across chat, voice, and email.
@@ -37,7 +37,7 @@ export default function AboutPage() {
               </div>
               <h3 className="text-2xl font-display font-bold text-foreground">Speed wins</h3>
               <p className="text-muted-foreground">
-                Leads expect fast replies, and delays cost instructions and bookings. We ensure instant response 24/7.
+                leads expect fast replies, and delays cost instructions and bookings.
               </p>
             </div>
             <div className="p-8 rounded-3xl glass-card flex flex-col gap-4 text-center items-center">
@@ -46,7 +46,7 @@ export default function AboutPage() {
               </div>
               <h3 className="text-2xl font-display font-bold text-foreground">Consistency wins</h3>
               <p className="text-muted-foreground">
-                Every lead gets the same highly polished, professional, and compliant experience.
+                every lead gets the same professional experience.
               </p>
             </div>
             <div className="p-8 rounded-3xl glass-card flex flex-col gap-4 text-center items-center">
@@ -55,7 +55,7 @@ export default function AboutPage() {
               </div>
               <h3 className="text-2xl font-display font-bold text-foreground">Focus wins</h3>
               <p className="text-muted-foreground">
-                Your team should spend time on viewings and negotiations—not answering repetitive admin questions.
+                your team should spend time on viewings and negotiations—not admin.
               </p>
             </div>
           </div>
@@ -69,10 +69,10 @@ export default function AboutPage() {
           
           <div className="space-y-6">
             {[
-              { title: "Real estate-first flows", desc: "Native understanding of viewings, qualification, confirmations, and reminders—not just a generic bot." },
-              { title: "Omnichannel coverage", desc: "A unified AI brain across web chat, social media DMs, phone calls, and email inbox." },
-              { title: "Human handover built-in", desc: "Recognizes when to step back and instantly transfers complex inquiries to your human sales team." },
-              { title: "Customizable tone", desc: "Configured exactly to match your agency's brand standards, questions, and workflows." },
+              { title: "Real estate-first flows", desc: "(viewings, qualification, confirmations, reminders)" },
+              { title: "Omnichannel coverage", desc: "(web + social + phone + email)" },
+              { title: "Human handover built-in", desc: "(transfer to sales anytime)" },
+              { title: "Customizable tone", desc: "questions, and workflows" },
             ].map((diff, idx) => (
               <div key={idx} className="flex gap-4 p-6 rounded-2xl bg-secondary border border-border/50 hover:border-primary/30 transition-colors">
                 <div className="shrink-0 mt-1">
@@ -94,7 +94,7 @@ export default function AboutPage() {
       {/* Mini CTA */}
       <section className="py-20 bg-primary/5 border-t border-border">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-display font-bold text-foreground mb-6">Want to map your enquiry-to-viewing flow?</h2>
+          <h2 className="text-3xl font-display font-bold text-foreground mb-6">Book a demo and we'll map your enquiry-to-viewing flow.</h2>
           <Link href="/contact" className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-primary text-primary-foreground font-bold hover:bg-primary/90 transition-all shadow-lg hover:shadow-primary/30 group">
             Book a demo
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

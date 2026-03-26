@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Syne, DM_Sans, JetBrains_Mono } from "next/font/google";
 import Navbar from "@/components/shared/Navbar";
 import Footer from "@/components/shared/Footer";
+import SmoothScroll from "@/components/shared/SmoothScroll";
 import "./globals.css";
 
 const fontSyne = Syne({
@@ -88,9 +89,11 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-screen bg-background text-foreground font-sans flex flex-col overflow-x-hidden">
-        <Navbar />
-        <main className="flex-grow pt-20">{children}</main>
-        <Footer />
+        <SmoothScroll>
+          <Navbar />
+          <main className="flex-grow pt-20">{children}</main>
+          <Footer />
+        </SmoothScroll>
       </body>
     </html>
   );
