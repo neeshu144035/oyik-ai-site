@@ -1,10 +1,10 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X, ArrowRight } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const links = [
   { href: "/", label: "Home" },
@@ -20,102 +20,121 @@ export default function Navbar() {
   const pathname = usePathname();
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20);
+    const handleScroll = () => setScrolled(window.scrollY > 28);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
-    <header 
-      className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 border-b ${
-        scrolled ? "bg-white/80 backdrop-blur-2xl py-4 border-neutral-200 shadow-sm" : "bg-transparent py-6 border-transparent"
-      }`}
-    >
-      <div className="container mx-auto px-6 lg:px-10 flex items-center justify-between">
-        {/* Brand */}
-        <Link href="/" className="relative z-20 flex items-center gap-2 group">
-          <div className="w-8 h-8 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center overflow-hidden relative">
-             <div className="absolute inset-0 bg-primary translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
-             <div className="w-2 h-2 rounded-full bg-primary group-hover:bg-white transition-colors duration-300 relative z-10" />
-          </div>
-          <span className="font-bold text-xl text-black tracking-tight">
-            OYIK<span className="text-primary">.</span>AI
-          </span>
-        </Link>
+    <header className="pointer-events-none fixed inset-x-0 top-5 z-50 flex justify-center px-4 md:top-6">
+      <div className="pointer-events-auto flex w-full flex-col items-center lg:w-auto lg:max-w-[calc(100vw-2.5rem)]">
+        <motion.div
+          initial={false}
+          animate={{
+            y: scrolled ? -2 : 0,
+            scale: scrolled ? 0.988 : 1,
+          }}
+          transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+          className={`relative flex w-full items-center justify-between gap-4 overflow-hidden rounded-[2rem] border px-4 py-3 shadow-[0_30px_90px_-46px_rgba(15,23,42,0.48)] backdrop-blur-2xl lg:w-auto lg:min-w-[980px] md:px-5 ${
+            scrolled
+              ? "border-white/70 bg-[linear-gradient(135deg,rgba(255,255,255,0.9),rgba(245,247,255,0.82))]"
+              : "border-white/80 bg-[linear-gradient(135deg,rgba(255,255,255,0.84),rgba(244,246,255,0.72))]"
+          }`}
+        >
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(99,102,241,0.14),transparent_30%),radial-gradient(circle_at_bottom_right,rgba(56,189,248,0.1),transparent_26%)]" />
+          <div className="absolute inset-[1px] rounded-[calc(2rem-1px)] border border-white/60" />
 
-        {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center gap-10">
-          <ul className="flex items-center gap-8 bg-white/60 border border-neutral-200 rounded-full px-8 py-2.5 backdrop-blur-md shadow-sm">
+          <Link href="/" className="relative z-10 flex shrink-0 items-center gap-3">
+            <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-[linear-gradient(145deg,rgba(255,255,255,0.86),rgba(229,234,255,0.9))] shadow-[inset_0_1px_0_rgba(255,255,255,0.85),0_12px_24px_-18px_rgba(67,56,202,0.5)] ring-1 ring-indigo-100">
+              <div className="h-3 w-3 rounded-full bg-primary shadow-[0_0_24px_rgba(67,56,202,0.65)]" />
+            </div>
+            <div className="flex flex-col leading-none">
+              <span className="brand-signature text-[1.18rem] sm:text-[1.25rem]">
+                oyik<span className="text-primary">.</span>
+              </span>
+              <span className="brand-meta">realestate.ai</span>
+            </div>
+          </Link>
+
+          <nav className="relative z-10 hidden items-center gap-1.5 lg:flex">
             {links.map((link) => {
               const isActive = pathname === link.href;
               return (
-                <li key={link.href}>
-                  <Link 
-                    href={link.href}
-                    className={`text-sm font-medium tracking-wide transition-colors duration-300 ${
-                      isActive ? "text-primary" : "text-neutral-600 hover:text-primary"
-                    }`}
-                  >
-                    {link.label}
-                  </Link>
-                </li>
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className={`rounded-full px-4 py-2 text-[0.92rem] font-medium tracking-[0.01em] transition-all duration-300 ${
+                    isActive
+                      ? "bg-white/75 text-primary shadow-[0_10px_24px_-18px_rgba(67,56,202,0.5)]"
+                      : "text-slate-600 hover:bg-white/55 hover:text-primary"
+                  }`}
+                >
+                  {link.label}
+                </Link>
               );
             })}
-          </ul>
+          </nav>
 
-          <Link
-            href="/contact"
-            className="group relative inline-flex items-center gap-3 px-6 py-2.5 rounded-full bg-primary text-white font-semibold text-sm hover:scale-105 transition-all duration-300 shadow-[0_4px_14px_0_rgba(67,56,202,0.39)] overflow-hidden"
-          >
-            <div className="absolute inset-0 bg-indigo-500 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
-            <span className="relative z-10">Book a demo</span>
-            <ArrowRight className="w-4 h-4 relative z-10 group-hover:translate-x-1 transition-transform duration-300" />
-          </Link>
-        </nav>
-
-        {/* Mobile Menu Toggle */}
-        <button 
-          className="lg:hidden relative z-20 text-neutral-800 p-2"
-          onClick={() => setIsOpen(!isOpen)}
-        >
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
-      </div>
-
-      {/* Mobile Menu Overlay */}
-      <motion.div 
-        initial={false}
-        animate={isOpen ? { opacity: 1, pointerEvents: "auto" } : { opacity: 0, pointerEvents: "none" }}
-        transition={{ duration: 0.3 }}
-        className="fixed inset-0 z-10 bg-white/95 backdrop-blur-3xl pt-24 px-6 flex flex-col"
-      >
-        <ul className="flex flex-col gap-6 mb-12">
-          {links.map((link, i) => (
-            <motion.li 
-              key={link.href}
-              initial={{ x: -20, opacity: 0 }}
-              animate={isOpen ? { x: 0, opacity: 1 } : { x: -20, opacity: 0 }}
-              transition={{ delay: 0.1 + (i * 0.05) }}
+          <div className="relative z-10 hidden shrink-0 items-center gap-3 lg:flex">
+            <Link
+              href="/contact"
+              className="group inline-flex items-center gap-3 rounded-full bg-[linear-gradient(135deg,#3f37b8,#564cf0)] px-5 py-3 text-sm font-semibold text-white shadow-[0_18px_34px_-20px_rgba(67,56,202,0.7)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_22px_44px_-20px_rgba(67,56,202,0.75)]"
             >
-              <Link 
-                href={link.href}
-                onClick={() => setIsOpen(false)}
-                className="text-3xl font-bold text-black tracking-tight active:text-primary"
-              >
-                {link.label}
-              </Link>
-            </motion.li>
-          ))}
-        </ul>
+              Book a demo
+              <span className="flex h-7 w-7 items-center justify-center rounded-full bg-white/16 transition-transform duration-300 group-hover:translate-x-0.5">
+                <ArrowRight className="h-4 w-4" />
+              </span>
+            </Link>
+          </div>
 
-        <Link
-          href="/contact"
-          onClick={() => setIsOpen(false)}
-          className="w-full py-4 rounded-xl bg-primary text-white font-bold flex justify-center items-center gap-3 shadow-[0_10px_30px_rgba(67,56,202,0.3)]"
-        >
-          Book a demo <ArrowRight size={18} />
-        </Link>
-      </motion.div>
+          <button
+            className="relative z-10 flex h-11 w-11 items-center justify-center rounded-2xl border border-white/65 bg-white/70 text-slate-700 shadow-[0_12px_22px_-18px_rgba(15,23,42,0.35)] lg:hidden"
+            onClick={() => setIsOpen((prev) => !prev)}
+            aria-label="Toggle navigation"
+          >
+            {isOpen ? <X size={20} /> : <Menu size={20} />}
+          </button>
+        </motion.div>
+
+        <AnimatePresence>
+          {isOpen && (
+            <motion.div
+              initial={{ opacity: 0, y: -12, scale: 0.98 }}
+              animate={{ opacity: 1, y: 10, scale: 1 }}
+              exit={{ opacity: 0, y: -10, scale: 0.98 }}
+              transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
+              className="w-full overflow-hidden rounded-[1.8rem] border border-white/70 bg-[linear-gradient(180deg,rgba(255,255,255,0.92),rgba(244,246,255,0.88))] p-4 shadow-[0_30px_80px_-40px_rgba(15,23,42,0.4)] backdrop-blur-2xl"
+            >
+              <div className="grid gap-2">
+                {links.map((link) => {
+                  const isActive = pathname === link.href;
+                  return (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      onClick={() => setIsOpen(false)}
+                      className={`rounded-2xl px-4 py-3 text-base font-medium transition-all ${
+                        isActive ? "bg-white text-primary shadow-sm" : "text-slate-700 hover:bg-white/70"
+                      }`}
+                    >
+                      {link.label}
+                    </Link>
+                  );
+                })}
+              </div>
+
+              <Link
+                href="/contact"
+                onClick={() => setIsOpen(false)}
+                className="mt-4 inline-flex w-full items-center justify-center gap-3 rounded-2xl bg-[linear-gradient(135deg,#3f37b8,#564cf0)] px-5 py-3.5 text-sm font-semibold text-white shadow-[0_18px_34px_-20px_rgba(67,56,202,0.7)]"
+              >
+                Book a demo
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
     </header>
   );
 }

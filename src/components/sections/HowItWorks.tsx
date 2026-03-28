@@ -1,82 +1,71 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Plug, TrendingUp, Settings } from "lucide-react";
+import { Plug, Settings, TrendingUp } from "lucide-react";
 
 const steps = [
   {
     step: "Step 1",
     title: "Connect",
-    description: "We connect your listings (or data feed), your calendar, and your channels (web chat + socials + phone + email).",
+    description: "We connect your listings, calendar, website, social channels, phone, and inboxes into one coordinated operating layer.",
     icon: Plug,
   },
   {
     step: "Step 2",
     title: "Train",
-    description: "We configure your FAQs, qualification questions, tone of voice, routes to sales, and message templates.",
+    description: "We shape the tone, qualification logic, escalation rules, reminders, and handoff flows around how your real estate business already works.",
     icon: Settings,
   },
   {
     step: "Step 3",
-    title: "Launch & improve",
-    description: "Go live fast, then optimize with analytics: response times, booked viewings, and lead quality.",
+    title: "Launch and refine",
+    description: "Go live fast, then improve with real data on response speed, booked viewings, conversion quality, and operational bottlenecks.",
     icon: TrendingUp,
-  }
+  },
 ];
 
 export default function HowItWorks() {
   return (
-    <section className="py-32 bg-secondary relative overflow-hidden">
-      
-      {/* Background Grid */}
-      <div className="absolute inset-0 z-0 opacity-[0.03]" 
-        style={{ backgroundImage: 'linear-gradient(#000000 1px, transparent 1px), linear-gradient(90deg, #000000 1px, transparent 1px)', backgroundSize: '100px 100px' }} 
+    <section className="relative overflow-hidden bg-secondary py-32">
+      <div
+        className="absolute inset-0 z-0 opacity-[0.05]"
+        style={{
+          backgroundImage: "linear-gradient(#000000 1px, transparent 1px), linear-gradient(90deg, #000000 1px, transparent 1px)",
+          backgroundSize: "100px 100px",
+        }}
       />
 
-      <div className="container mx-auto px-6 lg:px-10 relative z-10 max-w-7xl">
-        <div className="text-center mb-24">
-          <h2 className="text-4xl sm:text-5xl lg:text-5xl font-display font-black text-foreground tracking-tight mb-6">
+      <div className="container relative z-10 mx-auto max-w-7xl px-6 lg:px-10">
+        <div className="mb-24 text-center">
+          <h2 className="mb-6 text-4xl font-display font-semibold leading-[0.98] tracking-[-0.03em] text-foreground sm:text-5xl lg:text-[3.9rem]">
             How it works
           </h2>
-          <div className="w-24 h-1 bg-primary mx-auto rounded-full opacity-50 shadow-[0_0_20px_rgba(67,56,202,0.6)]" />
+          <div className="mx-auto h-1 w-24 rounded-full bg-primary opacity-50 shadow-[0_0_20px_rgba(63,55,184,0.55)]" />
         </div>
 
-        <div className="grid md:grid-cols-3 gap-12 lg:gap-8 relative">
-          
-          {/* Connecting Line Vector */}
-          <div className="hidden md:block absolute top-[60px] left-[10%] right-[10%] h-[2px] bg-gradient-to-r from-primary/0 via-primary/30 to-accent/0 -z-10" />
+        <div className="relative grid gap-12 md:grid-cols-3 lg:gap-8">
+          <div className="absolute left-[10%] right-[10%] top-[60px] -z-10 hidden h-[2px] bg-gradient-to-r from-primary/0 via-primary/30 to-accent/0 md:block" />
 
           {steps.map((step, idx) => (
-            <motion.div 
+            <motion.div
               key={idx}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.8, delay: idx * 0.2 }}
-              className="group flex flex-col items-center text-center relative"
+              transition={{ duration: 0.8, delay: idx * 0.12 }}
+              className="group relative flex flex-col items-center text-center"
             >
-              {/* Step Marker */}
-              <div className="w-32 h-32 rounded-[2rem] bg-card border border-border shadow-xl shadow-primary/10 flex items-center justify-center mb-8 relative group-hover:-translate-y-4 transition-transform duration-500">
-                <div className="absolute inset-0 bg-primary opacity-0 group-hover:opacity-5 transition-opacity duration-500 rounded-[2rem]" />
-                <step.icon className="w-12 h-12 text-primary" />
-                
-                {/* Number Badge */}
-                <div className="absolute -top-4 -right-4 w-10 h-10 rounded-full bg-primary text-primary-foreground font-black flex items-center justify-center shadow-lg transform group-hover:scale-110 transition-transform duration-300">
+              <div className="relative mb-8 flex h-32 w-32 items-center justify-center rounded-[2rem] border border-border bg-card shadow-xl shadow-primary/10 transition-transform duration-500 group-hover:-translate-y-3">
+                <div className="absolute inset-0 rounded-[2rem] bg-primary opacity-0 transition-opacity duration-500 group-hover:opacity-5" />
+                <step.icon className="h-12 w-12 text-primary" />
+                <div className="absolute -right-4 -top-4 flex h-10 w-10 items-center justify-center rounded-full bg-primary font-semibold text-primary-foreground shadow-lg">
                   {idx + 1}
                 </div>
               </div>
 
-              <span className="text-primary font-mono tracking-[0.2em] text-sm uppercase mb-3">
-                {step.step}
-              </span>
-              
-              <h3 className="text-2xl font-bold text-foreground mb-4">
-                {step.title}
-              </h3>
-              
-              <p className="text-muted-foreground leading-relaxed font-light text-lg">
-                {step.description}
-              </p>
+              <span className="mb-3 text-sm font-mono uppercase tracking-[0.2em] text-primary">{step.step}</span>
+              <h3 className="mb-4 text-2xl font-display font-semibold tracking-[-0.02em] text-foreground">{step.title}</h3>
+              <p className="text-lg font-light leading-relaxed text-muted-foreground">{step.description}</p>
             </motion.div>
           ))}
         </div>

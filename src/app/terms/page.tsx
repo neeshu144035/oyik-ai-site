@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Terms of Service | Oyik.AI",
+  title: "Terms of Service | oyik.realestate.ai",
 };
 
 export default function TermsPage() {
@@ -11,7 +11,7 @@ export default function TermsPage() {
       <div className="text-muted-foreground space-y-6">
         <p>Last updated: {new Date().toLocaleDateString()}</p>
         <p>
-          By using Oyik.AI services, you agree to these Terms of Service. Our AI systems are provided "as is" to facilitate real estate enquiries, lead qualification, and automated bookings.
+          By using oyik.realestate.ai services, you agree to these Terms of Service. Our AI systems are provided "as is" to facilitate real estate enquiries, lead qualification, and automated bookings.
         </p>
         
         <h2 className="text-2xl font-bold text-foreground mt-8">1. License and Usage</h2>
@@ -21,7 +21,7 @@ export default function TermsPage() {
         
         <h2 className="text-2xl font-bold text-foreground mt-8">2. Liability and Accuracy</h2>
         <p>
-          While our AI models (including language and voice) are highly trained specifically for real estate use cases, Oyik.AI is not liable for missed viewings, miscommunications, or inaccuracies in AI-generated responses. You have full control to edit AI knowledge bases and instructions at any time.
+          While our AI models (including language and voice) are highly trained specifically for real estate use cases, oyik.realestate.ai is not liable for missed viewings, miscommunications, or inaccuracies in AI-generated responses. You have full control to edit AI knowledge bases and instructions at any time.
         </p>
 
         <h2 className="text-2xl font-bold text-foreground mt-8">3. Subscription and Billing</h2>

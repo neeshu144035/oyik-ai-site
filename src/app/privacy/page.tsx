@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | Oyik.AI",
+  title: "Privacy Policy | oyik.realestate.ai",
 };
 
 export default function PrivacyPage() {
@@ -11,7 +11,7 @@ export default function PrivacyPage() {
       <div className="text-muted-foreground space-y-6">
         <p>Last updated: {new Date().toLocaleDateString()}</p>
         <p>
-          At Oyik.AI ("we", "us", or "our"), respecting your privacy is a core principle. This Privacy Policy describes how we collect, use, and protect your information when you interact with our AI agents and services.
+          At oyik.realestate.ai ("we", "us", or "our"), respecting your privacy is a core principle. This Privacy Policy describes how we collect, use, and protect your information when you interact with our AI agents and services.
         </p>
         
         <h2 className="text-2xl font-bold text-foreground mt-8">Information Collection</h2>

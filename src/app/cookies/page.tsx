@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Cookie Policy | Oyik.AI",
+  title: "Cookie Policy | oyik.realestate.ai",
 };
 
 export default function CookiesPage() {

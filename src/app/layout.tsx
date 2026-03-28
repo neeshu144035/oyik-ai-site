@@ -1,69 +1,103 @@
-import type { Metadata } from "next";
-import { Inter, JetBrains_Mono } from "next/font/google";
+import type { Metadata, Viewport } from "next";
+import { Roboto, Urbanist } from "next/font/google";
 import Navbar from "@/components/shared/Navbar";
 import Footer from "@/components/shared/Footer";
 import SmoothScroll from "@/components/shared/SmoothScroll";
 import "./globals.css";
 
-const fontInter = Inter({
+const fontSans = Roboto({
   variable: "--font-sans",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
 });
 
-const fontMono = JetBrains_Mono({
+const fontMono = Roboto({
   variable: "--font-mono",
   subsets: ["latin"],
+  weight: ["400", "500", "700"],
 });
 
+const fontDisplay = Urbanist({
+  variable: "--font-display",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#f7f5f0",
+};
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://oyik.ai"),
+  metadataBase: new URL("https://oyik.realestate.ai"),
   title: {
-    default: "Oyik.AI | The Intelligence Behind Every Real Estate Decision",
-    template: "%s | Oyik.AI",
+    default: "oyik.realestate.ai | Luxury AI Automation for Real Estate Growth",
+    template: "%s | oyik.realestate.ai",
   },
-  description: "AI employees for real estate teams. Instant replies, perfectly qualified leads, autonomous viewing bookings, and 24/7 engagement across web, social, email, and phone.",
-  keywords: ["real estate AI", "property management automation", "AI real estate agent", "AI chatbots for real estate", "voice agents for real estate"],
+  description:
+    "oyik.realestate.ai helps real estate businesses automate website chat, voice calls, lead qualification, viewing bookings, reminders, maintenance intake, and AI property marketing with a premium client experience.",
+  keywords: [
+    "real estate AI",
+    "real estate chatbot",
+    "real estate voice agents",
+    "property viewing automation",
+    "maintenance intake automation",
+    "real estate marketing automation",
+    "AI employees for real estate",
+  ],
+  alternates: {
+    canonical: "/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://oyik.ai",
-    title: "Oyik.AI | The Intelligence Behind Every Real Estate Decision",
-    description: "AI employees for real estate teams. Autonomous lead qualification and viewing bookings 24/7.",
-    siteName: "Oyik.AI",
+    url: "https://oyik.realestate.ai",
+    title: "oyik.realestate.ai | Luxury AI Automation for Real Estate Growth",
+    description:
+      "Premium AI systems for real estate teams across chat, voice, booking, reminders, maintenance intake, and property marketing.",
+    siteName: "oyik.realestate.ai",
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Oyik.AI Real Estate Automation Platform",
+        alt: "oyik.realestate.ai luxury real estate AI automation website",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Oyik.AI | The Intelligence Behind Every Real Estate Decision",
-    description: "AI employees for real estate teams. Autonomous lead qualification and automated viewing bookings.",
+    title: "oyik.realestate.ai | Luxury AI Automation for Real Estate Growth",
+    description:
+      "Premium AI systems for real estate businesses that want faster lead response, better qualification, and more booked viewings.",
     creator: "@oyikai",
+    images: ["/og-image.jpg"],
   },
 };
 
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  "name": "Oyik.AI",
-  "operatingSystem": "Web",
-  "applicationCategory": "BusinessApplication",
-  "offers": {
+  name: "oyik.realestate.ai",
+  operatingSystem: "Web",
+  applicationCategory: "BusinessApplication",
+  offers: {
     "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
+    price: "0",
+    priceCurrency: "USD",
   },
-  "description": "An AI workforce platform for real estate, providing intelligent chatbots, conversational voice agents, and lead qualification software.",
-  "provider": {
+  description:
+    "A luxury AI automation platform for real estate businesses, covering website chat, voice agents, lead qualification, viewing bookings, maintenance intake, reminders, email automation, and AI marketing.",
+  provider: {
     "@type": "Organization",
-    "name": "Oyik.AI",
-    "url": "https://oyik.ai"
-  }
+    name: "oyik.realestate.ai",
+    url: "https://oyik.realestate.ai",
+  },
 };
 
 export default function RootLayout({
@@ -74,19 +108,16 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${fontInter.variable} ${fontMono.variable} antialiased`}
+      className={`${fontSans.variable} ${fontMono.variable} ${fontDisplay.variable} antialiased`}
       suppressHydrationWarning
     >
       <head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       </head>
-      <body className="min-h-screen bg-background text-foreground font-sans flex flex-col overflow-x-hidden">
+      <body className="flex min-h-screen flex-col overflow-x-hidden bg-background font-sans text-foreground">
         <SmoothScroll>
           <Navbar />
-          <main className="flex-grow pt-20">{children}</main>
+          <main className="flex-grow">{children}</main>
           <Footer />
         </SmoothScroll>
       </body>
