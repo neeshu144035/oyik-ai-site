@@ -43,22 +43,26 @@ const chatbotFeatures = [
   {
     icon: House,
     title: "Live listing display",
-    description: "Show real property cards, pricing, and images inside the chat instead of plain text replies.",
+    description:
+      "Show real property cards, pricing, and images inside the chat instead of plain text replies.",
   },
   {
     icon: CalendarCheck2,
     title: "Viewings booked in-chat",
-    description: "Offer time slots, confirm appointments, and move qualified leads to the next step without delay.",
+    description:
+      "Offer time slots, confirm appointments, and move qualified leads to the next step without delay.",
   },
   {
     icon: Database,
     title: "CRM-ready lead context",
-    description: "Save property interest, contact data, and qualification answers so the team joins with context.",
+    description:
+      "Save property interest, contact data, and qualification answers so the team joins with context.",
   },
   {
     icon: Send,
     title: "Mail and reminder automation",
-    description: "Trigger confirmations, reminder emails, and follow-up actions once the visitor commits.",
+    description:
+      "Trigger confirmations, reminder emails, and follow-up actions once the visitor commits.",
   },
 ];
 
@@ -116,16 +120,25 @@ export default function Features() {
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
             >
-              <p className="mb-5 text-sm font-semibold uppercase tracking-[0.28em] text-indigo-200">Flagship model</p>
+              <p className="mb-5 text-sm font-semibold uppercase tracking-[0.28em] text-indigo-200">
+                Flagship model
+              </p>
               <h2 className="max-w-3xl text-4xl font-display font-medium leading-[1.02] tracking-[-0.035em] text-white sm:text-5xl lg:text-[4.3rem]">
                 Voice agents that handle the first conversation like a trained property desk.
               </h2>
               <p className="mt-6 max-w-2xl text-lg leading-relaxed text-blue-100/82 sm:text-xl">
-                Built for real estate sales, lettings, rentals, buying, landlord updates, and maintenance triage, with live property matching, booking logic, reminders, and CRM logging folded into one smooth voice layer.
+                Built for real estate sales, lettings, rentals, buying, landlord updates,
+                and maintenance triage, with live property matching, booking logic,
+                reminders, and CRM logging folded into one smooth voice layer.
               </p>
 
               <div className="mt-8 flex flex-wrap gap-3">
-                {["Inbound + outbound", "Sales + rentals", "Calendar aware", "CRM connected"].map((item) => (
+                {[
+                  "Inbound + outbound",
+                  "Sales + rentals",
+                  "Calendar aware",
+                  "CRM connected",
+                ].map((item) => (
                   <span
                     key={item}
                     className="rounded-full border border-white/16 bg-white/8 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.24em] text-white/78"
@@ -155,7 +168,9 @@ export default function Features() {
                         <h3 className="mt-2 text-[1.35rem] font-display font-medium leading-[1.02] tracking-[-0.02em] text-white">
                           {item.title}
                         </h3>
-                        <p className="mt-2 text-sm leading-relaxed text-blue-100/72">{item.description}</p>
+                        <p className="mt-2 text-sm leading-relaxed text-blue-100/72">
+                          {item.description}
+                        </p>
                       </div>
                     </div>
                   ))}
@@ -183,7 +198,9 @@ export default function Features() {
                         <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-indigo-200">
                           Live call desk
                         </p>
-                        <p className="mt-2 text-sm text-blue-100/72">Premium front-line voice automation for property teams.</p>
+                        <p className="mt-2 text-sm text-blue-100/72">
+                          Premium front-line voice automation for property teams.
+                        </p>
                       </div>
                       <div className="h-3 w-3 rounded-full bg-emerald-300 shadow-[0_0_18px_rgba(110,231,183,0.85)]" />
                     </div>
@@ -205,14 +222,21 @@ export default function Features() {
                           copy: "Confirmation emails and reminder flows are triggered automatically.",
                         },
                       ].map((item) => (
-                        <div key={item.title} className="rounded-[1.6rem] border border-white/10 bg-white/8 p-4">
+                        <div
+                          key={item.title}
+                          className="rounded-[1.6rem] border border-white/10 bg-white/8 p-4"
+                        >
                           <div className="flex items-start gap-3">
                             <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-white/10 text-indigo-100">
                               <item.icon className="h-4 w-4" />
                             </div>
                             <div>
-                              <p className="text-base font-medium text-white">{item.title}</p>
-                              <p className="mt-1 text-sm leading-relaxed text-blue-100/70">{item.copy}</p>
+                              <p className="text-base font-medium text-white">
+                                {item.title}
+                              </p>
+                              <p className="mt-1 text-sm leading-relaxed text-blue-100/70">
+                                {item.copy}
+                              </p>
                             </div>
                           </div>
                         </div>
@@ -220,7 +244,9 @@ export default function Features() {
                     </div>
 
                     <div className="mt-6 rounded-[1.8rem] border border-white/10 bg-white/[0.06] p-4">
-                      <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-indigo-200">Auto actions</p>
+                      <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-indigo-200">
+                        Auto actions
+                      </p>
                       <div className="mt-3 flex flex-wrap gap-2">
                         {[
                           "Calendar sync",
@@ -242,9 +268,13 @@ export default function Features() {
 
                   <div className="space-y-5">
                     <div className="rounded-[2rem] border border-white/12 bg-white/8 p-5">
-                      <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-indigo-200">Coverage</p>
+                      <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-indigo-200">
+                        Coverage
+                      </p>
                       <div className="mt-4 flex items-end gap-3">
-                        <span className="font-display text-6xl leading-none tracking-[-0.05em] text-white">24/7</span>
+                        <span className="font-display text-6xl leading-none tracking-[-0.05em] text-white">
+                          24/7
+                        </span>
                         <span className="max-w-[10rem] pb-1 text-sm leading-relaxed text-blue-100/72">
                           Response window for inbound and outbound property conversations.
                         </span>
@@ -252,17 +282,24 @@ export default function Features() {
                     </div>
 
                     <div className="rounded-[2rem] border border-white/12 bg-white/8 p-5">
-                      <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-indigo-200">Booking speed</p>
+                      <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-indigo-200">
+                        Booking speed
+                      </p>
                       <div className="mt-4 flex items-end gap-3">
-                        <span className="font-display text-6xl leading-none tracking-[-0.05em] text-white">Live</span>
+                        <span className="font-display text-6xl leading-none tracking-[-0.05em] text-white">
+                          Live
+                        </span>
                         <span className="max-w-[10rem] pb-1 text-sm leading-relaxed text-blue-100/72">
-                          Calendar checks and viewing confirmation without waiting for a callback.
+                          Calendar checks and viewing confirmation without waiting for a
+                          callback.
                         </span>
                       </div>
                     </div>
 
                     <div className="rounded-[2rem] border border-white/12 bg-[linear-gradient(180deg,rgba(255,255,255,0.12),rgba(255,255,255,0.06))] p-5">
-                      <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-indigo-200">Handled scenarios</p>
+                      <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-indigo-200">
+                        Handled scenarios
+                      </p>
                       <div className="mt-4 space-y-3">
                         {[
                           "Sales enquiries and callbacks",
@@ -327,7 +364,8 @@ export default function Features() {
                           I need a 3-bed rental in London under 2,800 with parking.
                         </div>
                         <div className="justify-self-end rounded-[1.45rem] rounded-br-sm bg-[linear-gradient(135deg,#eef1ff,#ffffff)] px-4 py-3 text-sm leading-relaxed text-slate-700">
-                          I found two live matches, both with parking, fresh photos, and viewing slots this week.
+                          I found two live matches, both with parking, fresh photos, and
+                          viewing slots this week.
                         </div>
                         <div className="rounded-[1.45rem] border border-white/10 bg-white/6 p-4">
                           <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-white/55">
@@ -335,8 +373,12 @@ export default function Features() {
                           </p>
                           <div className="mt-3 flex items-center justify-between rounded-[1.2rem] border border-white/10 bg-white/6 px-4 py-3">
                             <div>
-                              <p className="text-sm font-medium text-white">Viewing slot offered</p>
-                              <p className="mt-1 text-xs text-white/60">Thu 11:30 AM or Fri 4:00 PM</p>
+                              <p className="text-sm font-medium text-white">
+                                Viewing slot offered
+                              </p>
+                              <p className="mt-1 text-xs text-white/60">
+                                Thu 11:30 AM or Fri 4:00 PM
+                              </p>
                             </div>
                             <div className="rounded-full bg-white px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-900">
                               Booked
@@ -372,9 +414,12 @@ export default function Features() {
                       ))}
 
                       <div className="rounded-[1.7rem] border border-slate-200 bg-[linear-gradient(135deg,rgba(238,241,255,0.95),rgba(255,255,255,0.95))] p-4">
-                        <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-primary">After chat</p>
+                        <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-primary">
+                          After chat
+                        </p>
                         <p className="mt-3 text-sm leading-relaxed text-slate-600">
-                          Booking details, lead answers, and follow-up actions are sent to CRM and email automatically.
+                          Booking details, lead answers, and follow-up actions are sent
+                          to CRM and email automatically.
                         </p>
                       </div>
                     </div>
@@ -389,12 +434,16 @@ export default function Features() {
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
             >
-              <p className="mb-5 text-sm font-semibold uppercase tracking-[0.28em] text-indigo-700">Flagship model</p>
+              <p className="mb-5 text-sm font-semibold uppercase tracking-[0.28em] text-indigo-700">
+                Flagship model
+              </p>
               <h2 className="max-w-3xl text-4xl font-display font-medium leading-[1.02] tracking-[-0.035em] text-slate-950 sm:text-5xl lg:text-[4.2rem]">
                 A website chatbot that feels like a concierge, not a widget.
               </h2>
               <p className="mt-6 max-w-2xl text-lg leading-relaxed text-slate-600 sm:text-xl">
-                Designed for premium real estate websites that need instant replies, live property previews, booking logic, CRM capture, and smooth follow-up without making the brand feel robotic or crowded.
+                Designed for premium real estate websites that need instant replies,
+                live property previews, booking logic, CRM capture, and smooth
+                follow-up without making the brand feel robotic or crowded.
               </p>
 
               <div className="mt-10 grid gap-4 sm:grid-cols-2">
@@ -409,15 +458,21 @@ export default function Features() {
                     <h3 className="mt-4 text-[1.45rem] font-display font-medium leading-[1.02] tracking-[-0.02em] text-slate-950">
                       {item.title}
                     </h3>
-                    <p className="mt-3 text-sm leading-relaxed text-slate-600">{item.description}</p>
+                    <p className="mt-3 text-sm leading-relaxed text-slate-600">
+                      {item.description}
+                    </p>
                   </div>
                 ))}
               </div>
 
               <div className="mt-8 rounded-[1.9rem] border border-white/85 bg-white/80 p-5 shadow-[0_20px_40px_-34px_rgba(15,23,42,0.18)]">
-                <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-primary">Smooth handoff</p>
+                <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-primary">
+                  Smooth handoff
+                </p>
                 <p className="mt-3 text-base leading-relaxed text-slate-600">
-                  When the visitor becomes high intent, the chatbot hands over the full story: selected property, preferred slot, qualification notes, and follow-up status, so the team enters the conversation already briefed.
+                  When the visitor becomes high intent, the chatbot hands over the full
+                  story: selected property, preferred slot, qualification notes, and
+                  follow-up status, so the team enters the conversation already briefed.
                 </p>
               </div>
             </motion.div>
@@ -444,7 +499,8 @@ export default function Features() {
                 Add an AI assistant layer to your agency workflow.
               </h2>
               <p className="mx-auto mt-6 max-w-3xl text-lg leading-relaxed text-blue-100/85 sm:text-xl">
-                Cover enquiries, phone calls, email follow-up, reminders, and listing content with one unified AI setup built for property teams.
+                Cover enquiries, phone calls, email follow-up, reminders, and listing
+                content with one unified AI setup built for property teams.
               </p>
             </motion.div>
           </div>
@@ -456,7 +512,11 @@ export default function Features() {
                 initial={{ opacity: 0, y: 28 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-60px" }}
-                transition={{ duration: 0.65, delay: index * 0.08, ease: [0.22, 1, 0.36, 1] }}
+                transition={{
+                  duration: 0.65,
+                  delay: index * 0.08,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
                 className="group bg-white/4 p-8 backdrop-blur-sm transition-colors duration-300 hover:bg-white/8"
               >
                 <div className="mb-8 w-full border-t border-white/16 pt-6" />
@@ -466,7 +526,9 @@ export default function Features() {
                 <h3 className="text-[1.65rem] font-display font-medium leading-none tracking-[-0.02em] text-white">
                   {item.title}
                 </h3>
-                <p className="mt-3 max-w-sm text-base leading-relaxed text-blue-100/80">{item.description}</p>
+                <p className="mt-3 max-w-sm text-base leading-relaxed text-blue-100/80">
+                  {item.description}
+                </p>
               </motion.div>
             ))}
           </div>

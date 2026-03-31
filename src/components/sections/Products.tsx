@@ -12,7 +12,6 @@ import {
   Mailbox,
   MessageSquare,
   PhoneCall,
-  Sparkles,
   Video as VideoIcon,
   Wrench,
 } from "lucide-react";
@@ -28,7 +27,10 @@ const products = [
     description: "Handles website and social enquiries, captures lead data, checks calendar availability, and confirms viewings — without making prospects wait for a human.",
     icon: MessageSquare,
     href: "/services/chat",
-    videoPath: "/media/sequences/services/Videos-Cropped/Chatbot.mp4",
+    videoPath: "/media/videos/chat.mp4",
+    gradient: "from-indigo-600 via-indigo-500 to-indigo-600",
+    accent: "text-indigo-600",
+    logoImage: "/media/ai_chat_ui_light_1774519717225.png",
   },
   {
     id: "voice",
@@ -38,7 +40,10 @@ const products = [
     description: "Runs dedicated call flows, matches listings from your live database, books viewings, sends confirmations, and updates your CRM automatically.",
     icon: PhoneCall,
     href: "/services/voice",
-    videoPath: "/media/sequences/services/Videos-Cropped/Voice agent.mp4",
+    videoPath: "/media/videos/voice.mp4",
+    gradient: "from-indigo-600 via-indigo-500 to-indigo-600",
+    accent: "text-indigo-600",
+    logoImage: "/media/voice_agent_ui_light_1774519815031.png",
   },
   {
     id: "reminders",
@@ -48,7 +53,10 @@ const products = [
     description: "Automates rent, deposit, and viewing reminders across SMS, email, WhatsApp, and voice so your team spends less time chasing.",
     icon: BellRing,
     href: "/services/reminders",
-    videoPath: "/media/sequences/services/Videos-Cropped/Reminder.mp4",
+    videoPath: "/media/videos/reminders.mp4",
+    gradient: "from-indigo-600 via-indigo-500 to-indigo-600",
+    accent: "text-indigo-600",
+    logoImage: "/media/reminders_calendar_ui_light_1774519912843.png",
   },
   {
     id: "maintenance",
@@ -58,7 +66,10 @@ const products = [
     description: "Collects tenant issues in detail, saves to CRM, sends follow-up links for photos, and routes urgent cases to the maintenance team.",
     icon: Wrench,
     href: "/services/maintenance",
-    videoPath: "/media/sequences/services/Videos-Cropped/Maintenance.mp4",
+    videoPath: "/media/videos/maintenance.mp4",
+    gradient: "from-indigo-600 via-indigo-500 to-indigo-600",
+    accent: "text-indigo-600",
+    logoImage: "/media/maintenance_intake_ui_generated.svg",
   },
   {
     id: "email",
@@ -68,7 +79,10 @@ const products = [
     description: "Drafts polished responses for enquiries, follow-ups, booking details and document requests while routing the right cases to the right people.",
     icon: Mailbox,
     href: "/services/email",
-    videoPath: "/media/sequences/services/Videos-Cropped/Email.mp4",
+    videoPath: "/media/videos/email.mp4",
+    gradient: "from-indigo-600 via-indigo-500 to-indigo-600",
+    accent: "text-indigo-600",
+    logoImage: "/media/email_automation_ui_light_1774519948355.png",
   },
   {
     id: "marketing",
@@ -78,7 +92,10 @@ const products = [
     description: "Builds AI avatar videos, listing explainers, and social-ready property content from your existing assets — market consistently without studio time.",
     icon: VideoIcon,
     href: "/services/ai-marketing",
-    videoPath: "/media/sequences/services/Videos-Cropped/AI marketing.mp4",
+    videoPath: "/media/videos/marketing.mp4",
+    gradient: "from-indigo-600 via-indigo-500 to-indigo-600",
+    accent: "text-indigo-600",
+    logoImage: "/media/ai_marketing_ui_light_1774519968668.png",
   },
 ];
 
@@ -118,25 +135,38 @@ export default function Products() {
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_16%_18%,rgba(63,55,184,0.03),transparent_30%)]" />
 
       {/* ── Header ── */}
-      <div className="relative z-10 py-28 text-center pt-36">
-        <motion.div
+      <div className="relative z-10 py-16 text-center">
+          <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="mb-5 inline-flex items-center gap-2.5 rounded-full border border-primary/10 bg-white px-5 py-2 shadow-sm"
+          className="mb-6 flex flex-wrap items-center justify-center gap-6 px-4"
         >
-          <Sparkles className="h-3.5 w-3.5 text-primary" />
-          <span className="text-[10.5px] font-semibold uppercase tracking-[0.3em] text-primary">
-            Luxury automation stack
-          </span>
+          {products.map((p, idx) => (
+            <motion.div
+              key={p.id}
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: idx * 0.1 }}
+              whileHover={{ scale: 1.08 }}
+              className="relative h-16 w-16 cursor-pointer overflow-hidden rounded-2xl bg-white shadow-lg"
+            >
+              <img 
+                src={p.logoImage} 
+                alt={p.title}
+                className="h-full w-full object-cover"
+              />
+            </motion.div>
+          ))}
         </motion.div>
         <motion.h2
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="mx-auto max-w-4xl text-4xl font-display font-medium leading-[1] tracking-[-0.04em] text-slate-900 sm:text-5xl lg:text-[4rem]"
+          className="mx-auto max-w-4xl text-4xl font-display font-medium leading-[1] tracking-[-0.04em] text-slate-900 sm:text-5xl lg:text-[4rem] px-4"
         >
           Premium automation for every part of the modern real estate journey.
         </motion.h2>
@@ -145,7 +175,7 @@ export default function Products() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-slate-500"
+          className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-slate-500 px-4"
         >
           Six AI-powered services designed to feel high-end for your brand and simple for your team.
         </motion.p>
@@ -178,9 +208,11 @@ export default function Products() {
                   </div>
 
                   {/* Badge */}
-                  <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-indigo-100 bg-indigo-50 px-4 py-1.5">
-                    <active.icon className="h-4 w-4 text-primary" />
-                    <span className="text-[11px] font-semibold uppercase tracking-[0.24em] text-primary">
+                  <div className={`mb-5 inline-flex items-center gap-2 rounded-full border ${active.gradient.split(' ')[0].replace('from-', 'border-')}/30 bg-white/80 px-4 py-1.5`}>
+                    <div className={`p-1 rounded-full bg-gradient-to-br ${active.gradient}`}>
+                      <active.icon className="h-3 w-3 text-white" />
+                    </div>
+                    <span className={`text-[11px] font-bold uppercase tracking-[0.24em] ${active.accent}`}>
                       {active.badge}
                     </span>
                   </div>
@@ -203,7 +235,7 @@ export default function Products() {
                   {/* CTA */}
                   <Link
                     href={active.href}
-                    className="group inline-flex items-center gap-3 rounded-full bg-slate-900 px-7 py-3.5 text-sm font-semibold uppercase tracking-[0.16em] text-white transition-all duration-300 hover:bg-primary"
+                    className={`group inline-flex items-center gap-3 rounded-full bg-gradient-to-r ${active.gradient} px-7 py-3.5 text-sm font-bold uppercase tracking-[0.16em] text-white shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-[1.02]`}
                   >
                     Explore {active.title}
                     <span className="flex h-7 w-7 items-center justify-center rounded-full bg-white/20 transition-transform duration-300 group-hover:translate-x-1">
@@ -252,7 +284,7 @@ export default function Products() {
                       muted
                       playsInline
                       loop
-                      className="absolute inset-0 w-full h-full object-cover"
+                      className="absolute left-0 top-0 h-full w-full origin-top scale-y-[1.12] object-cover"
                     />
                   </motion.div>
                 ))}

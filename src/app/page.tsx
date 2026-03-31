@@ -1,10 +1,11 @@
 import Hero from "@/components/sections/Hero";
-import Features from "@/components/sections/Features";
-import Logos from "@/components/sections/Logos";
 import Products from "@/components/sections/Products";
 import HowItWorks from "@/components/sections/HowItWorks";
-import Testimonials from "@/components/sections/Testimonials";
+import Features from "@/components/sections/Features";
 import FinalCTA from "@/components/sections/FinalCTA";
+import Logos from "@/components/sections/Logos";
+import Testimonials from "@/components/sections/Testimonials";
+import ContactFormSection from "@/components/sections/ContactFormSection";
 
 export default function Home() {
   return (
@@ -13,9 +14,10 @@ export default function Home() {
       <Products />
       <HowItWorks />
       <Features />
+      <FinalCTA />
       <Logos />
       <Testimonials />
-      <FinalCTA />
+      <ContactFormSection />
     </div>
   );
 }
