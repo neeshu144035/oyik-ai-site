@@ -164,11 +164,11 @@ export default function VoiceShowcase() {
                       <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-indigo-200">
                         Coverage
                       </p>
-                      <div className="mt-4 flex items-end gap-3">
+                      <div className="mt-4 flex flex-col items-start gap-2 sm:flex-row sm:items-end sm:gap-3">
                         <span className="font-display text-6xl leading-none tracking-[-0.05em] text-white">
                           24/7
                         </span>
-                        <span className="max-w-[10rem] pb-1 text-sm leading-relaxed text-blue-100/72">
+                        <span className="max-w-[14rem] pb-1 text-sm leading-relaxed text-blue-100/72 sm:max-w-[10rem]">
                           Inbound and outbound property conversations without queue gaps.
                         </span>
                       </div>
@@ -178,11 +178,11 @@ export default function VoiceShowcase() {
                       <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-indigo-200">
                         Booking speed
                       </p>
-                      <div className="mt-4 flex items-end gap-3">
+                      <div className="mt-4 flex flex-col items-start gap-2 sm:flex-row sm:items-end sm:gap-3">
                         <span className="font-display text-6xl leading-none tracking-[-0.05em] text-white">
                           Live
                         </span>
-                        <span className="max-w-[10rem] pb-1 text-sm leading-relaxed text-blue-100/72">
+                        <span className="max-w-[14rem] pb-1 text-sm leading-relaxed text-blue-100/72 sm:max-w-[10rem]">
                           Calendar checks and confirmations while the caller is still talking.
                         </span>
                       </div>

@@ -18,7 +18,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative min-h-screen w-full overflow-hidden">
+    <section className="relative min-h-[100svh] w-full overflow-hidden">
       {/* ─── Layer 1 (BOTTOM): Full-screen auto-playing native video ─── */}
       <div className="absolute inset-0 z-0">
         <video
@@ -36,7 +36,7 @@ export default function Hero() {
       <div className="absolute inset-0 z-10 bg-[linear-gradient(180deg,rgba(5,5,25,0.55)_0%,rgba(5,5,25,0.35)_60%,rgba(5,5,25,0.65)_100%)]" />
 
       {/* ─── Layer 3 (TOP): Hero text content, centered above the video ─── */}
-      <div className="relative z-20 flex min-h-screen flex-col items-center justify-center px-4 pb-20 pt-32 sm:px-6 lg:px-8">
+      <div className="relative z-20 flex min-h-[100svh] flex-col items-center justify-center px-4 pb-16 pt-28 sm:px-6 sm:pb-20 sm:pt-32 lg:px-8">
         <div className="mx-auto max-w-[1120px] text-center">
 
           {/* Badge */}
@@ -44,10 +44,10 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-            className="mb-8 inline-flex items-center gap-3 rounded-full border border-white/20 bg-white/10 px-5 py-2.5 backdrop-blur-md"
+            className="mb-7 inline-flex max-w-full items-center gap-3 rounded-full border border-white/20 bg-white/10 px-4 py-2 backdrop-blur-md sm:mb-8 sm:px-5 sm:py-2.5"
           >
             <Sparkles className="h-4 w-4 text-indigo-300" />
-            <span className="text-[11px] font-semibold uppercase tracking-[0.28em] text-indigo-200">
+            <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-indigo-200 sm:text-[11px] sm:tracking-[0.28em]">
               Luxury AI operating layer for real estate
             </span>
           </motion.div>
@@ -57,7 +57,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.75, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-            className="max-w-5xl mx-auto text-[3.2rem] font-display font-medium leading-[0.92] tracking-[-0.045em] text-white sm:text-[5.1rem] lg:text-[7rem]"
+            className="mx-auto max-w-5xl text-[2.5rem] font-display font-medium leading-[0.92] tracking-[-0.045em] text-white sm:text-[4.3rem] lg:text-[7rem]"
           >
             AI employees for{" "}
             <span className="bg-gradient-to-r from-indigo-300 via-violet-300 to-sky-300 bg-clip-text text-transparent">
@@ -85,7 +85,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.65, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-            className="mt-8 max-w-[56rem] mx-auto text-[1.04rem] leading-relaxed text-white/70 sm:text-[1.18rem]"
+            className="mx-auto mt-7 max-w-[56rem] text-[0.98rem] leading-relaxed text-white/72 sm:mt-8 sm:text-[1.12rem] lg:text-[1.18rem]"
           >
             oyik.realestate.ai helps real estate agencies, brokerages, property managers, and letting businesses automate website chat, voice calls, lead qualification, live property matching, viewing bookings, reminders, maintenance intake, CRM updates, and AI marketing with a faster and more premium client experience.
           </motion.p>
@@ -120,7 +120,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.65, delay: 0.45, ease: [0.22, 1, 0.36, 1] }}
-            className="mt-14 grid w-full gap-4 lg:grid-cols-3"
+            className="mt-12 grid w-full gap-4 lg:mt-14 lg:grid-cols-3"
           >
             <div className="rounded-[1.9rem] border border-white/15 bg-white/8 p-5 text-left backdrop-blur-xl">
               <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-2xl bg-indigo-500/20 text-indigo-300">

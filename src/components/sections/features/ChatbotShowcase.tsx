@@ -270,7 +270,7 @@ export default function ChatbotShowcase() {
                   repeat: Infinity,
                   ease: "easeInOut",
                 }}
-                className="group relative inline-flex min-w-[18rem] justify-center overflow-hidden rounded-full border border-indigo-300/40 bg-[linear-gradient(135deg,#4f46e5,#4338ca)] px-7 py-4 text-sm font-semibold uppercase tracking-[0.22em] text-white sm:min-w-[20rem]"
+                className="group relative inline-flex w-full justify-center overflow-hidden rounded-full border border-indigo-300/40 bg-[linear-gradient(135deg,#4f46e5,#4338ca)] px-6 py-4 text-sm font-semibold uppercase tracking-[0.2em] text-white sm:w-auto sm:min-w-[20rem] sm:px-7 sm:tracking-[0.22em]"
               >
                 <motion.span
                   aria-hidden="true"
@@ -316,7 +316,7 @@ export default function ChatbotShowcase() {
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     exit={{ opacity: 0, y: 24, scale: 0.98 }}
                     transition={{ duration: 0.32, ease: [0.22, 1, 0.36, 1] }}
-                    className="relative z-10 flex h-[min(82vh,780px)] w-full max-w-[min(92vw,980px)] flex-col overflow-hidden rounded-[2rem] border border-white/70 bg-[linear-gradient(180deg,rgba(255,255,255,0.98),rgba(244,247,255,0.95))] shadow-[0_40px_120px_-38px_rgba(15,23,42,0.45)]"
+                    className="relative z-10 flex h-[min(88svh,780px)] w-full max-w-[min(92vw,980px)] flex-col overflow-hidden rounded-[2rem] border border-white/70 bg-[linear-gradient(180deg,rgba(255,255,255,0.98),rgba(244,247,255,0.95))] shadow-[0_40px_120px_-38px_rgba(15,23,42,0.45)]"
                   >
                     <div className="flex items-center justify-between gap-4 border-b border-slate-200/80 px-5 py-4 sm:px-6">
                       <div className="min-w-0">

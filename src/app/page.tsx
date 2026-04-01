@@ -12,11 +12,11 @@ export default function Home() {
     <div className="flex flex-col gap-0 w-full min-h-screen bg-background">
       <Hero />
       <Products />
+      <Logos />
       <HowItWorks />
       <Features />
-      <FinalCTA />
-      <Logos />
       <Testimonials />
+      <FinalCTA />
       <ContactFormSection />
     </div>
   );

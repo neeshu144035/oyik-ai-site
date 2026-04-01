@@ -67,7 +67,32 @@ export default function Testimonials() {
         </div>
       </div>
 
-      <div className="relative z-10 overflow-hidden">
+      <div className="relative z-10 md:hidden">
+        <div className="flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-2 sm:px-6">
+          {testimonials.map((item) => (
+            <article
+              key={item.name}
+              className="min-h-[320px] w-[84vw] max-w-[22rem] shrink-0 snap-center rounded-[2rem] border border-border/80 bg-white/88 p-6 shadow-[0_20px_50px_-28px_rgba(63,55,184,0.24)] backdrop-blur-xl"
+            >
+              <div className="mb-6 flex items-center justify-between">
+                <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-primary/15 bg-primary/10 font-semibold text-primary">
+                  {item.initials}
+                </div>
+                <Quote className="h-10 w-10 text-primary/20" />
+              </div>
+
+              <p className="text-base font-medium leading-relaxed text-foreground">&ldquo;{item.quote}&rdquo;</p>
+
+              <div className="mt-8 border-t border-border/70 pt-5">
+                <p className="font-display text-lg font-semibold text-foreground">{item.name}</p>
+                <p className="mt-1 text-[11px] font-mono uppercase tracking-[0.22em] text-primary">{item.company}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+
+      <div className="relative z-10 hidden overflow-hidden md:block">
         <motion.div
           className="flex gap-6 px-6 lg:px-10"
           animate={{ x: [0, -1720] }}

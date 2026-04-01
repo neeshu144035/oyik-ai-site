@@ -94,6 +94,7 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    scroll-padding-top: 7rem;
   }
   * {
     @apply border-border outline-ring/50;
@@ -106,9 +107,18 @@
       radial-gradient(circle at 18% 92%, rgba(219, 194, 143, 0.08) 0%, transparent 28%),
       linear-gradient(180deg, #fcfbf8 0%, #f8f5ef 48%, #f4f6fb 100%);
     background-attachment: fixed;
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+    padding-bottom: env(safe-area-inset-bottom);
   }
   h1, h2, h3, h4, h5, h6 {
     @apply tracking-tight text-foreground font-medium;
+  }
+}
+
+@media (max-width: 767px) {
+  body {
+    background-attachment: scroll;
   }
 }
 

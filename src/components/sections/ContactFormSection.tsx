@@ -1,10 +1,12 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, Mail, Phone, MapPin, Send } from "lucide-react";
-import { useState } from "react";
+import { Mail, Phone, Send } from "lucide-react";
+import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 
 export default function ContactFormSection() {
+  const router = useRouter();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -13,14 +15,26 @@ export default function ContactFormSection() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+  useEffect(() => {
+    router.prefetch("/thank-you");
+  }, [router]);
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    setTimeout(() => {
-      window.open("/thank-you", "_blank");
-      setFormData({ name: "", email: "", phone: "", message: "" });
-      setIsSubmitting(false);
-    }, 800);
+
+    const thankYouUrl = new URL("/thank-you", window.location.origin).toString();
+    const newTab = window.open("", "_blank");
+
+    if (newTab) {
+      newTab.opener = null;
+      newTab.location.replace(thankYouUrl);
+    } else {
+      window.location.assign(thankYouUrl);
+    }
+
+    setFormData({ name: "", email: "", phone: "", message: "" });
+    window.setTimeout(() => setIsSubmitting(false), 150);
   };
 
   return (

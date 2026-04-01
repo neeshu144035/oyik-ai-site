@@ -1,9 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Roboto, Urbanist } from "next/font/google";
-import Navbar from "@/components/shared/Navbar";
-import Footer from "@/components/shared/Footer";
-import PageFaqSection from "@/components/shared/PageFaqSection";
-import SmoothScroll from "@/components/shared/SmoothScroll";
+import AppShell from "@/components/shared/AppShell";
 import "./globals.css";
 
 const fontSans = Roboto({
@@ -27,6 +24,7 @@ const fontDisplay = Urbanist({
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
+  viewportFit: "cover",
   themeColor: "#f7f5f0",
 };
 
@@ -116,12 +114,7 @@ export default function RootLayout({
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       </head>
       <body className="flex min-h-screen flex-col overflow-x-hidden bg-background font-sans text-foreground">
-        <SmoothScroll>
-          <Navbar />
-          <main className="flex-grow">{children}</main>
-          <PageFaqSection />
-          <Footer />
-        </SmoothScroll>
+        <AppShell>{children}</AppShell>
       </body>
     </html>
   );

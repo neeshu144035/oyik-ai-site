@@ -35,8 +35,8 @@ export default function Navbar() {
   }, []);
 
   return (
-    <header className="pointer-events-none fixed inset-x-0 top-10 z-50 flex justify-center px-4 md:top-12">
-      <div className="pointer-events-auto relative flex w-full flex-col items-center lg:w-auto lg:max-w-[calc(100vw-2.5rem)]">
+    <header className="pointer-events-none fixed inset-x-0 top-4 z-50 flex justify-center px-3 sm:top-6 sm:px-4 lg:top-10">
+      <div className="pointer-events-auto relative flex w-full max-w-[min(100%,28rem)] flex-col items-center lg:w-auto lg:max-w-[calc(100vw-2.5rem)]">
         {!reduceMotion && (
           <>
             <div aria-hidden="true" className="pointer-events-none absolute -inset-[5px] hidden rounded-full lg:block">
@@ -118,18 +118,18 @@ export default function Navbar() {
         <motion.div
           initial={false}
           animate={{
-            y: scrolled ? -3 : 0,
-            scale: scrolled ? 0.988 : 1,
+            y: scrolled ? -2 : 0,
+            scale: scrolled ? 0.992 : 1,
           }}
           transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-          className={`relative flex w-full items-center justify-between gap-4 overflow-hidden rounded-full border px-3 py-2 shadow-[0_16px_42px_-30px_rgba(15,23,42,0.22)] backdrop-blur-xl lg:min-w-[860px] lg:px-4 ${
-            scrolled ? "border-slate-900/10 bg-transparent" : "border-white/16 bg-transparent"
+          className={`relative flex w-full items-center justify-between gap-2 overflow-hidden rounded-[1.75rem] border px-2.5 py-2 shadow-[0_16px_42px_-30px_rgba(15,23,42,0.22)] backdrop-blur-xl sm:gap-3 sm:px-3 lg:min-w-[860px] lg:rounded-full lg:px-4 ${
+            scrolled ? "border-slate-900/10 bg-white/65" : "border-white/16 bg-slate-950/18"
           }`}
         >
-          <div className="absolute inset-[1px] rounded-full border border-white/6" />
+          <div className="absolute inset-[1px] rounded-[1.65rem] border border-white/8 lg:rounded-full" />
 
-          <Link href="/" className="relative z-10 flex shrink-0 items-center gap-4 pr-6">
-            <div className="flex h-14 w-14 items-center justify-center overflow-hidden rounded-full border border-white/22 bg-white shadow-[0_12px_30px_-18px_rgba(63,55,184,0.45)]">
+          <Link href="/" className="relative z-10 flex min-w-0 shrink items-center gap-3 pr-2 sm:pr-4 lg:pr-6">
+            <div className="flex h-11 w-11 shrink-0 items-center justify-center overflow-hidden rounded-full border border-white/22 bg-white shadow-[0_12px_30px_-18px_rgba(63,55,184,0.45)] sm:h-12 sm:w-12 lg:h-14 lg:w-14">
               <Image
                 src="/oyik-logo-indigo-tech.png"
                 alt="Oyik logo"
@@ -140,16 +140,16 @@ export default function Navbar() {
               />
             </div>
 
-            <div className="flex flex-col leading-none">
+            <div className="flex min-w-0 flex-col leading-none">
               <span
-                className={`brand-signature text-[1.6rem] sm:text-[1.8rem] font-bold ${
+                className={`brand-signature truncate text-[1.2rem] font-bold sm:text-[1.45rem] lg:text-[1.75rem] ${
                   scrolled ? "text-slate-950" : "text-white drop-shadow-[0_2px_10px_rgba(15,23,42,0.32)]"
                 }`}
               >
                 Oyik
               </span>
               <span
-                className={`text-[0.82rem] font-extrabold tracking-[0.28em] ${
+                className={`truncate text-[0.64rem] font-extrabold tracking-[0.18em] sm:text-[0.72rem] sm:tracking-[0.24em] lg:text-[0.82rem] lg:tracking-[0.28em] ${
                   scrolled ? "text-primary" : "text-white/95 drop-shadow-[0_2px_12px_rgba(90,84,235,0.6)]"
                 }`}
               >
@@ -212,6 +212,7 @@ export default function Navbar() {
             }`}
             onClick={() => setIsOpen((prev) => !prev)}
             aria-label="Toggle navigation"
+            aria-expanded={isOpen}
           >
             {isOpen ? <X size={18} /> : <Menu size={18} />}
           </button>
@@ -224,8 +225,8 @@ export default function Navbar() {
               animate={{ opacity: 1, y: 10, scale: 1 }}
               exit={{ opacity: 0, y: -10, scale: 0.98 }}
               transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
-              className={`mt-2 w-full overflow-hidden rounded-[1.8rem] border p-4 shadow-[0_30px_80px_-40px_rgba(15,23,42,0.4)] backdrop-blur-2xl ${
-                scrolled ? "border-slate-900/10 bg-white/60" : "border-white/12 bg-slate-950/24"
+              className={`mt-3 w-full overflow-hidden rounded-[1.8rem] border p-4 shadow-[0_30px_80px_-40px_rgba(15,23,42,0.4)] backdrop-blur-2xl ${
+                scrolled ? "border-slate-900/10 bg-white/80" : "border-white/12 bg-slate-950/44"
               }`}
             >
               <div className="grid gap-2">
