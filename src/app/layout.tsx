@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Roboto, Urbanist } from "next/font/google";
 import Navbar from "@/components/shared/Navbar";
 import Footer from "@/components/shared/Footer";
+import PageFaqSection from "@/components/shared/PageFaqSection";
 import SmoothScroll from "@/components/shared/SmoothScroll";
 import "./globals.css";
 
@@ -118,6 +119,7 @@ export default function RootLayout({
         <SmoothScroll>
           <Navbar />
           <main className="flex-grow">{children}</main>
+          <PageFaqSection />
           <Footer />
         </SmoothScroll>
       </body>

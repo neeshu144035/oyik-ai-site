@@ -24,7 +24,7 @@ const products = [
     title: "AI Chat",
     badge: "Website + Social",
     subtitle: "Reply, qualify, show live listings, and move leads to a booked next step.",
-    description: "Handles website and social enquiries, captures lead data, checks calendar availability, and confirms viewings — without making prospects wait for a human.",
+    description: "Handles website and social enquiries, captures lead data, checks calendar availability, and confirms viewings without making prospects wait for a human.",
     icon: MessageSquare,
     href: "/services/chat",
     videoPath: "/media/videos/chat.mp4",
@@ -89,7 +89,7 @@ const products = [
     title: "AI Marketing",
     badge: "AI Avatars + Videos",
     subtitle: "Create premium listing content without blocking your agents.",
-    description: "Builds AI avatar videos, listing explainers, and social-ready property content from your existing assets — market consistently without studio time.",
+    description: "Builds AI avatar videos, listing explainers, and social-ready property content from your existing assets so you can market consistently without studio time.",
     icon: VideoIcon,
     href: "/services/ai-marketing",
     videoPath: "/media/videos/marketing.mp4",
@@ -134,33 +134,8 @@ export default function Products() {
       {/* Background elegant pattern */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_16%_18%,rgba(63,55,184,0.03),transparent_30%)]" />
 
-      {/* ── Header ── */}
+      {/* Header */}
       <div className="relative z-10 py-16 text-center">
-          <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="mb-6 flex flex-wrap items-center justify-center gap-6 px-4"
-        >
-          {products.map((p, idx) => (
-            <motion.div
-              key={p.id}
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: idx * 0.1 }}
-              whileHover={{ scale: 1.08 }}
-              className="relative h-16 w-16 cursor-pointer overflow-hidden rounded-2xl bg-white shadow-lg"
-            >
-              <img 
-                src={p.logoImage} 
-                alt={p.title}
-                className="h-full w-full object-cover"
-              />
-            </motion.div>
-          ))}
-        </motion.div>
         <motion.h2
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -181,14 +156,14 @@ export default function Products() {
         </motion.p>
       </div>
 
-      {/* ── Sticky Scroll Container ── */}
+      {/* Sticky Scroll Container */}
       <div ref={containerRef} style={{ height: `${products.length * 60}vh` }}>
         <div className="sticky top-0 h-screen flex items-center overflow-hidden">
 
-          {/* ── Inner grid: 40% info card | 60% video frame ── */}
+          {/* Inner grid: 40% info card | 60% video frame */}
           <div className="container mx-auto grid h-full max-w-[1500px] grid-cols-1 items-center gap-10 px-6 lg:grid-cols-[40fr_60fr] lg:px-12 pb-16">
 
-            {/* ── LEFT: Animated info card ── */}
+            {/* Left: animated info card */}
             <div className="flex flex-col justify-center">
               <AnimatePresence mode="wait">
                 <motion.div

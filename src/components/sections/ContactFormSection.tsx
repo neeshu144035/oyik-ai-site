@@ -149,11 +149,11 @@ export default function ContactFormSection() {
                   <span className="text-sm font-medium">+44 7352 328646</span>
                 </a>
                 <a
-                  href="mailto:hello@oyik.realestate.ai"
+                  href="mailto:hello@oyik.ai"
                   className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
                 >
                   <Mail className="h-4 w-4 text-primary" />
-                  <span className="text-sm font-medium">hello@oyik.realestate.ai</span>
+                  <span className="text-sm font-medium">Hello@oyik.ai</span>
                 </a>
               </div>
             </div>

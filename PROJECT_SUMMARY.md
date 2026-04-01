@@ -1,41 +1,48 @@
-# oyik.realestate.ai - Short Project Summary
+# oyik.realestate.ai - Project Summary
 
-**Last Updated:** 2026-03-31 (Asia/Calcutta)
+**Last Updated:** 2026-04-01 (Asia/Calcutta)
 
-## Current State
+## Snapshot
 
-- Project: Next.js site in `oyik-ai-site`
-- Brand now shown as `Oyik` + `RealEstate.ai`
-- Main header is a centered "dynamic island" navbar with `Home`, `About`, `Service`, `Blog`, and `Call Us`
-- `Blog` is visible but intentionally non-clickable
+- App: Next.js site in `oyik-ai-site`
+- Brand: `Oyik` + `RealEstate.ai`
+- Header: centered dynamic-island navbar with `Home`, `About`, `Service`, `Blog`, and `Call Us`
+- `Blog` stays visible but non-clickable
 - `Call Us` dials `+44 7352 328646`
 
-## Latest Chat Updates
-
-- Reworked `src/components/shared/Navbar.tsx`
-  - switched logo to the newer Oyik logo asset
-  - kept the floating island styling
-  - changed the border effect to a single rounded sparkle trace traveling around the full pill border
-  - refined brand text to `RealEstate.ai`
-- Reworked `src/components/sections/HowItWorks.tsx`
-  - added a stronger 5-second animated energy-transfer flow between steps
-  - made the "processing" / handoff motion much more visible
-- Reworked `src/components/sections/Products.tsx`
-  - product cards use the newer videos from `public/media/videos`
-  - display crop now trims from the bottom only to keep watermark area out of view
-
-## Local Status
+## Homepage Status
 
 - Local preview verified on `http://localhost:3000`
 - `npm run build` passes
-- These newest navbar / video / animation changes are local only and have **not** been pushed or deployed yet
+- Homepage now uses the newer Oyik logo, updated section spacing, and the revised feature stack
 
-## Main Files Touched Recently
+## Latest Approved Changes
+
+- Voice flagship:
+  - right-side desk card lowered slightly for better balance
+  - left-side chips and `Book a live demo` CTA removed so the orchestration card sits higher
+- Chat flagship:
+  - left chatbot mockup re-centered and lifted slightly
+  - mockup width/card sizing adjusted to feel more natural
+  - lower chatbot CTA replaced with a centered animated trigger
+  - chatbot now opens in a centered modal with blurred backdrop instead of inside the mockup
+  - modal supports `NEXT_PUBLIC_N8N_CHAT_URL` for a live n8n chat embed
+- Model stack:
+  - scrolling logo viewport narrowed so horizontal motion reads earlier
+- Footer FAQ strip:
+  - small label replaced by a larger `FAQ` heading with route-aware eyebrow text
+
+## Key Files
 
 - `src/components/shared/Navbar.tsx`
-- `src/components/sections/HowItWorks.tsx`
-- `src/components/sections/Products.tsx`
+- `src/components/sections/features/VoiceShowcase.tsx`
+- `src/components/sections/features/ChatbotShowcase.tsx`
+- `src/components/sections/Logos.tsx`
+- `src/components/shared/PageFaqSection.tsx`
+- `.env.example`
 
-## Next Useful Step
+## Deployment Notes
 
-- Review the latest localhost version visually, then push/deploy only after the header border animation and video crop are approved
+- Production deploy: `https://oyik-ai-site-v2.netlify.app` on 2026-04-01
+- Netlify site is linked locally via `.netlify/state.json`
+- Git remote: `origin` -> `git@github.com:neeshu144035/oyik-ai-site.git`

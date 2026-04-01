@@ -58,7 +58,7 @@ export default function ThankYou() {
             <Link href="https://wa.me/447352328646" target="_blank" className="flex h-12 w-12 items-center justify-center rounded-full bg-green-500/20 text-green-400 hover:bg-green-500/30 transition-colors">
               <MessageSquare className="h-5 w-5" />
             </Link>
-            <Link href="mailto:hello@oyik.realestate.ai" className="flex h-12 w-12 items-center justify-center rounded-full bg-blue-500/20 text-blue-400 hover:bg-blue-500/30 transition-colors">
+            <Link href="mailto:hello@oyik.ai" className="flex h-12 w-12 items-center justify-center rounded-full bg-blue-500/20 text-blue-400 hover:bg-blue-500/30 transition-colors">
               <Mail className="h-5 w-5" />
             </Link>
             <Link href="tel:+447352328646" className="flex h-12 w-12 items-center justify-center rounded-full bg-purple-500/20 text-purple-400 hover:bg-purple-500/30 transition-colors">
