@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Roboto, Urbanist } from "next/font/google";
 import AppShell from "@/components/shared/AppShell";
+import "@n8n/chat/dist/style.css";
 import "./globals.css";
 
 const fontSans = Roboto({

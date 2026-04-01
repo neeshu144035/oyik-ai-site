@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { Mail, MapPin, Phone } from "lucide-react";
 
 const serviceLinks = [
@@ -36,8 +37,14 @@ export default function Footer() {
         <div className="mb-16 grid grid-cols-1 gap-12 md:grid-cols-2 xl:grid-cols-[1.2fr_0.8fr_0.8fr_0.8fr_1.15fr] xl:gap-8">
           <div className="flex flex-col gap-6">
             <Link href="/" className="group flex items-center gap-3">
-              <div className="flex h-10 w-10 items-center justify-center rounded-2xl border border-primary/20 bg-primary/10 shadow-[0_18px_35px_-18px_rgba(67,56,202,0.55)]">
-                <div className="h-2.5 w-2.5 rounded-full bg-primary" />
+              <div className="flex h-11 w-11 items-center justify-center overflow-hidden rounded-2xl border border-primary/20 bg-white shadow-[0_18px_35px_-18px_rgba(67,56,202,0.55)]">
+                <Image
+                  src="/oyik-logo-indigo-tech.png"
+                  alt="Oyik logo"
+                  width={44}
+                  height={44}
+                  className="h-full w-full object-cover"
+                />
               </div>
               <div className="flex flex-col leading-none">
                 <span className="brand-signature text-[1.75rem] transition-colors group-hover:text-primary">
@@ -145,7 +152,20 @@ export default function Footer() {
         </div>
 
         <div className="flex flex-col items-center justify-between gap-4 border-t border-border pt-8 md:flex-row">
-          <p className="text-sm text-muted-foreground">(c) {new Date().getFullYear()} oyik.realestate.ai. All Rights Reserved.</p>
+          <div className="flex items-center gap-3">
+            <div className="flex h-10 w-10 items-center justify-center overflow-hidden rounded-2xl border border-primary/20 bg-white shadow-[0_16px_30px_-20px_rgba(67,56,202,0.45)]">
+              <Image
+                src="/oyik-logo-indigo-tech.png"
+                alt="Oyik logo"
+                width={40}
+                height={40}
+                className="h-full w-full object-cover"
+              />
+            </div>
+            <p className="text-sm text-muted-foreground">
+              (c) {new Date().getFullYear()} oyik.realestate.ai. All Rights Reserved.
+            </p>
+          </div>
           <p className="flex items-center gap-1 text-sm text-muted-foreground">
             Built with <span className="font-medium text-primary">AI</span>. Powered by <span className="font-medium text-primary">Intelligence</span>.
           </p>

@@ -6,43 +6,47 @@
 
 - App: Next.js site in `oyik-ai-site`
 - Brand: `Oyik` + `RealEstate.ai`
-- Header: centered dynamic-island navbar with `Home`, `About`, `Service`, `Blog`, and `Call Us`
-- `Blog` stays visible but non-clickable
-- `Call Us` dials `+44 7352 328646`
+- Local status: `npm run build` passes
+- Primary deploy target: Netlify
+- Git remote: `origin` -> `git@github.com:neeshu144035/oyik-ai-site.git`
 
-## Homepage Status
+## Current Homepage State
 
-- Local preview verified on `http://localhost:3000`
-- `npm run build` passes
-- Homepage now uses the newer Oyik logo, updated section spacing, and the revised feature stack
+- Premium hero, product stack, ecosystem logos, voice showcase, chatbot showcase, testimonials, CTA, and contact form are live.
+- The site is mobile responsive and the thank-you page stays chromeless.
+- Footer now includes the Oyik logo again in both the main brand block and bottom bar.
 
-## Latest Approved Changes
+## Chatbot Status
 
-- Voice flagship:
-  - right-side desk card lowered slightly for better balance
-  - left-side chips and `Book a live demo` CTA removed so the orchestration card sits higher
-- Chat flagship:
-  - left chatbot mockup re-centered and lifted slightly
-  - mockup width/card sizing adjusted to feel more natural
-  - lower chatbot CTA replaced with a centered animated trigger
-  - chatbot now opens in a centered modal with blurred backdrop instead of inside the mockup
-  - modal supports `NEXT_PUBLIC_N8N_CHAT_URL` for a live n8n chat embed
-- Model stack:
-  - scrolling logo viewport narrowed so horizontal motion reads earlier
-- Footer FAQ strip:
-  - small label replaced by a larger `FAQ` heading with route-aware eyebrow text
+- `@n8n/chat` is installed and wired in.
+- Live chat uses `NEXT_PUBLIC_N8N_CHAT_URL`.
+- Homepage chatbot preview is customer-facing, not builder-facing.
+- Preview flow now starts with a user asking for a Leicester property, then the AI shows matching options, then booking continues in-chat.
+- The live modal was reduced into a centered, compact real-chat layout with only the Oyik chat header and live conversation area.
+- Live chat header and theme are styled to match the premium Oyik brand.
+
+## Motion and Smoothness
+
+- Smooth scrolling is handled through `ReactLenis`.
+- Global route transitions were softened for a more premium feel.
+- Navbar heavy border tracing was removed in favor of a lighter glow treatment.
+- Background scrolling and chat sizing were tuned to feel smoother and less sticky.
 
 ## Key Files
 
-- `src/components/shared/Navbar.tsx`
-- `src/components/sections/features/VoiceShowcase.tsx`
 - `src/components/sections/features/ChatbotShowcase.tsx`
-- `src/components/sections/Logos.tsx`
-- `src/components/shared/PageFaqSection.tsx`
-- `.env.example`
+- `src/components/shared/SmoothScroll.tsx`
+- `src/components/shared/AppShell.tsx`
+- `src/components/shared/Navbar.tsx`
+- `src/components/shared/Footer.tsx`
+- `src/app/globals.css`
+- `src/app/layout.tsx`
+
+## Local Docs
+
+- `docs/chatbot-demo-ux-sop.md` contains the repeatable local process for maintaining the chatbot demo and smooth-scroll setup.
 
 ## Deployment Notes
 
-- Production deploy: `https://oyik-ai-site-v2.netlify.app` on 2026-04-01
 - Netlify site is linked locally via `.netlify/state.json`
-- Git remote: `origin` -> `git@github.com:neeshu144035/oyik-ai-site.git`
+- Production site used in this workspace: `oyik-ai-site-v2`

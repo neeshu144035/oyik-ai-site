@@ -37,9 +37,9 @@ export default function AppShell({ children }: AppShellProps) {
 
       <motion.main
         key={pathname}
-        initial={reduceMotion ? { opacity: 1 } : { opacity: 0, y: 18, filter: "blur(10px)" }}
-        animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-        transition={{ duration: reduceMotion ? 0 : 0.42, ease: [0.22, 1, 0.36, 1] }}
+        initial={reduceMotion ? { opacity: 1 } : { opacity: 0, y: 12, scale: 0.995 }}
+        animate={{ opacity: 1, y: 0, scale: 1 }}
+        transition={{ duration: reduceMotion ? 0 : 0.34, ease: [0.22, 1, 0.36, 1] }}
         className="flex-grow"
       >
         {children}

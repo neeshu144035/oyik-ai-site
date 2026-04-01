@@ -30,7 +30,7 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 28);
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -38,81 +38,10 @@ export default function Navbar() {
     <header className="pointer-events-none fixed inset-x-0 top-4 z-50 flex justify-center px-3 sm:top-6 sm:px-4 lg:top-10">
       <div className="pointer-events-auto relative flex w-full max-w-[min(100%,28rem)] flex-col items-center lg:w-auto lg:max-w-[calc(100vw-2.5rem)]">
         {!reduceMotion && (
-          <>
-            <div aria-hidden="true" className="pointer-events-none absolute -inset-[5px] hidden rounded-full lg:block">
-              <svg
-                className="h-full w-full overflow-visible"
-                viewBox="0 0 1000 120"
-                preserveAspectRatio="none"
-                fill="none"
-              >
-                <defs>
-                  <linearGradient id="nav-border-trace" x1="0" y1="60" x2="1000" y2="60" gradientUnits="userSpaceOnUse">
-                    <stop stopColor="rgba(90,84,235,0)" />
-                    <stop offset="0.25" stopColor="rgba(150,160,255,0.92)" />
-                    <stop offset="0.5" stopColor="rgba(255,255,255,1)" />
-                    <stop offset="0.76" stopColor="rgba(90,84,235,0.96)" />
-                    <stop offset="1" stopColor="rgba(90,84,235,0)" />
-                  </linearGradient>
-                  <linearGradient id="nav-border-spark" x1="0" y1="60" x2="1000" y2="60" gradientUnits="userSpaceOnUse">
-                    <stop stopColor="rgba(255,255,255,0)" />
-                    <stop offset="0.45" stopColor="rgba(255,255,255,0.98)" />
-                    <stop offset="0.7" stopColor="rgba(176,183,255,0.96)" />
-                    <stop offset="1" stopColor="rgba(255,255,255,0)" />
-                  </linearGradient>
-                  <filter id="nav-border-glow" x="-30%" y="-120%" width="160%" height="340%">
-                    <feGaussianBlur stdDeviation="4.5" result="blur" />
-                    <feMerge>
-                      <feMergeNode in="blur" />
-                      <feMergeNode in="SourceGraphic" />
-                    </feMerge>
-                  </filter>
-                </defs>
-
-                <rect
-                  x="3"
-                  y="3"
-                  width="994"
-                  height="114"
-                  rx="57"
-                  stroke="rgba(255,255,255,0.12)"
-                  strokeWidth="1"
-                />
-
-                <motion.rect
-                  x="3"
-                  y="3"
-                  width="994"
-                  height="114"
-                  rx="57"
-                  stroke="url(#nav-border-trace)"
-                  strokeWidth="2.4"
-                  strokeLinecap="round"
-                  strokeDasharray="220 2157"
-                  strokeDashoffset="0"
-                  filter="url(#nav-border-glow)"
-                  animate={{ strokeDashoffset: [0, -2377] }}
-                  transition={{ duration: 2.3, ease: "linear", repeat: Infinity }}
-                />
-
-                <motion.rect
-                  x="3"
-                  y="3"
-                  width="994"
-                  height="114"
-                  rx="57"
-                  stroke="url(#nav-border-spark)"
-                  strokeWidth="1.4"
-                  strokeLinecap="round"
-                  strokeDasharray="52 2325"
-                  strokeDashoffset="-120"
-                  filter="url(#nav-border-glow)"
-                  animate={{ strokeDashoffset: [-120, -2497] }}
-                  transition={{ duration: 2.3, ease: "linear", repeat: Infinity }}
-                />
-              </svg>
-            </div>
-          </>
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute -inset-[4px] hidden rounded-full bg-[radial-gradient(circle_at_center,rgba(129,140,248,0.18),transparent_62%)] opacity-80 blur-xl lg:block"
+          />
         )}
 
         <motion.div
