@@ -10,14 +10,14 @@ const steps = [
     step: "Step 1",
     title: "Connect",
     description:
-      "We connect your listings, calendar, website, social channels, phone, and inboxes into one coordinated operating layer.",
+      "We connect your website, social media messaging channels, phone line, calendar, and CRM into one platform. This allows our real estate artificial intelligence to receive enquiries from every communication source and manage them in a single place without changing your current workflow.",
     icon: Plug,
   },
   {
     step: "Step 2",
     title: "Train",
     description:
-      "We shape the tone, qualification logic, escalation rules, reminders, and handoff flows around how your real estate business already works.",
+      "We shape the tone, qualification logic, escalation rules, reminders, and handoff flows around how your agency already operates, ensuring your AI for real estate fits seamlessly into your existing workflows.",
     icon: Settings,
   },
   {

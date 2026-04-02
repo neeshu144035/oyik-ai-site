@@ -71,7 +71,8 @@ export default function OperationsShowcase() {
             </h2>
             <p className="mx-auto mt-6 max-w-3xl text-lg leading-relaxed text-blue-100/85 sm:text-xl">
               Cover enquiries, phone calls, email follow-up, reminders, and listing
-              content with one unified AI setup built for property teams.
+              content with one unified AI for real estate setup built specifically
+              for property teams.
             </p>
           </motion.div>
         </div>

@@ -62,7 +62,8 @@ export default function Testimonials() {
             Built for busy teams.
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-            Operators, letting managers, and founders use Oyik to make response speed feel premium again.
+            Operators, letting managers, and founders use Oyik&apos;s Artificial Intelligence for real estate to
+            make response speed feel premium again.
           </p>
         </div>
       </div>
@@ -81,7 +82,7 @@ export default function Testimonials() {
                 <Quote className="h-10 w-10 text-primary/20" />
               </div>
 
-              <p className="text-base font-medium leading-relaxed text-foreground">&ldquo;{item.quote}&rdquo;</p>
+              <p className="text-base font-medium italic leading-relaxed text-foreground">&ldquo;{item.quote}&rdquo;</p>
 
               <div className="mt-8 border-t border-border/70 pt-5">
                 <p className="font-display text-lg font-semibold text-foreground">{item.name}</p>
@@ -110,7 +111,7 @@ export default function Testimonials() {
                 <Quote className="h-10 w-10 text-primary/20 transition-transform duration-300 group-hover:-translate-y-1" />
               </div>
 
-              <p className="text-lg font-medium leading-relaxed text-foreground">&ldquo;{item.quote}&rdquo;</p>
+              <p className="text-lg font-medium italic leading-relaxed text-foreground">&ldquo;{item.quote}&rdquo;</p>
 
               <div className="mt-8 border-t border-border/70 pt-5">
                 <p className="font-display text-xl font-semibold text-foreground">{item.name}</p>

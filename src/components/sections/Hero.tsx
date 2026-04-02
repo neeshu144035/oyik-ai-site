@@ -38,25 +38,27 @@ export default function Hero() {
       {/* ─── Layer 3 (TOP): Hero text content, centered above the video ─── */}
       <div className="relative z-20 flex min-h-[100svh] flex-col items-center justify-center px-4 pb-16 pt-28 sm:px-6 sm:pb-20 sm:pt-32 lg:px-8">
         <div className="mx-auto max-w-[1120px] text-center">
+          <h1 className="sr-only">AI for Real Estate UK | Smart AI Solutions for Estate Agents</h1>
 
           {/* Badge */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-            className="mb-7 inline-flex max-w-full items-center gap-3 rounded-full border border-white/20 bg-white/10 px-4 py-2 backdrop-blur-md sm:mb-8 sm:px-5 sm:py-2.5"
+            className="mb-7 inline-flex max-w-[min(100%,56rem)] flex-wrap items-center justify-center gap-3 rounded-full border border-white/20 bg-white/10 px-4 py-2.5 text-center backdrop-blur-md sm:mb-8 sm:px-5 sm:py-3"
           >
             <Sparkles className="h-4 w-4 text-indigo-300" />
-            <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-indigo-200 sm:text-[11px] sm:tracking-[0.28em]">
-              Luxury AI operating layer for real estate
+            <span className="text-[9px] font-semibold uppercase tracking-[0.12em] text-indigo-200 sm:text-[11px] sm:tracking-[0.2em]">
+              AI for Real Estate UK | Smart AI Solutions for Estate Agents
             </span>
           </motion.div>
 
           {/* Hero Headline */}
-          <motion.h1
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.75, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+            aria-hidden="true"
             className="mx-auto max-w-5xl text-[2.5rem] font-display font-medium leading-[0.92] tracking-[-0.045em] text-white sm:text-[4.3rem] lg:text-[7rem]"
           >
             AI employees for{" "}
@@ -78,17 +80,27 @@ export default function Hero() {
               </AnimatePresence>
               <span className="invisible">{rotatingWords[rotatingWords.length - 1]}</span>
             </span>
-          </motion.h1>
+          </motion.div>
 
           {/* Subtitle */}
-          <motion.p
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.65, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-            className="mx-auto mt-7 max-w-[56rem] text-[0.98rem] leading-relaxed text-white/72 sm:mt-8 sm:text-[1.12rem] lg:text-[1.18rem]"
+            className="mx-auto mt-7 max-w-[64rem] sm:mt-8"
           >
-            oyik.realestate.ai helps real estate agencies, brokerages, property managers, and letting businesses automate website chat, voice calls, lead qualification, live property matching, viewing bookings, reminders, maintenance intake, CRM updates, and AI marketing with a faster and more premium client experience.
-          </motion.p>
+            <p className="text-[0.98rem] leading-relaxed text-white/72 sm:text-[1.12rem] lg:text-[1.18rem]">
+              oyik.realestate.ai helps real estate agencies, brokerages, property managers, and
+              letting businesses automate website chat, voice calls, lead qualification, live
+              property matching, viewing bookings, reminders, maintenance intake, CRM updates,
+              and AI marketing with a faster and more premium client experience.
+            </p>
+            <p className="mx-auto mt-4 max-w-[58rem] text-[0.98rem] leading-relaxed text-white/72 sm:text-[1.12rem] lg:text-[1.18rem]">
+              Upgrade your agency with artificial intelligence for real estate that combines
+              chatbots, voice assistants, reminder automation, email workflows, marketing systems,
+              and maintenance intake into one intelligent operating layer.
+            </p>
+          </motion.div>
 
           {/* CTAs */}
           <motion.div

@@ -15,8 +15,8 @@ type LinkItem = {
 
 const links: LinkItem[] = [
   { href: "/", label: "Home" },
-  { href: "/about", label: "About" },
-  { href: "/services", label: "Service" },
+  { href: "/about", label: "About Us" },
+  { href: "/services", label: "Services" },
   { href: "#", label: "Blog", disabled: true },
 ];
 

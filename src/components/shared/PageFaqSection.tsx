@@ -18,8 +18,8 @@ type FaqContent = {
 
 const faqByRoute: Record<string, FaqContent> = {
   "/": {
-    eyebrow: "Homepage FAQ",
-    title: "Questions visitors usually have after seeing the full oyik offering.",
+    eyebrow: "",
+    title: "Everything visitors typically want to know about implementing AI for real estate",
     items: [
       {
         question: "Can I start with one AI service first?",
@@ -170,16 +170,28 @@ const faqByRoute: Record<string, FaqContent> = {
     title: "Answers tied to the voice-agent experience on this page.",
     items: [
       {
-        question: "Are the voice players on this page connected to a backend?",
-        answer: "No. The samples are front-end demos that let visitors hear the tone and flow without wiring a full telephony backend.",
+        question: "Can the AI voice assistant respond to multiple calls at once?",
+        answer: "Yes. Unlike human staff, an AI voice agent can handle multiple simultaneous conversations without delays.",
       },
       {
-        question: "What kinds of calls can the voice model handle?",
-        answer: "The voice positioning covers sales, lettings, viewing coordination, landlord updates, and maintenance triage.",
+        question: "Is the AI voice assistant customisable for our agency scripts?",
+        answer: "Yes. AI voice agents can be trained using your agency tone, qualification logic, escalation rules, and viewing workflows.",
       },
       {
-        question: "Can calls trigger booking and CRM actions?",
-        answer: "That is part of the intended system story, with calendar checks, confirmations, reminders, and logged handoff after qualification.",
+        question: "How is an AI voice assistant different from a regular phone system?",
+        answer: "An AI voice assistant for estate agents sounds natural and conversational, not like a basic phone menu. It can answer property questions, qualify callers, check availability, and book viewings automatically.",
+      },
+      {
+        question: "Does the AI voice assistant work during business hours only?",
+        answer: "No - this is one of the main advantages. Your AI call agent works 24/7, which is critical because most property enquiries happen outside traditional office hours.",
+      },
+      {
+        question: "Does the AI voice agent log call activity automatically?",
+        answer: "Yes. Call summaries, qualification answers, and booking details can be recorded inside your CRM automatically.",
+      },
+      {
+        question: "Can the AI voice assistant send follow-up messages after calls?",
+        answer: "Yes. It can trigger SMS confirmations, reminders, or viewing details automatically after the conversation.",
       },
     ],
   },
@@ -188,16 +200,24 @@ const faqByRoute: Record<string, FaqContent> = {
     title: "Questions that match the website-chatbot service page.",
     items: [
       {
-        question: "Can the chatbot show actual property options?",
-        answer: "Yes. The product direction is to surface live-style listing cards, pricing, and next-step actions inside the chat experience.",
+        question: "Can the chatbot answer questions about specific listings?",
+        answer: "Yes. A conversational AI chatbot can provide property details such as price, availability, features, location information, and viewing options instantly.",
       },
       {
-        question: "Does the chatbot only answer FAQs?",
-        answer: "No. It is positioned as a lead qualification and booking layer, not just a static support widget.",
+        question: "Will conversations feel robotic to customers?",
+        answer: "Modern conversational AI chatbots are designed to sound natural and helpful, creating a smooth experience that feels similar to speaking with a team member.",
       },
       {
-        question: "Can the chat hand over to staff when intent is high?",
-        answer: "Yes. Clean handoff with context is one of the strongest parts of the overall experience.",
+        question: "Is setup complicated for estate agencies?",
+        answer: "No. Most AI chatbot implementations are configured around your existing workflow, listings, and qualification process.",
+      },
+      {
+        question: "Will an AI chatbot replace my negotiators?",
+        answer: "No. A conversational AI chatbot supports your negotiators by handling repetitive questions, capturing enquiry details, and scheduling appointments so your team can focus on closing deals.",
+      },
+      {
+        question: "What kind of information does the AI chatbot collect from prospects?",
+        answer: "Our property AI chatbot collects essential information through conversational automation, including buyer budget, preferred locations, property type, timeline, and availability for viewings.",
       },
     ],
   },
@@ -206,16 +226,24 @@ const faqByRoute: Record<string, FaqContent> = {
     title: "Short answers for reminder automation prospects.",
     items: [
       {
-        question: "What reminders can this cover?",
-        answer: "The positioning includes viewings, rent, deposit, and follow-up reminders across the channels your team chooses to use.",
+        question: "What does an AI reminder assistant do for estate agents?",
+        answer: "An AI reminder assistant automatically sends reminders for property viewings, rent payments, document submissions, and appointments so your team doesn't have to follow up manually.",
       },
       {
-        question: "Will reminders feel robotic?",
-        answer: "They should not. The brand tone should stay polished and consistent with the rest of the premium client journey.",
+        question: "Can reminders be customised for different stages of the property journey?",
+        answer: "Yes. Messages can be tailored for viewings, rent due dates, onboarding steps, and document completion requests.",
       },
       {
-        question: "Can reminders reduce no-shows?",
-        answer: "That is exactly the value story: fewer missed appointments and less manual chasing.",
+        question: "Can the AI reminder assistant follow up with inactive leads?",
+        answer: "Yes. If a prospect stops responding, the system can send automated follow-up reminders to re-engage them.",
+      },
+      {
+        question: "Can an AI reminder assistant confirm viewing attendance automatically?",
+        answer: "Yes. The AI reminder assistant can ask buyers or tenants to confirm attendance and notify your team if someone cancels or needs to reschedule.",
+      },
+      {
+        question: "Can reminders be personalised for each client?",
+        answer: "Yes. Messages can include property details, appointment times, addresses, and next-step instructions tailored to each enquiry.",
       },
     ],
   },
@@ -224,16 +252,28 @@ const faqByRoute: Record<string, FaqContent> = {
     title: "Contextual answers for the email automation page.",
     items: [
       {
-        question: "Does email automation replace the team?",
-        answer: "No. It is meant to accelerate replies, drafts, and follow-up so staff spend less time on repetitive inbox work.",
+        question: "Will email automation reduce inbox workload?",
+        answer: "Yes. Real estate email automation handles repetitive replies automatically, helping your team focus on valuations, negotiations, and closing deals.",
       },
       {
-        question: "What kinds of messages can be handled?",
-        answer: "Enquiries, booking details, document requests, and routine follow-ups are all part of the fit.",
+        question: "Can AI email automation respond to Rightmove or portal enquiries automatically?",
+        answer: "Yes. AI email automation for estate agents can detect portal enquiries and send instant replies with property details, viewing links, and next-step instructions.",
       },
       {
-        question: "Can email stay aligned with property context?",
-        answer: "Yes. The strongest use case is when the email flow inherits the same lead and booking context collected elsewhere.",
+        question: "Will AI email automation organise shared team inboxes?",
+        answer: "Yes. It routes enquiries to the correct department and keeps communication structured across sales and lettings teams.",
+      },
+      {
+        question: "Can automated emails send property brochures automatically?",
+        answer: "Yes. The system can attach brochures, floor plans, or listing links based on the enquiry type.",
+      },
+      {
+        question: "Does AI email automation improve response consistency across teams?",
+        answer: "Yes. Every client receives accurate, professional replies aligned with your agency's communication standards.",
+      },
+      {
+        question: "Can email automation notify negotiators when a hot lead replies?",
+        answer: "Yes. Priority responses can trigger alerts so negotiators can act quickly on serious prospects.",
       },
     ],
   },
@@ -242,16 +282,28 @@ const faqByRoute: Record<string, FaqContent> = {
     title: "Questions tied to the maintenance intake workflow.",
     items: [
       {
-        question: "Can maintenance requests be triaged automatically?",
-        answer: "Yes. The product story is about capturing issue details, checking urgency, and routing the case into the right workflow fast.",
+        question: "What is maintenance intake automation for estate agents?",
+        answer: "Maintenance intake automation captures tenant repair requests in a structured format and routes them to the right team automatically, reducing manual follow-ups and delays.",
       },
       {
-        question: "Does it help reduce back-and-forth?",
-        answer: "That is one of the main reasons to use it, especially when teams lose time chasing missing details.",
+        question: "Does maintenance intake automation prioritise urgent repairs automatically?",
+        answer: "Yes. Emergency issues such as leaks, heating failures, or safety risks are flagged and escalated instantly to the maintenance team.",
       },
       {
-        question: "Can urgent issues be escalated?",
-        answer: "Yes. The system should distinguish urgency so teams can act quickly when a request needs immediate attention.",
+        question: "Will the system collect all required repair information from tenants?",
+        answer: "Yes. It gathers contact details, property information, issue descriptions, urgency level, and access availability automatically.",
+      },
+      {
+        question: "Can agencies track maintenance history for each property?",
+        answer: "Yes. Each request is recorded with timestamps and updates, creating a clear maintenance activity timeline.",
+      },
+      {
+        question: "Does maintenance intake automation help coordinate contractors faster?",
+        answer: "Yes. Complete issue summaries allow contractors to prepare before attending the property, reducing delays.",
+      },
+      {
+        question: "Will contractors receive structured repair summaries before attending?",
+        answer: "Yes. Contractors can receive clear issue descriptions, tenant access details, and supporting images before visiting the property.",
       },
     ],
   },
@@ -260,16 +312,62 @@ const faqByRoute: Record<string, FaqContent> = {
     title: "Questions prospects usually have around content creation and listing media.",
     items: [
       {
-        question: "What kind of content can AI marketing create?",
-        answer: "The page positioning supports listing explainers, avatar-led videos, and social-ready property content.",
+        question: "Can AI marketing automation post content to social media automatically?",
+        answer: "Yes. The system can schedule and publish posts across platforms so your agency stays active without manual effort.",
       },
       {
-        question: "Is this meant for one-off campaigns only?",
-        answer: "No. The bigger value is consistent property marketing output without relying on a heavy production cycle every time.",
+        question: "Does AI marketing automation improve brand consistency?",
+        answer: "Yes. Every listing video and post follows a structured format aligned with your agency's branding and messaging.",
       },
       {
-        question: "Can this support premium-looking property brands?",
-        answer: "Yes. The visual and messaging direction should stay polished and brand-safe rather than feeling mass-produced.",
+        question: "Can AI marketing automation help attract landlords?",
+        answer: "Yes. It can generate landlord education videos, service explainers, and valuation-focused content to support instruction growth.",
+      },
+      {
+        question: "Will AI marketing automation help my agency stay visible between instructions?",
+        answer: "Yes. It keeps your agency active online with regular branded content even when you don't have new listings to promote.",
+      },
+      {
+        question: "Can the system create seasonal property campaigns for the UK market?",
+        answer: "Yes. Campaigns can highlight spring listings, summer moves, student lettings periods, or end-of-year landlord updates.",
+      },
+      {
+        question: "Will AI-generated property videos match UK estate agency branding?",
+        answer: "Yes. Videos can be customised with your logo, colours, messaging style, and branch contact details.",
+      },
+    ],
+  },
+  "/services/workflow-automation": {
+    eyebrow: "Workflow Automation FAQ",
+    title: "Questions tied to the workflow automation system.",
+    items: [
+      {
+        question: "How does workflow automation help estate agencies save time?",
+        answer: "It removes repetitive admin tasks like manual lead entry, appointment confirmations, reminders, and follow-ups so negotiators can focus on closing deals.",
+      },
+      {
+        question: "Will AI workflow automation reduce missed opportunities?",
+        answer: "Yes. Every enquiry is tracked and progressed through structured steps, reducing the risk of leads being overlooked.",
+      },
+      {
+        question: "Can workflow automation help with offer progression tracking?",
+        answer: "Yes. It monitors deal stages and alerts negotiators when activity slows or follow-ups are needed.",
+      },
+      {
+        question: "Can automated workflow solutions help track negotiator performance?",
+        answer: "Yes. Automated workflow solutions provide visibility into response times, lead handling activity, and pipeline movement.",
+      },
+      {
+        question: "What is included in an AI workflow automation system for estate agents?",
+        answer: "An AI workflow automation system for estate agents connects enquiries, CRM updates, viewing bookings, reminders, and follow-ups into one structured process that runs automatically in the background.",
+      },
+      {
+        question: "Will AI workflow automation support seller lead nurturing before instruction?",
+        answer: "Yes. Real estate workflow automation can send valuation reminders, follow-up emails, and seller education content automatically.",
+      },
+      {
+        question: "Can AI workflow automation improve pipeline visibility for managers?",
+        answer: "Yes. Managers can track enquiry progress, viewing activity, and deal movement across the entire sales and lettings pipeline.",
       },
     ],
   },
@@ -386,9 +484,11 @@ export default function PageFaqSection() {
       <div className="container relative mx-auto px-6 lg:px-10">
         <div className="mx-auto max-w-4xl">
           <div className="mb-10 text-center">
-            <p className="text-sm font-semibold uppercase tracking-[0.32em] text-indigo-600">
-              {content.eyebrow}
-            </p>
+            {content.eyebrow ? (
+              <p className="text-sm font-semibold uppercase tracking-[0.32em] text-indigo-600">
+                {content.eyebrow}
+              </p>
+            ) : null}
             <h2 className="mt-4 text-4xl font-display font-medium tracking-[-0.04em] text-slate-950 sm:text-5xl">
               FAQ
             </h2>

@@ -155,9 +155,11 @@ export default function Products() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-slate-500 sm:mt-6 sm:text-lg"
+          className="mx-auto mt-5 max-w-4xl text-base leading-relaxed text-slate-500 sm:mt-6 sm:text-lg"
         >
-          Six AI-powered services designed to feel high-end for your brand and simple for your team.
+          Built for modern agencies, our AI for real estate delivers connected automation
+          across chat, calls, email, and operations, creating a high-end client experience
+          with less manual effort from your team.
         </motion.p>
       </div>
 

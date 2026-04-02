@@ -2,7 +2,7 @@
 
 import { motion, useReducedMotion, useScroll } from "framer-motion";
 import { usePathname } from "next/navigation";
-import type { ReactNode } from "react";
+import { useEffect, type ReactNode } from "react";
 import Footer from "@/components/shared/Footer";
 import Navbar from "@/components/shared/Navbar";
 import PageFaqSection from "@/components/shared/PageFaqSection";
@@ -19,6 +19,19 @@ export default function AppShell({ children }: AppShellProps) {
   const reduceMotion = useReducedMotion();
   const { scrollYProgress } = useScroll();
   const showSiteChrome = !CHROMELESS_PATHS.has(pathname);
+
+  useEffect(() => {
+    const resetScroll = () => {
+      window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+    };
+
+    resetScroll();
+    const frame = window.requestAnimationFrame(resetScroll);
+
+    return () => window.cancelAnimationFrame(frame);
+  }, [pathname]);
 
   const pageContent = (
     <>

@@ -1,52 +1,55 @@
 # oyik.realestate.ai - Project Summary
 
-**Last Updated:** 2026-04-01 (Asia/Calcutta)
+**Last Updated:** 2026-04-03 (Asia/Calcutta)
 
-## Snapshot
+## Project Snapshot
 
-- App: Next.js site in `oyik-ai-site`
-- Brand: `Oyik` + `RealEstate.ai`
-- Local status: `npm run build` passes
-- Primary deploy target: Netlify
-- Git remote: `origin` -> `git@github.com:neeshu144035/oyik-ai-site.git`
+- App: Next.js static-export site in `oyik-ai-site`
+- Brand: `Oyik RealEstate.ai`
+- Local build: `npm run build`
+- Deploy target: Netlify
+- Current git remote: `git@github.com:neeshu144035/oyik-ai-site.git`
 
-## Current Homepage State
+## Current State
 
-- Premium hero, product stack, ecosystem logos, voice showcase, chatbot showcase, testimonials, CTA, and contact form are live.
-- The site is mobile responsive and the thank-you page stays chromeless.
-- Footer now includes the Oyik logo again in both the main brand block and bottom bar.
+- Homepage refined with premium layout updates, tighter flagship chatbot showcase, and `Services` label in navbar
+- Route navigation now scrolls to the top on page change
+- About page, services index, and all service detail pages have been redesigned with updated SEO content
+- Shared FAQ content at the bottom of service pages has been fully replaced with the latest approved copy
 
-## Chatbot Status
+## Service Pages Completed
 
-- `@n8n/chat` is installed and wired in.
-- Live chat uses `NEXT_PUBLIC_N8N_CHAT_URL`.
-- Homepage chatbot preview is customer-facing, not builder-facing.
-- Preview flow now starts with a user asking for a Leicester property, then the AI shows matching options, then booking continues in-chat.
-- The live modal was reduced into a centered, compact real-chat layout with only the Oyik chat header and live conversation area.
-- Live chat header and theme are styled to match the premium Oyik brand.
+- `/services/chat`
+- `/services/voice`
+- `/services/reminders`
+- `/services/email`
+- `/services/maintenance`
+- `/services/ai-marketing`
+- `/services/workflow-automation`
 
-## Motion and Smoothness
+## Important Implementation Notes
 
-- Smooth scrolling is handled through `ReactLenis`.
-- Global route transitions were softened for a more premium feel.
-- Navbar heavy border tracing was removed in favor of a lighter glow treatment.
-- Background scrolling and chat sizing were tuned to feel smoother and less sticky.
+- Premium design direction matters on every content section; avoid plain empty cards or large dead space
+- For SEO-led service pages, keep user-provided H1/H2/body copy structure exact unless explicitly asked to change wording
+- Green inline text in provided references means hyperlink text; target route is usually written in brackets in the brief
+- Shared service FAQs are controlled in `src/components/shared/PageFaqSection.tsx`
 
 ## Key Files
 
-- `src/components/sections/features/ChatbotShowcase.tsx`
-- `src/components/shared/SmoothScroll.tsx`
 - `src/components/shared/AppShell.tsx`
 - `src/components/shared/Navbar.tsx`
-- `src/components/shared/Footer.tsx`
-- `src/app/globals.css`
-- `src/app/layout.tsx`
+- `src/components/shared/PageFaqSection.tsx`
+- `src/components/sections/features/ChatbotShowcase.tsx`
+- `src/app/services/`
+- `src/app/about/`
 
-## Local Docs
+## Preview / Deploy Notes
 
-- `docs/chatbot-demo-ux-sop.md` contains the repeatable local process for maintaining the chatbot demo and smooth-scroll setup.
+- Static export is configured through `netlify.toml`
+- Netlify build command: `npm run build`
+- Netlify publish directory: `out`
+- Repo is already linked to Netlify site ID: `76cdcaff-711b-4a34-8480-c01044ca5a11`
 
-## Deployment Notes
+## Working Rule
 
-- Netlify site is linked locally via `.netlify/state.json`
-- Production site used in this workspace: `oyik-ai-site-v2`
+- Do not revert unrelated work in the repo; this project often has an intentionally dirty worktree during content/design iterations

@@ -81,22 +81,17 @@ function PropertyCard({
   slot: string;
 }) {
   return (
-    <article className="overflow-hidden rounded-[1.5rem] border border-white/10 bg-white/7 shadow-[0_18px_40px_-34px_rgba(15,23,42,0.55)]">
-      <div className="relative h-36 overflow-hidden">
-        <Image src={image} alt={title} fill className="object-cover" sizes="(max-width: 1023px) 100vw, 320px" />
+    <article className="overflow-hidden rounded-[1.35rem] border border-white/10 bg-white/7 shadow-[0_18px_40px_-34px_rgba(15,23,42,0.55)]">
+      <div className="relative h-24 overflow-hidden">
+        <Image src={image} alt={title} fill className="object-cover" sizes="(max-width: 1023px) 100vw, 260px" />
         <div className="absolute inset-0 bg-gradient-to-t from-slate-950/45 via-transparent to-transparent" />
       </div>
-      <div className="space-y-2.5 p-4">
+      <div className="space-y-2 p-3.5">
         <div>
-          <p className="text-[1.05rem] font-semibold text-white">{title}</p>
+          <p className="text-[0.98rem] font-semibold text-white">{title}</p>
           <p className="mt-1 text-[11px] uppercase tracking-[0.24em] text-white/55">{location}</p>
         </div>
-        <div className="flex items-center justify-between gap-3">
-          <p className="text-[1.05rem] text-white/90">{price}</p>
-          <div className="rounded-full border border-white/10 bg-white/7 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-white/70">
-            {slot}
-          </div>
-        </div>
+        <p className="text-[0.96rem] text-white/90">{price}</p>
       </div>
     </article>
   );
@@ -222,7 +217,7 @@ export default function ChatbotShowcase() {
       <div className="absolute inset-0 opacity-[0.22] [background-image:linear-gradient(rgba(63,55,184,0.06)_1px,transparent_1px),linear-gradient(90deg,rgba(63,55,184,0.06)_1px,transparent_1px)] [background-size:88px_88px]" />
 
       <div className="container relative z-10 mx-auto px-6 lg:px-10">
-        <div className="grid gap-10 lg:grid-cols-[1fr_0.95fr] lg:items-center lg:gap-16">
+        <div className="grid gap-6 lg:grid-cols-[0.82fr_1.18fr] lg:items-center lg:gap-10">
           <motion.div
             initial={{ opacity: 0, x: -18 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -230,7 +225,7 @@ export default function ChatbotShowcase() {
             transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
             className="relative"
           >
-            <div className="rounded-[2.5rem] border border-white/80 bg-white/84 p-5 shadow-[0_34px_90px_-46px_rgba(15,23,42,0.28)] backdrop-blur-2xl sm:p-6">
+            <div className="rounded-[2.15rem] border border-white/80 bg-white/84 p-3.5 shadow-[0_34px_90px_-46px_rgba(15,23,42,0.28)] backdrop-blur-2xl sm:p-4">
               <div className="flex items-center justify-between gap-3">
                 <div className="rounded-full border border-slate-200 bg-white/90 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.28em] text-slate-700">
                   Live property concierge
@@ -244,7 +239,7 @@ export default function ChatbotShowcase() {
                 </div>
               </div>
 
-              <div className="mt-5 overflow-hidden rounded-[2.25rem] border border-slate-200 bg-[linear-gradient(180deg,#091225_0%,#111b34_60%,#14203b_100%)] p-5 text-white shadow-[0_24px_60px_-40px_rgba(15,23,42,0.8)] sm:p-6">
+              <div className="mt-3.5 overflow-hidden rounded-[1.85rem] border border-slate-200 bg-[linear-gradient(180deg,#091225_0%,#111b34_60%,#14203b_100%)] p-3.5 text-white shadow-[0_24px_60px_-40px_rgba(15,23,42,0.8)] sm:p-4">
                 <div className="flex flex-wrap items-center justify-between gap-4">
                   <div className="flex items-center gap-4">
                     <div className="flex h-12 w-12 items-center justify-center overflow-hidden rounded-2xl border border-white/12 bg-white shadow-[0_18px_35px_-20px_rgba(255,255,255,0.35)]">
@@ -261,7 +256,7 @@ export default function ChatbotShowcase() {
                       <p className="text-[10px] font-semibold uppercase tracking-[0.28em] text-white/55">
                         Oyik
                       </p>
-                      <p className="mt-1 text-xl font-display font-medium text-white">
+                      <p className="mt-1 text-[1.12rem] font-display font-medium text-white">
                         Property concierge
                       </p>
                     </div>
@@ -272,36 +267,36 @@ export default function ChatbotShowcase() {
                   </div>
                 </div>
 
-                <div className="mt-6 space-y-3.5">
-                  <div className="ml-auto max-w-[70%] rounded-[1.35rem] rounded-br-sm bg-[linear-gradient(135deg,#eef1ff,#ffffff)] px-4 py-3.5 text-sm leading-relaxed text-slate-700">
+                <div className="mt-3.5 space-y-2.5">
+                  <div className="ml-auto max-w-[66%] rounded-[1.1rem] rounded-br-sm bg-[linear-gradient(135deg,#eef1ff,#ffffff)] px-3.5 py-2.5 text-[12px] leading-relaxed text-slate-700">
                     I want a two-bedroom property in Leicester with parking.
                   </div>
-                  <div className="max-w-[70%] rounded-[1.35rem] rounded-bl-sm bg-white/10 px-4 py-3.5 text-sm leading-relaxed text-white/92">
-                    I found three Leicester matches below. Tell me which one you want to view.
+                  <div className="max-w-[66%] rounded-[1.1rem] rounded-bl-sm bg-white/10 px-3.5 py-2.5 text-[12px] leading-relaxed text-white/92">
+                    I found the best Leicester matches below. Tell me which one you want to view.
                   </div>
-                  <div className="mt-2 grid gap-4 lg:grid-cols-3">
-                    {listings.map((listing) => (
+                  <div className="mt-1 grid gap-3 sm:grid-cols-2">
+                    {listings.slice(0, 2).map((listing) => (
                       <PropertyCard key={listing.title} {...listing} />
                     ))}
                   </div>
-                  <div className="ml-auto max-w-[72%] rounded-[1.35rem] rounded-br-sm bg-[linear-gradient(135deg,#eef1ff,#ffffff)] px-4 py-3.5 text-sm leading-relaxed text-slate-700">
+                  <div className="ml-auto max-w-[68%] rounded-[1.1rem] rounded-br-sm bg-[linear-gradient(135deg,#eef1ff,#ffffff)] px-3.5 py-2.5 text-[12px] leading-relaxed text-slate-700">
                     I like Clarendon Residences. I want to view it tomorrow at 5:30 PM.
                   </div>
-                  <div className="max-w-[66%] rounded-[1.35rem] rounded-bl-sm bg-white/10 px-4 py-3.5 text-sm leading-relaxed text-white/92">
+                  <div className="max-w-[56%] rounded-[1.1rem] rounded-bl-sm bg-white/10 px-3.5 py-2.5 text-[12px] leading-relaxed text-white/92">
                     Let me check the calendar.
                   </div>
-                  <div className="max-w-[72%] rounded-[1.35rem] rounded-bl-sm bg-[linear-gradient(135deg,rgba(99,102,241,0.2),rgba(255,255,255,0.12))] px-4 py-3.5 text-sm leading-relaxed text-white">
+                  <div className="max-w-[68%] rounded-[1.1rem] rounded-bl-sm bg-[linear-gradient(135deg,rgba(99,102,241,0.2),rgba(255,255,255,0.12))] px-3.5 py-2.5 text-[12px] leading-relaxed text-white">
                     All set. You are booked for tomorrow at 5:30 PM for Clarendon Residences.
                   </div>
                 </div>
 
-                <div className="mt-6 rounded-[1.45rem] border border-white/10 bg-white/7 p-3">
-                  <div className="flex items-center gap-3 rounded-[1.2rem] border border-white/8 bg-white/90 px-4 py-4">
+                <div className="mt-3.5 rounded-[1.25rem] border border-white/10 bg-white/7 p-2">
+                  <div className="flex items-center gap-3 rounded-[1rem] border border-white/8 bg-white/90 px-3.5 py-2.5">
                     <MessageSquareMore className="h-5 w-5 shrink-0 text-indigo-600" />
-                    <span className="text-sm text-slate-500">
+                    <span className="text-[13px] text-slate-500">
                       Ask for a Leicester area, budget, or viewing time...
                     </span>
-                    <div className="ml-auto flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[linear-gradient(135deg,#4f46e5,#4338ca)] text-white shadow-[0_16px_32px_-18px_rgba(79,70,229,0.7)]">
+                    <div className="ml-auto flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[linear-gradient(135deg,#4f46e5,#4338ca)] text-white shadow-[0_16px_32px_-18px_rgba(79,70,229,0.7)]">
                       <Send className="h-4 w-4" />
                     </div>
                   </div>
@@ -316,19 +311,19 @@ export default function ChatbotShowcase() {
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
           >
-            <p className="mb-5 text-sm font-semibold uppercase tracking-[0.28em] text-indigo-700">
+            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.28em] text-indigo-700">
               Website chat
             </p>
-            <h2 className="max-w-3xl text-4xl font-display font-medium leading-[1.02] tracking-[-0.035em] text-slate-950 sm:text-5xl lg:text-[4.15rem]">
+            <h2 className="max-w-3xl text-4xl font-display font-medium leading-[0.98] tracking-[-0.04em] text-slate-950 sm:text-[3.6rem] lg:text-[3.75rem]">
               Turn property browsing into booked viewings.
             </h2>
-            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-slate-600 sm:text-xl">
+            <p className="mt-4 max-w-2xl text-[1rem] leading-relaxed text-slate-600 sm:text-[1.05rem]">
               The chat should feel calm, premium, and useful. Prospects see real options, pick a
               property by name, ask for a time, and get a confirmed next step in the same
               conversation.
             </p>
 
-            <div className="mt-8 flex flex-wrap gap-4">
+            <div className="mt-6 flex flex-wrap gap-3.5">
               <Link
                 href="/book-demo"
                 className="group inline-flex items-center gap-3 rounded-full bg-primary px-6 py-3.5 text-sm font-semibold uppercase tracking-[0.18em] text-white shadow-[0_18px_40px_-22px_rgba(79,70,229,0.65)] transition-all duration-300 hover:-translate-y-0.5"
@@ -348,24 +343,24 @@ export default function ChatbotShowcase() {
               </button>
             </div>
 
-            <div className="mt-10 grid gap-4 sm:grid-cols-2">
+            <div className="mt-6 grid gap-3.5 sm:grid-cols-2">
               {features.map((item) => (
                 <div
                   key={item.title}
-                  className="rounded-[1.8rem] border border-white/80 bg-white/76 p-5 shadow-[0_20px_40px_-34px_rgba(15,23,42,0.2)]"
+                  className="rounded-[1.55rem] border border-white/80 bg-white/76 p-4 shadow-[0_20px_40px_-34px_rgba(15,23,42,0.2)]"
                 >
-                  <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-indigo-50 text-primary">
-                    <item.icon className="h-5 w-5" />
+                  <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-indigo-50 text-primary">
+                    <item.icon className="h-4 w-4" />
                   </div>
-                  <h3 className="mt-4 text-[1.4rem] font-display font-medium leading-[1.02] tracking-[-0.02em] text-slate-950">
+                  <h3 className="mt-3 text-[1.15rem] font-display font-medium leading-[1.02] tracking-[-0.02em] text-slate-950">
                     {item.title}
                   </h3>
-                  <p className="mt-3 text-sm leading-relaxed text-slate-600">{item.description}</p>
+                  <p className="mt-2 text-[13px] leading-relaxed text-slate-600">{item.description}</p>
                 </div>
               ))}
             </div>
 
-            <div className="mt-9 flex justify-center">
+            <div className="mt-5 flex justify-center lg:justify-start">
               <motion.button
                 type="button"
                 onClick={() => setIsOpen(true)}
