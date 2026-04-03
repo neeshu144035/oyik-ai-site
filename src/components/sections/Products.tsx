@@ -137,7 +137,7 @@ export default function Products() {
   const active = products[activeIndex];
 
   return (
-    <section className="relative bg-slate-50 py-16 sm:py-20 lg:py-0">
+    <section className="relative bg-slate-50 py-14 sm:py-16 lg:py-0">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_16%_18%,rgba(63,55,184,0.03),transparent_30%)]" />
 
       <div className="relative z-10 px-4 text-center sm:px-6 lg:px-0 lg:py-16">
@@ -164,7 +164,75 @@ export default function Products() {
       </div>
 
       <div className="relative z-10 px-4 sm:px-6 lg:hidden">
-        <div className="grid gap-5">
+        <div className="md:hidden">
+          <div className="mb-4 flex items-center justify-between gap-3">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.26em] text-indigo-600">
+              Swipe through services
+            </p>
+            <p className="text-[11px] font-medium uppercase tracking-[0.2em] text-slate-400">
+              {products.length} modules
+            </p>
+          </div>
+
+          <div className="-mx-4 overflow-x-auto px-4 pb-2 [scrollbar-width:none]">
+            <div className="flex snap-x snap-mandatory gap-4">
+              {products.map((product, index) => (
+                <motion.article
+                  key={product.id}
+                  initial={{ opacity: 0, y: 24 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-60px" }}
+                  transition={{ duration: 0.55, delay: index * 0.05, ease: [0.22, 1, 0.36, 1] }}
+                  className="w-[min(86vw,22rem)] shrink-0 snap-start overflow-hidden rounded-[1.9rem] border border-slate-200/70 bg-white/90 shadow-[0_24px_64px_-40px_rgba(63,55,184,0.18)] backdrop-blur-xl"
+                >
+                  <div className="relative aspect-[16/10] overflow-hidden bg-slate-100">
+                    <Image
+                      src={product.logoImage}
+                      alt={`${product.title} interface preview`}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 767px) 86vw, 0px"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/24 via-transparent to-transparent" />
+                    <div className="absolute left-4 top-4 inline-flex items-center gap-2 rounded-full border border-white/70 bg-white/88 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.22em] text-slate-700 shadow-sm backdrop-blur-md">
+                      <span className={`flex h-7 w-7 items-center justify-center rounded-full bg-gradient-to-br ${product.gradient}`}>
+                        <product.icon className="h-3.5 w-3.5 text-white" />
+                      </span>
+                      {product.badge}
+                    </div>
+                  </div>
+
+                  <div className="space-y-4 p-5">
+                    <div>
+                      <h3 className="text-[1.75rem] font-display font-semibold leading-[0.96] tracking-[-0.04em] text-slate-900">
+                        {product.title}
+                      </h3>
+                      <p className="mt-2 text-[0.96rem] font-medium leading-relaxed text-indigo-600">
+                        {product.subtitle}
+                      </p>
+                    </div>
+
+                    <p className="text-sm leading-relaxed text-slate-600">
+                      {product.description}
+                    </p>
+
+                    <Link
+                      href={product.href}
+                      className={`group inline-flex w-full items-center justify-center gap-3 rounded-full bg-gradient-to-r ${product.gradient} px-6 py-3.5 text-sm font-bold uppercase tracking-[0.16em] text-white shadow-lg transition-all duration-300`}
+                    >
+                      Explore {product.title}
+                      <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white/18 transition-transform duration-300 group-hover:translate-x-1">
+                        <ArrowUpRight className="h-4 w-4" />
+                      </span>
+                    </Link>
+                  </div>
+                </motion.article>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div className="hidden gap-5 md:grid md:grid-cols-2">
           {products.map((product, index) => (
             <motion.article
               key={product.id}
@@ -180,7 +248,7 @@ export default function Products() {
                   alt={`${product.title} interface preview`}
                   fill
                   className="object-cover"
-                  sizes="(max-width: 1023px) 100vw, 0px"
+                  sizes="(max-width: 1023px) 50vw, 0px"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/24 via-transparent to-transparent" />
                 <div className="absolute left-4 top-4 inline-flex items-center gap-2 rounded-full border border-white/70 bg-white/88 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.22em] text-slate-700 shadow-sm backdrop-blur-md">

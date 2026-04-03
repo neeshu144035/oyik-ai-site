@@ -6,7 +6,7 @@ import { ArrowRight, Calendar } from "lucide-react";
 
 export default function FinalCTA() {
   return (
-    <section className="relative overflow-hidden bg-secondary py-24 sm:py-28 lg:py-32">
+    <section className="relative overflow-hidden bg-secondary py-20 sm:py-24 lg:py-28">
       <div className="pointer-events-none absolute left-1/2 top-1/2 h-[80vw] w-[80vw] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/5 blur-[120px]" />
       <div
         className="pointer-events-none absolute inset-0 opacity-[0.03] mix-blend-overlay"
@@ -17,7 +17,7 @@ export default function FinalCTA() {
         }}
       />
 
-      <div className="container relative z-10 mx-auto px-6 lg:px-10">
+      <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-10">
         <motion.div
           initial={{ opacity: 0, scale: 0.95, y: 30 }}
           whileInView={{ opacity: 1, scale: 1, y: 0 }}

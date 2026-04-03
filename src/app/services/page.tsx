@@ -155,11 +155,11 @@ export default function ServicesPage() {
       </section>
 
       <section className="bg-background py-10 sm:py-12 lg:py-14">
-        <div className="container mx-auto flex flex-col gap-24 px-4 sm:px-6 lg:gap-32 lg:px-8">
+        <div className="container mx-auto flex flex-col gap-16 px-4 sm:gap-20 sm:px-6 lg:gap-32 lg:px-8">
           {services.map((service, idx) => (
             <div
               key={service.id}
-              className={`grid items-center gap-12 lg:grid-cols-2 lg:gap-16 ${idx % 2 !== 0 ? "lg:[&>div:first-child]:order-last" : ""}`}
+              className={`grid items-center gap-8 sm:gap-10 lg:grid-cols-2 lg:gap-16 ${idx % 2 !== 0 ? "lg:[&>div:first-child]:order-last" : ""}`}
             >
               <div className="flex flex-col gap-6">
                 <div className="mb-1 inline-flex w-fit items-center rounded-full border border-border bg-secondary px-5 py-3 text-primary shadow-lg">
@@ -186,7 +186,7 @@ export default function ServicesPage() {
 
                 <Link
                   href={`/services/${service.id}`}
-                  className="group mt-1 inline-flex w-fit items-center gap-3 rounded-full bg-primary px-7 py-4 text-base font-semibold text-primary-foreground shadow-[0_16px_34px_-18px_rgba(67,56,202,0.65)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-primary/92 hover:shadow-[0_20px_40px_-18px_rgba(67,56,202,0.72)]"
+                  className="group mt-1 inline-flex w-full items-center justify-center gap-3 rounded-full bg-primary px-7 py-4 text-base font-semibold text-primary-foreground shadow-[0_16px_34px_-18px_rgba(67,56,202,0.65)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-primary/92 hover:shadow-[0_20px_40px_-18px_rgba(67,56,202,0.72)] sm:w-fit"
                 >
                   See full details
                   <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white/14 transition-transform duration-300 group-hover:translate-x-1">

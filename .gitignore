@@ -32,6 +32,10 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
+*.log
+*.err
+__pycache__/
+serve_export.py
 
 # env files (can opt-in for committing if needed)
 .env*

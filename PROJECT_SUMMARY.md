@@ -1,55 +1,48 @@
-# oyik.realestate.ai - Project Summary
+# oyik.realestate.ai (Oyik RealEstate.ai) - Project Summary
 
 **Last Updated:** 2026-04-03 (Asia/Calcutta)
 
-## Project Snapshot
+## What This Repo Is
 
-- App: Next.js static-export site in `oyik-ai-site`
-- Brand: `Oyik RealEstate.ai`
-- Local build: `npm run build`
-- Deploy target: Netlify
-- Current git remote: `git@github.com:neeshu144035/oyik-ai-site.git`
+- Next.js site (static export) deployed on Netlify.
+- Project root: `oyik-ai-site`
+- Netlify config: `netlify.toml` (build: `npm run build`, publish: `out`)
+- Netlify site ID: `76cdcaff-711b-4a34-8480-c01044ca5a11`
 
-## Current State
+## Key Pages
 
-- Homepage refined with premium layout updates, tighter flagship chatbot showcase, and `Services` label in navbar
-- Route navigation now scrolls to the top on page change
-- About page, services index, and all service detail pages have been redesigned with updated SEO content
-- Shared FAQ content at the bottom of service pages has been fully replaced with the latest approved copy
+- Home: `/`
+- About: `/about`
+- Services index: `/services`
+- Service detail pages:
+  - `/services/chat`
+  - `/services/voice`
+  - `/services/reminders`
+  - `/services/email`
+  - `/services/maintenance`
+  - `/services/ai-marketing`
+  - `/services/workflow-automation`
 
-## Service Pages Completed
+## What’s Implemented (Current)
 
-- `/services/chat`
-- `/services/voice`
-- `/services/reminders`
-- `/services/email`
-- `/services/maintenance`
-- `/services/ai-marketing`
-- `/services/workflow-automation`
+- Premium UI refresh across home, about, services index, and all service detail pages.
+- SEO-first content: keep user-provided H1/H2/body copy structure exactly unless explicitly asked to change wording.
+- Navigation scroll behavior: route changes land at the top of the new page.
+- FAQ: bottom-of-page FAQs are driven by `src/components/shared/PageFaqSection.tsx` and have been replaced with the latest approved copy.
+- Mobile-first improvements:
+  - Flagship chatbot showcase is resized to fit a single viewport (no forced scroll), and listing “Tomorrow | time” labels removed.
+  - Services/products section uses swipeable horizontal cards on mobile, grid on tablet+.
+  - Smooth scrolling is disabled on touch devices (enabled on desktop only) to avoid mobile jank.
 
-## Important Implementation Notes
+## Dev Commands
 
-- Premium design direction matters on every content section; avoid plain empty cards or large dead space
-- For SEO-led service pages, keep user-provided H1/H2/body copy structure exact unless explicitly asked to change wording
-- Green inline text in provided references means hyperlink text; target route is usually written in brackets in the brief
-- Shared service FAQs are controlled in `src/components/shared/PageFaqSection.tsx`
+- Install: `npm i`
+- Run local: `npm run dev` (http://localhost:3000)
+- Build/export: `npm run build` (outputs `out/`)
 
-## Key Files
+## Key Files To Touch
 
-- `src/components/shared/AppShell.tsx`
-- `src/components/shared/Navbar.tsx`
-- `src/components/shared/PageFaqSection.tsx`
-- `src/components/sections/features/ChatbotShowcase.tsx`
-- `src/app/services/`
-- `src/app/about/`
-
-## Preview / Deploy Notes
-
-- Static export is configured through `netlify.toml`
-- Netlify build command: `npm run build`
-- Netlify publish directory: `out`
-- Repo is already linked to Netlify site ID: `76cdcaff-711b-4a34-8480-c01044ca5a11`
-
-## Working Rule
-
-- Do not revert unrelated work in the repo; this project often has an intentionally dirty worktree during content/design iterations
+- `src/components/shared/PageFaqSection.tsx` (FAQs)
+- `src/components/shared/SmoothScroll.tsx` (scroll behavior)
+- `src/components/sections/features/ChatbotShowcase.tsx` (homepage flagship chatbot)
+- `src/components/sections/Products.tsx` (mobile swipe cards)

@@ -34,7 +34,7 @@ export default function HowItWorks() {
   const flowPath = "M 90 102 C 240 38, 366 38, 500 102 S 754 166, 910 102";
 
   return (
-    <section className="relative overflow-hidden bg-secondary py-32">
+    <section className="relative overflow-hidden bg-secondary py-20 sm:py-24 lg:py-32">
       <div
         className="absolute inset-0 z-0 opacity-[0.05]"
         style={{
@@ -71,15 +71,15 @@ export default function HowItWorks() {
         </>
       )}
 
-      <div className="container relative z-10 mx-auto max-w-7xl px-6 lg:px-10">
-        <div className="mb-24 text-center">
-          <h2 className="mb-6 text-4xl font-display font-semibold leading-[0.98] tracking-[-0.03em] text-foreground sm:text-5xl lg:text-[3.9rem]">
+      <div className="container relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
+        <div className="mb-16 text-center sm:mb-20 lg:mb-24">
+          <h2 className="mb-5 text-[2.35rem] font-display font-semibold leading-[0.98] tracking-[-0.03em] text-foreground sm:mb-6 sm:text-5xl lg:text-[3.9rem]">
             How it works
           </h2>
           <div className="mx-auto h-1 w-24 rounded-full bg-primary opacity-50 shadow-[0_0_20px_rgba(63,55,184,0.55)]" />
         </div>
 
-        <div className="relative grid gap-14 md:grid-cols-3 lg:gap-10">
+        <div className="relative grid gap-10 sm:gap-12 md:grid-cols-3 lg:gap-10">
           <div className="pointer-events-none absolute left-[5%] right-[5%] top-[18px] -z-10 hidden h-[190px] md:block">
             <svg
               className="absolute inset-0 h-full w-full overflow-visible"
@@ -261,7 +261,7 @@ export default function HowItWorks() {
               transition={{ duration: 0.8, delay: idx * 0.12 }}
               className="group relative flex flex-col items-center text-center"
             >
-              <div className="relative mb-8 flex h-40 w-40 items-center justify-center rounded-[2.35rem] border border-border/70 bg-white/95 shadow-[0_28px_60px_-28px_rgba(63,55,184,0.34)] transition-transform duration-500 group-hover:-translate-y-3">
+              <div className="relative mb-6 flex h-28 w-28 items-center justify-center rounded-[2rem] border border-border/70 bg-white/95 shadow-[0_28px_60px_-28px_rgba(63,55,184,0.34)] transition-transform duration-500 group-hover:-translate-y-3 sm:mb-8 sm:h-36 sm:w-36 sm:rounded-[2.2rem] lg:h-40 lg:w-40 lg:rounded-[2.35rem]">
                 <div className="absolute inset-0 rounded-[2.2rem] bg-[radial-gradient(circle_at_top,rgba(90,84,235,0.12),transparent_68%)] opacity-80" />
 
                 {!reduceMotion && idx === 0 && (
@@ -452,17 +452,17 @@ export default function HowItWorks() {
                           : { duration: cycleDuration, times: [0, 0.62, 0.76, 0.92, 1, 1], repeat: Infinity, ease: "easeInOut" }
                   }
                 >
-                  <step.icon className="h-12 w-12 text-primary" />
+                  <step.icon className="h-9 w-9 text-primary sm:h-11 sm:w-11 lg:h-12 lg:w-12" />
                 </motion.div>
 
-                <div className="absolute -right-4 -top-4 flex h-10 w-10 items-center justify-center rounded-full bg-primary font-semibold text-primary-foreground shadow-lg">
+                <div className="absolute -right-3 -top-3 flex h-9 w-9 items-center justify-center rounded-full bg-primary text-sm font-semibold text-primary-foreground shadow-lg sm:-right-4 sm:-top-4 sm:h-10 sm:w-10">
                   {idx + 1}
                 </div>
               </div>
 
-              <span className="mb-3 text-sm font-mono uppercase tracking-[0.2em] text-primary">{step.step}</span>
-              <h3 className="mb-4 text-2xl font-display font-semibold tracking-[-0.02em] text-foreground">{step.title}</h3>
-              <p className="text-lg font-light leading-relaxed text-muted-foreground">{step.description}</p>
+              <span className="mb-2 text-[12px] font-mono uppercase tracking-[0.2em] text-primary sm:mb-3 sm:text-sm">{step.step}</span>
+              <h3 className="mb-3 text-[1.45rem] font-display font-semibold tracking-[-0.02em] text-foreground sm:mb-4 sm:text-2xl">{step.title}</h3>
+              <p className="text-base font-light leading-relaxed text-muted-foreground sm:text-lg">{step.description}</p>
             </motion.div>
           ))}
         </div>

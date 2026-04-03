@@ -38,7 +38,7 @@ export default function ContactFormSection() {
   };
 
   return (
-    <section className="relative overflow-hidden bg-[linear-gradient(180deg,#f7f5f0_0%,#f2f4fb_54%,#f8f4ec_100%)] py-24">
+    <section className="relative overflow-hidden bg-[linear-gradient(180deg,#f7f5f0_0%,#f2f4fb_54%,#f8f4ec_100%)] py-20 sm:py-24">
       <div className="pointer-events-none absolute left-[-6rem] top-24 h-[28rem] w-[28rem] rounded-full bg-[radial-gradient(circle,rgba(63,55,184,0.13),transparent_70%)] blur-3xl" />
       <div className="pointer-events-none absolute bottom-[-8rem] right-[-4rem] h-[30rem] w-[30rem] rounded-full bg-[radial-gradient(circle,rgba(96,165,250,0.1),transparent_72%)] blur-3xl" />
       <div
@@ -50,7 +50,7 @@ export default function ContactFormSection() {
         }}
       />
 
-      <div className="container relative z-10 mx-auto px-6 lg:px-10">
+      <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}

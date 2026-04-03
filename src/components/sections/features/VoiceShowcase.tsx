@@ -51,12 +51,12 @@ const voiceScenarios = [
 
 export default function VoiceShowcase() {
   return (
-    <section className="relative overflow-hidden bg-[#0d2358] py-24 text-white">
+    <section className="relative overflow-hidden bg-[#0d2358] py-20 text-white sm:py-24">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(99,102,241,0.28),transparent_32%),radial-gradient(circle_at_bottom_left,rgba(56,189,248,0.16),transparent_24%),linear-gradient(180deg,#0f2e72_0%,#0b2253_52%,#08193d_100%)]" />
       <div className="absolute inset-0 opacity-[0.12] [background-image:linear-gradient(rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.08)_1px,transparent_1px)] [background-size:90px_90px]" />
 
-      <div className="container relative z-10 mx-auto px-6 lg:px-10">
-        <div className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
+      <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-10">
+        <div className="grid gap-7 sm:gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}

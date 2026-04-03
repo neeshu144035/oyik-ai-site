@@ -85,10 +85,10 @@ export default function VoiceSamples() {
   };
 
   return (
-    <section className="relative overflow-hidden bg-[linear-gradient(180deg,#f7f9ff_0%,#eef3ff_100%)] py-24 text-slate-950">
+    <section className="relative overflow-hidden bg-[linear-gradient(180deg,#f7f9ff_0%,#eef3ff_100%)] py-20 text-slate-950 sm:py-24">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(99,102,241,0.12),transparent_28%),radial-gradient(circle_at_bottom_right,rgba(56,189,248,0.1),transparent_22%)]" />
 
-      <div className="container relative z-10 mx-auto px-6 lg:px-10">
+      <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-10">
         <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
           <div className="max-w-3xl">
             <p className="mb-5 text-sm font-semibold uppercase tracking-[0.28em] text-indigo-700">

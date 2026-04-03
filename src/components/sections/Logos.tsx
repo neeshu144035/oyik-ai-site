@@ -73,11 +73,17 @@ const ecosystemRows: LogoRow[] = [
   },
 ];
 
-const allItems = ecosystemRows.flatMap((row) => row.items);
-
-function EcosystemCard({ item }: { item: LogoItem }) {
+function EcosystemCard({
+  item,
+  className = "",
+}: {
+  item: LogoItem;
+  className?: string;
+}) {
   return (
-    <article className="group relative w-[13.5rem] shrink-0 overflow-hidden rounded-[1.7rem] border border-slate-200/80 bg-white/82 p-3 shadow-[0_22px_54px_-36px_rgba(15,23,42,0.26)] backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_26px_60px_-34px_rgba(79,70,229,0.28)]">
+    <article
+      className={`group relative w-[13.5rem] shrink-0 overflow-hidden rounded-[1.7rem] border border-slate-200/80 bg-white/82 p-3 shadow-[0_22px_54px_-36px_rgba(15,23,42,0.26)] backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_26px_60px_-34px_rgba(79,70,229,0.28)] ${className}`}
+    >
       <div className={`pointer-events-none absolute inset-0 bg-gradient-to-br ${item.glowClass}`} />
       <div className="relative flex items-center gap-3">
         <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-[1.15rem] border border-slate-200 bg-white shadow-sm">
@@ -127,39 +133,44 @@ export default function Logos() {
           </p>
         </motion.div>
 
-        <div className="grid gap-3 sm:grid-cols-2 lg:hidden">
-          {allItems.map((item, index) => (
+        <div className="space-y-5 lg:hidden">
+          {ecosystemRows.map((row, rowIndex) => (
             <motion.div
-              key={`${item.name}-${item.tag}`}
+              key={row.label}
               initial={{ opacity: 0, y: 18 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-40px" }}
-              transition={{ duration: 0.35, delay: index * 0.01 }}
+              transition={{ duration: 0.4, delay: rowIndex * 0.06 }}
+              className="overflow-hidden rounded-[1.8rem] border border-slate-200/80 bg-white/78 p-4 shadow-[0_20px_48px_-36px_rgba(15,23,42,0.2)] backdrop-blur-xl sm:p-5"
             >
-              <article className="relative overflow-hidden rounded-[1.45rem] border border-slate-200/80 bg-white/84 p-3.5 shadow-[0_18px_42px_-34px_rgba(15,23,42,0.22)] backdrop-blur-xl">
-                <div className={`pointer-events-none absolute inset-0 bg-gradient-to-br ${item.glowClass}`} />
-                <div className="relative flex items-center gap-3">
-                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-[1rem] border border-slate-200 bg-white shadow-sm">
-                    <Image
-                      src={item.logoPath}
-                      alt={`${item.name} logo`}
-                      width={30}
-                      height={30}
-                      className="h-7 w-7 object-contain"
-                      loading="lazy"
-                    />
-                  </div>
-                  <div className="min-w-0">
-                    <p className="truncate text-sm font-semibold text-slate-950">{item.name}</p>
-                    <p className="mt-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-500">{item.tag}</p>
-                  </div>
+              <div className="flex items-start justify-between gap-3">
+                <div>
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-indigo-600/80">
+                    {row.label}
+                  </p>
+                  <p className="mt-2 text-sm leading-relaxed text-slate-500">
+                    Swipe to browse the tools in this category.
+                  </p>
                 </div>
-              </article>
+                <span className="rounded-full border border-slate-200 bg-white/90 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-500">
+                  {row.items.length} tools
+                </span>
+              </div>
+
+              <div className="-mx-1 mt-4 flex snap-x snap-mandatory gap-3 overflow-x-auto px-1 pb-2 [scrollbar-width:none]">
+                {row.items.map((item) => (
+                  <EcosystemCard
+                    key={`${row.label}-${item.name}`}
+                    item={item}
+                    className="w-[11.5rem] snap-start rounded-[1.45rem] p-3.5 sm:w-[12.5rem]"
+                  />
+                ))}
+              </div>
             </motion.div>
           ))}
         </div>
 
-        <div className="relative hidden flex-col gap-4 overflow-hidden md:flex">
+        <div className="relative hidden flex-col gap-4 overflow-hidden lg:flex">
           {ecosystemRows.map((row, rowIndex) => {
             const repeated = [...row.items, ...row.items];
             const travel = row.items.length * cardWidth;

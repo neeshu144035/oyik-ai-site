@@ -51,11 +51,11 @@ const operationsItems = [
 
 export default function OperationsShowcase() {
   return (
-    <section className="relative overflow-hidden bg-[#0d2358] py-24 text-white">
+    <section className="relative overflow-hidden bg-[#0d2358] py-20 text-white sm:py-24">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(99,102,241,0.28),transparent_32%),radial-gradient(circle_at_bottom_left,rgba(56,189,248,0.16),transparent_24%),linear-gradient(180deg,#0f2e72_0%,#0b2253_52%,#08193d_100%)]" />
       <div className="absolute inset-0 opacity-[0.12] [background-image:linear-gradient(rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.08)_1px,transparent_1px)] [background-size:90px_90px]" />
 
-      <div className="container relative z-10 mx-auto px-6 lg:px-10">
+      <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-10">
         <div className="mx-auto max-w-5xl text-center">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
@@ -77,7 +77,7 @@ export default function OperationsShowcase() {
           </motion.div>
         </div>
 
-        <div className="mt-16 grid gap-px overflow-hidden rounded-[2rem] border border-white/12 bg-white/10 md:grid-cols-3">
+        <div className="mt-12 grid gap-px overflow-hidden rounded-[2rem] border border-white/12 bg-white/10 md:mt-16 md:grid-cols-3">
           {operationsItems.map((item, index) => (
             <motion.div
               key={item.title}
@@ -89,16 +89,16 @@ export default function OperationsShowcase() {
                 delay: index * 0.08,
                 ease: [0.22, 1, 0.36, 1],
               }}
-              className="group bg-white/4 p-8 backdrop-blur-sm transition-colors duration-300 hover:bg-white/8"
+              className="group bg-white/4 p-6 backdrop-blur-sm transition-colors duration-300 hover:bg-white/8 sm:p-8"
             >
-              <div className="mb-8 w-full border-t border-white/16 pt-6" />
-              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-white/10 text-indigo-100 ring-1 ring-white/15">
+              <div className="mb-6 w-full border-t border-white/16 pt-5 sm:mb-8 sm:pt-6" />
+              <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-2xl bg-white/10 text-indigo-100 ring-1 ring-white/15 sm:mb-5 sm:h-12 sm:w-12">
                 <item.icon className="h-5 w-5" />
               </div>
-              <h3 className="text-[1.65rem] font-display font-medium leading-none tracking-[-0.02em] text-white">
+              <h3 className="text-[1.42rem] font-display font-medium leading-none tracking-[-0.02em] text-white sm:text-[1.65rem]">
                 {item.title}
               </h3>
-              <p className="mt-3 max-w-sm text-base leading-relaxed text-blue-100/80">
+              <p className="mt-3 max-w-sm text-[0.95rem] leading-relaxed text-blue-100/80 sm:text-base">
                 {item.description}
               </p>
             </motion.div>

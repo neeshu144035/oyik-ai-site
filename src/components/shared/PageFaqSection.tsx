@@ -22,20 +22,32 @@ const faqByRoute: Record<string, FaqContent> = {
     title: "Everything visitors typically want to know about implementing AI for real estate",
     items: [
       {
-        question: "Can I start with one AI service first?",
-        answer: "Yes. Most teams start with chat or voice first, then add booking, reminders, maintenance, or email once the first workflow is stable.",
+        question: "Is AI automation suitable for small estate agencies?",
+        answer: "Yes. AI automation for estate agencies helps small teams manage enquiries, qualify leads, and book viewings without hiring extra staff.",
       },
       {
-        question: "Do the voice and chat tools work together?",
-        answer: "That is the point of the platform direction. The same lead context, booking logic, and follow-up actions can carry across channels instead of living in silos.",
+        question: "Does AI automation reduce staffing costs?",
+        answer: "Yes. AI automation for estate agents handles repetitive tasks like replying to enquiries and scheduling appointments, improving efficiency without increasing headcount.",
       },
       {
-        question: "Is this designed for premium real estate brands?",
-        answer: "Yes. The positioning, conversational tone, and front-end experience are all built to feel high-end rather than cheap or overly robotic.",
+        question: "What return on investment can we expect from AI automation?",
+        answer: "Most agencies using AI automation for real estate see faster responses, more qualified leads, and increased viewing bookings that improve conversion rates.",
       },
       {
-        question: "How do I see a live walkthrough?",
-        answer: "Use the Book Demo route to open the booking page and schedule a focused walkthrough for your team.",
+        question: "Do we need technical knowledge to use the system?",
+        answer: "No. Our real estate automation platform is designed for estate agents and includes full setup support.",
+      },
+      {
+        question: "How expensive is AI automation for estate agencies?",
+        answer: "The cost of AI automation for estate agencies depends on enquiry volume, features, and communication channels required.",
+      },
+      {
+        question: "Can the system be customised for our agency?",
+        answer: "Yes. Our AI chatbot for estate agents can be customised to match your qualification questions, tone, and viewing workflow.",
+      },
+      {
+        question: "Will AI automation affect our current enquiry process?",
+        answer: "No. AI automation for real estate businesses works alongside your existing systems without disrupting daily operations.",
       },
     ],
   },
@@ -44,16 +56,28 @@ const faqByRoute: Record<string, FaqContent> = {
     title: "More context on who oyik is for and how the approach works.",
     items: [
       {
-        question: "Who is oyik built for?",
-        answer: "The platform is aimed at real estate teams that need premium lead handling, cleaner operations, and a more responsive client experience.",
+        question: "Who is Oyik Real Estate.AI for?",
+        answer: "AI for estate agencies is designed for estate agents, letting agents, and property teams that want faster responses, more booked viewings, and better communication.",
       },
       {
-        question: "Is oyik a software tool or a service layer?",
-        answer: "It is presented as both a product layer and an implementation partner, helping teams deploy the workflows instead of only selling abstract software.",
+        question: "What problems does Oyik Real Estate.AI solve?",
+        answer: "Real estate workflow automation helps reduce missed enquiries, delayed replies, manual follow-ups, and inefficient scheduling.",
       },
       {
-        question: "What makes the approach different from generic AI tools?",
-        answer: "The flows are tailored for property enquiries, viewings, landlord updates, reminders, maintenance intake, and real handoff requirements.",
+        question: "How is Oyik Real Estate.AI different from general AI tools?",
+        answer: "AI for real estate businesses is built specifically for property enquiries, viewing coordination, landlord requests, and lead qualification.",
+      },
+      {
+        question: "Why was Oyik Real Estate.AI created?",
+        answer: "AI solutions for property professionals help agencies convert more enquiries into viewings while reducing repetitive admin work.",
+      },
+      {
+        question: "What makes Oyik Real Estate.AI reliable for property businesses?",
+        answer: "Property enquiry automation ensures consistent responses, accurate listing information, and 24/7 enquiry capture.",
+      },
+      {
+        question: "What results do agencies typically see with Oyik Real Estate.AI?",
+        answer: "AI for estate agency automation improves response speed, lead qualification, and confirmed property viewing bookings.",
       },
     ],
   },
@@ -152,16 +176,24 @@ const faqByRoute: Record<string, FaqContent> = {
     title: "Quick guidance for people comparing the available automation categories.",
     items: [
       {
-        question: "Do I need all services at once?",
-        answer: "No. The services can be approached as a phased rollout rather than a single large deployment.",
+        question: "How does Oyik Real Estate AI measure results from automation?",
+        answer: "Performance can be tracked through response speed improvements, increased enquiry handling, reduced missed appointments, and higher viewing bookings.",
       },
       {
-        question: "Which service usually delivers value first?",
-        answer: "That depends on your bottleneck, but chat and voice usually stand out because they affect speed-to-lead immediately.",
+        question: "Can the AI voice agent answer calls like a receptionist?",
+        answer: "Yes. The AI voice agent handles inbound and outbound calls, matches properties from your listings, books viewings, sends confirmations, and updates your CRM automatically.",
       },
       {
-        question: "Can services share one operating layer?",
-        answer: "Yes. The strongest product story is that these services work as one connected AI desk instead of isolated tools.",
+        question: "Will email automation replace my team's communication with clients?",
+        answer: "No. It supports your team by drafting responses and routing messages efficiently while agents stay in control of important conversations.",
+      },
+      {
+        question: "Can I start with one automation feature and expand later?",
+        answer: "Yes. Many agencies begin with chatbot or reminders and add voice agents, marketing automation, and workflow automation as their needs grow.",
+      },
+      {
+        question: "How do I measure the results from AI automation?",
+        answer: "Results can be tracked through faster response times, fewer missed enquiries, improved viewing attendance, reduced admin workload, and increased lead conversion.",
       },
     ],
   },

@@ -36,7 +36,7 @@ export default function Hero() {
       <div className="absolute inset-0 z-10 bg-[linear-gradient(180deg,rgba(5,5,25,0.55)_0%,rgba(5,5,25,0.35)_60%,rgba(5,5,25,0.65)_100%)]" />
 
       {/* ─── Layer 3 (TOP): Hero text content, centered above the video ─── */}
-      <div className="relative z-20 flex min-h-[100svh] flex-col items-center justify-center px-4 pb-16 pt-28 sm:px-6 sm:pb-20 sm:pt-32 lg:px-8">
+      <div className="relative z-20 flex min-h-[100svh] flex-col items-center justify-center px-4 pb-14 pt-24 sm:px-6 sm:pb-16 sm:pt-28 lg:px-8">
         <div className="mx-auto max-w-[1120px] text-center">
           <h1 className="sr-only">AI for Real Estate UK | Smart AI Solutions for Estate Agents</h1>
 
@@ -45,7 +45,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-            className="mb-7 inline-flex max-w-[min(100%,56rem)] flex-wrap items-center justify-center gap-3 rounded-full border border-white/20 bg-white/10 px-4 py-2.5 text-center backdrop-blur-md sm:mb-8 sm:px-5 sm:py-3"
+            className="mb-6 inline-flex max-w-[min(100%,56rem)] flex-wrap items-center justify-center gap-2.5 rounded-full border border-white/20 bg-white/10 px-4 py-2.5 text-center backdrop-blur-md sm:mb-8 sm:gap-3 sm:px-5 sm:py-3"
           >
             <Sparkles className="h-4 w-4 text-indigo-300" />
             <span className="text-[9px] font-semibold uppercase tracking-[0.12em] text-indigo-200 sm:text-[11px] sm:tracking-[0.2em]">
@@ -59,7 +59,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.75, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
             aria-hidden="true"
-            className="mx-auto max-w-5xl text-[2.5rem] font-display font-medium leading-[0.92] tracking-[-0.045em] text-white sm:text-[4.3rem] lg:text-[7rem]"
+            className="mx-auto max-w-5xl text-[2.4rem] font-display font-medium leading-[0.93] tracking-[-0.045em] text-white sm:text-[4.3rem] lg:text-[7rem]"
           >
             AI employees for{" "}
             <span className="bg-gradient-to-r from-indigo-300 via-violet-300 to-sky-300 bg-clip-text text-transparent">
@@ -87,15 +87,15 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.65, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-            className="mx-auto mt-7 max-w-[64rem] sm:mt-8"
+            className="mx-auto mt-6 max-w-[64rem] sm:mt-8"
           >
-            <p className="text-[0.98rem] leading-relaxed text-white/72 sm:text-[1.12rem] lg:text-[1.18rem]">
+            <p className="text-[0.95rem] leading-relaxed text-white/74 sm:text-[1.12rem] lg:text-[1.18rem]">
               oyik.realestate.ai helps real estate agencies, brokerages, property managers, and
               letting businesses automate website chat, voice calls, lead qualification, live
               property matching, viewing bookings, reminders, maintenance intake, CRM updates,
               and AI marketing with a faster and more premium client experience.
             </p>
-            <p className="mx-auto mt-4 max-w-[58rem] text-[0.98rem] leading-relaxed text-white/72 sm:text-[1.12rem] lg:text-[1.18rem]">
+            <p className="mx-auto mt-4 max-w-[58rem] text-[0.95rem] leading-relaxed text-white/74 sm:text-[1.12rem] lg:text-[1.18rem]">
               Upgrade your agency with artificial intelligence for real estate that combines
               chatbots, voice assistants, reminder automation, email workflows, marketing systems,
               and maintenance intake into one intelligent operating layer.
@@ -107,7 +107,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.65, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-            className="mt-10 flex w-full flex-col items-center justify-center gap-4 sm:w-auto sm:flex-row"
+            className="mt-8 flex w-full flex-col items-center justify-center gap-3.5 sm:mt-10 sm:w-auto sm:flex-row sm:gap-4"
           >
             <Link
               href="/contact"
@@ -132,34 +132,34 @@ export default function Hero() {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.65, delay: 0.45, ease: [0.22, 1, 0.36, 1] }}
-            className="mt-12 grid w-full gap-4 lg:mt-14 lg:grid-cols-3"
+            className="mt-10 grid w-full gap-3.5 sm:mt-12 sm:gap-4 lg:mt-14 lg:grid-cols-3"
           >
-            <div className="rounded-[1.9rem] border border-white/15 bg-white/8 p-5 text-left backdrop-blur-xl">
-              <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-2xl bg-indigo-500/20 text-indigo-300">
+            <div className="rounded-[1.8rem] border border-white/15 bg-white/8 p-4 text-left backdrop-blur-xl sm:rounded-[1.9rem] sm:p-5">
+              <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-2xl bg-indigo-500/20 text-indigo-300 sm:mb-4 sm:h-11 sm:w-11">
                 <PhoneCall className="h-5 w-5" />
               </div>
               <p className="text-sm font-medium uppercase tracking-[0.22em] text-indigo-300">Voice + chat</p>
-              <p className="mt-3 text-base leading-relaxed text-white/65">
+              <p className="mt-2.5 text-[0.95rem] leading-relaxed text-white/65 sm:mt-3 sm:text-base">
                 One premium AI layer for property enquiries, website leads, inbound calls, outbound follow-up, and fast qualification.
               </p>
             </div>
 
-            <div className="rounded-[1.9rem] border border-white/15 bg-white/8 p-5 text-left backdrop-blur-xl">
-              <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-2xl bg-indigo-500/20 text-indigo-300">
+            <div className="rounded-[1.8rem] border border-white/15 bg-white/8 p-4 text-left backdrop-blur-xl sm:rounded-[1.9rem] sm:p-5">
+              <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-2xl bg-indigo-500/20 text-indigo-300 sm:mb-4 sm:h-11 sm:w-11">
                 <CalendarCheck2 className="h-5 w-5" />
               </div>
               <p className="text-sm font-medium uppercase tracking-[0.22em] text-indigo-300">Booking automation</p>
-              <p className="mt-3 text-base leading-relaxed text-white/65">
+              <p className="mt-2.5 text-[0.95rem] leading-relaxed text-white/65 sm:mt-3 sm:text-base">
                 Live calendar checks, viewing bookings, confirmations, reminders, and follow-up flows that keep intent moving.
               </p>
             </div>
 
-            <div className="rounded-[1.9rem] border border-white/15 bg-white/8 p-5 text-left backdrop-blur-xl">
-              <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-2xl bg-indigo-500/20 text-indigo-300">
+            <div className="rounded-[1.8rem] border border-white/15 bg-white/8 p-4 text-left backdrop-blur-xl sm:rounded-[1.9rem] sm:p-5">
+              <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-2xl bg-indigo-500/20 text-indigo-300 sm:mb-4 sm:h-11 sm:w-11">
                 <Sparkles className="h-5 w-5" />
               </div>
               <p className="text-sm font-medium uppercase tracking-[0.22em] text-indigo-300">Marketing + support</p>
-              <p className="mt-3 text-base leading-relaxed text-white/65">
+              <p className="mt-2.5 text-[0.95rem] leading-relaxed text-white/65 sm:mt-3 sm:text-base">
                 AI marketing, email automation, reminders, and maintenance intake designed for high-end real estate operations.
               </p>
             </div>

@@ -1,13 +1,28 @@
 "use client";
 
-import { ReactNode } from "react";
+import { ReactNode, useEffect, useState } from "react";
 import { useReducedMotion } from "framer-motion";
 import { ReactLenis } from "@studio-freight/react-lenis";
 
 export default function SmoothScroll({ children }: { children: ReactNode }) {
   const reduceMotion = useReducedMotion();
+  const [allowSmoothScroll, setAllowSmoothScroll] = useState(false);
 
-  if (reduceMotion) {
+  useEffect(() => {
+    if (typeof window === "undefined") {
+      return;
+    }
+
+    const mediaQuery = window.matchMedia("(min-width: 1024px) and (pointer: fine)");
+    const updatePreference = () => setAllowSmoothScroll(mediaQuery.matches);
+
+    updatePreference();
+    mediaQuery.addEventListener("change", updatePreference);
+
+    return () => mediaQuery.removeEventListener("change", updatePreference);
+  }, []);
+
+  if (reduceMotion || !allowSmoothScroll) {
     return <>{children}</>;
   }
 

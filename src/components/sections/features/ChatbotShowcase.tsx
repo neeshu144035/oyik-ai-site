@@ -49,21 +49,18 @@ const listings = [
     location: "Leicester Centre",
     price: "GBP 1,980 pcm",
     image: "/media/listings/dockside-tower.jpg",
-    slot: "Tomorrow | 5:30 PM",
   },
   {
     title: "Stoneygate House",
     location: "Stoneygate",
     price: "GBP 2,240 pcm",
     image: "/media/listings/night-penthouse.jpg",
-    slot: "Tomorrow | 3:15 PM",
   },
   {
     title: "Abbey Park Suite",
     location: "Leicester North",
     price: "GBP 1,760 pcm",
     image: "/media/listings/toronto-bedroom.jpg",
-    slot: "Tomorrow | 11:00 AM",
   },
 ];
 
@@ -72,26 +69,24 @@ function PropertyCard({
   location,
   price,
   image,
-  slot,
 }: {
   title: string;
   location: string;
   price: string;
   image: string;
-  slot: string;
 }) {
   return (
-    <article className="overflow-hidden rounded-[1.35rem] border border-white/10 bg-white/7 shadow-[0_18px_40px_-34px_rgba(15,23,42,0.55)]">
-      <div className="relative h-24 overflow-hidden">
+    <article className="overflow-hidden rounded-[1.1rem] border border-white/10 bg-white/7 shadow-[0_18px_40px_-34px_rgba(15,23,42,0.55)] sm:rounded-[1.35rem]">
+      <div className="relative h-20 overflow-hidden sm:h-24">
         <Image src={image} alt={title} fill className="object-cover" sizes="(max-width: 1023px) 100vw, 260px" />
         <div className="absolute inset-0 bg-gradient-to-t from-slate-950/45 via-transparent to-transparent" />
       </div>
-      <div className="space-y-2 p-3.5">
+      <div className="space-y-1.5 p-3 sm:space-y-2 sm:p-3.5">
         <div>
-          <p className="text-[0.98rem] font-semibold text-white">{title}</p>
-          <p className="mt-1 text-[11px] uppercase tracking-[0.24em] text-white/55">{location}</p>
+          <p className="text-[0.82rem] font-semibold leading-tight text-white sm:text-[0.98rem]">{title}</p>
+          <p className="mt-1 text-[9px] uppercase tracking-[0.18em] text-white/55 sm:text-[11px] sm:tracking-[0.24em]">{location}</p>
         </div>
-        <p className="text-[0.96rem] text-white/90">{price}</p>
+        <p className="text-[0.82rem] text-white/90 sm:text-[0.96rem]">{price}</p>
       </div>
     </article>
   );
@@ -212,25 +207,25 @@ export default function ChatbotShowcase() {
   }, [isOpen, n8nChatUrl]);
 
   return (
-    <section className="relative overflow-hidden bg-[linear-gradient(180deg,#fbfcff_0%,#f7f8fd_46%,#f4f6fb_100%)] py-24 text-slate-950">
+    <section className="relative overflow-hidden bg-[linear-gradient(180deg,#fbfcff_0%,#f7f8fd_46%,#f4f6fb_100%)] py-20 text-slate-950 sm:py-24">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(99,102,241,0.14),transparent_28%),radial-gradient(circle_at_bottom_right,rgba(56,189,248,0.12),transparent_22%)]" />
       <div className="absolute inset-0 opacity-[0.22] [background-image:linear-gradient(rgba(63,55,184,0.06)_1px,transparent_1px),linear-gradient(90deg,rgba(63,55,184,0.06)_1px,transparent_1px)] [background-size:88px_88px]" />
 
-      <div className="container relative z-10 mx-auto px-6 lg:px-10">
-        <div className="grid gap-6 lg:grid-cols-[0.82fr_1.18fr] lg:items-center lg:gap-10">
+      <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-10">
+        <div className="grid gap-8 lg:grid-cols-[0.82fr_1.18fr] lg:items-center lg:gap-10">
           <motion.div
             initial={{ opacity: 0, x: -18 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
-            className="relative"
+            className="relative order-2 lg:order-1"
           >
-            <div className="rounded-[2.15rem] border border-white/80 bg-white/84 p-3.5 shadow-[0_34px_90px_-46px_rgba(15,23,42,0.28)] backdrop-blur-2xl sm:p-4">
-              <div className="flex items-center justify-between gap-3">
-                <div className="rounded-full border border-slate-200 bg-white/90 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.28em] text-slate-700">
+            <div className="rounded-[1.85rem] border border-white/80 bg-white/84 p-3 shadow-[0_34px_90px_-46px_rgba(15,23,42,0.28)] backdrop-blur-2xl sm:rounded-[2.15rem] sm:p-4">
+              <div className="flex flex-col gap-2.5 sm:flex-row sm:items-center sm:justify-between sm:gap-3">
+                <div className="rounded-full border border-slate-200 bg-white/90 px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.22em] text-slate-700 sm:text-[11px] sm:tracking-[0.28em]">
                   Live property concierge
                 </div>
-                <div className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50/90 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-emerald-700">
+                <div className="inline-flex items-center gap-2 self-start rounded-full border border-emerald-200 bg-emerald-50/90 px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.18em] text-emerald-700 sm:self-auto sm:text-[11px] sm:tracking-[0.22em]">
                   <span className="relative flex h-2.5 w-2.5">
                     <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400/70" />
                     <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-500" />
@@ -239,10 +234,10 @@ export default function ChatbotShowcase() {
                 </div>
               </div>
 
-              <div className="mt-3.5 overflow-hidden rounded-[1.85rem] border border-slate-200 bg-[linear-gradient(180deg,#091225_0%,#111b34_60%,#14203b_100%)] p-3.5 text-white shadow-[0_24px_60px_-40px_rgba(15,23,42,0.8)] sm:p-4">
+              <div className="mt-3 overflow-hidden rounded-[1.6rem] border border-slate-200 bg-[linear-gradient(180deg,#091225_0%,#111b34_60%,#14203b_100%)] p-3 text-white shadow-[0_24px_60px_-40px_rgba(15,23,42,0.8)] sm:mt-3.5 sm:rounded-[1.85rem] sm:p-4">
                 <div className="flex flex-wrap items-center justify-between gap-4">
                   <div className="flex items-center gap-4">
-                    <div className="flex h-12 w-12 items-center justify-center overflow-hidden rounded-2xl border border-white/12 bg-white shadow-[0_18px_35px_-20px_rgba(255,255,255,0.35)]">
+                    <div className="flex h-10 w-10 items-center justify-center overflow-hidden rounded-2xl border border-white/12 bg-white shadow-[0_18px_35px_-20px_rgba(255,255,255,0.35)] sm:h-12 sm:w-12">
                       <Image
                         src="/oyik-logo-indigo-tech.png"
                         alt="Oyik logo"
@@ -256,47 +251,47 @@ export default function ChatbotShowcase() {
                       <p className="text-[10px] font-semibold uppercase tracking-[0.28em] text-white/55">
                         Oyik
                       </p>
-                      <p className="mt-1 text-[1.12rem] font-display font-medium text-white">
+                      <p className="mt-1 text-[1rem] font-display font-medium text-white sm:text-[1.12rem]">
                         Property concierge
                       </p>
                     </div>
                   </div>
 
-                  <div className="rounded-full border border-white/10 bg-white/8 px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.18em] text-white/70">
+                  <div className="rounded-full border border-white/10 bg-white/8 px-4 py-2 text-[9px] font-semibold uppercase tracking-[0.14em] text-white/70 sm:text-[10px] sm:tracking-[0.18em]">
                     Viewings booked in chat
                   </div>
                 </div>
 
-                <div className="mt-3.5 space-y-2.5">
-                  <div className="ml-auto max-w-[66%] rounded-[1.1rem] rounded-br-sm bg-[linear-gradient(135deg,#eef1ff,#ffffff)] px-3.5 py-2.5 text-[12px] leading-relaxed text-slate-700">
+                <div className="mt-3 space-y-2 sm:mt-3.5 sm:space-y-2.5">
+                  <div className="ml-auto max-w-[72%] rounded-[1rem] rounded-br-sm bg-[linear-gradient(135deg,#eef1ff,#ffffff)] px-3 py-2 text-[11px] leading-relaxed text-slate-700 sm:max-w-[66%] sm:rounded-[1.1rem] sm:px-3.5 sm:py-2.5 sm:text-[12px]">
                     I want a two-bedroom property in Leicester with parking.
                   </div>
-                  <div className="max-w-[66%] rounded-[1.1rem] rounded-bl-sm bg-white/10 px-3.5 py-2.5 text-[12px] leading-relaxed text-white/92">
+                  <div className="max-w-[72%] rounded-[1rem] rounded-bl-sm bg-white/10 px-3 py-2 text-[11px] leading-relaxed text-white/92 sm:max-w-[66%] sm:rounded-[1.1rem] sm:px-3.5 sm:py-2.5 sm:text-[12px]">
                     I found the best Leicester matches below. Tell me which one you want to view.
                   </div>
-                  <div className="mt-1 grid gap-3 sm:grid-cols-2">
+                  <div className="mt-1 grid grid-cols-2 gap-2 sm:gap-3">
                     {listings.slice(0, 2).map((listing) => (
                       <PropertyCard key={listing.title} {...listing} />
                     ))}
                   </div>
-                  <div className="ml-auto max-w-[68%] rounded-[1.1rem] rounded-br-sm bg-[linear-gradient(135deg,#eef1ff,#ffffff)] px-3.5 py-2.5 text-[12px] leading-relaxed text-slate-700">
+                  <div className="ml-auto max-w-[76%] rounded-[1rem] rounded-br-sm bg-[linear-gradient(135deg,#eef1ff,#ffffff)] px-3 py-2 text-[11px] leading-relaxed text-slate-700 sm:max-w-[68%] sm:rounded-[1.1rem] sm:px-3.5 sm:py-2.5 sm:text-[12px]">
                     I like Clarendon Residences. I want to view it tomorrow at 5:30 PM.
                   </div>
-                  <div className="max-w-[56%] rounded-[1.1rem] rounded-bl-sm bg-white/10 px-3.5 py-2.5 text-[12px] leading-relaxed text-white/92">
+                  <div className="max-w-[60%] rounded-[1rem] rounded-bl-sm bg-white/10 px-3 py-2 text-[11px] leading-relaxed text-white/92 sm:max-w-[56%] sm:rounded-[1.1rem] sm:px-3.5 sm:py-2.5 sm:text-[12px]">
                     Let me check the calendar.
                   </div>
-                  <div className="max-w-[68%] rounded-[1.1rem] rounded-bl-sm bg-[linear-gradient(135deg,rgba(99,102,241,0.2),rgba(255,255,255,0.12))] px-3.5 py-2.5 text-[12px] leading-relaxed text-white">
+                  <div className="max-w-[76%] rounded-[1rem] rounded-bl-sm bg-[linear-gradient(135deg,rgba(99,102,241,0.2),rgba(255,255,255,0.12))] px-3 py-2 text-[11px] leading-relaxed text-white sm:max-w-[68%] sm:rounded-[1.1rem] sm:px-3.5 sm:py-2.5 sm:text-[12px]">
                     All set. You are booked for tomorrow at 5:30 PM for Clarendon Residences.
                   </div>
                 </div>
 
-                <div className="mt-3.5 rounded-[1.25rem] border border-white/10 bg-white/7 p-2">
-                  <div className="flex items-center gap-3 rounded-[1rem] border border-white/8 bg-white/90 px-3.5 py-2.5">
-                    <MessageSquareMore className="h-5 w-5 shrink-0 text-indigo-600" />
-                    <span className="text-[13px] text-slate-500">
+                <div className="mt-3 rounded-[1.1rem] border border-white/10 bg-white/7 p-2 sm:mt-3.5 sm:rounded-[1.25rem]">
+                  <div className="flex items-center gap-3 rounded-[1rem] border border-white/8 bg-white/90 px-3 py-2 sm:px-3.5 sm:py-2.5">
+                    <MessageSquareMore className="h-4 w-4 shrink-0 text-indigo-600 sm:h-5 sm:w-5" />
+                    <span className="text-[11px] text-slate-500 sm:text-[13px]">
                       Ask for a Leicester area, budget, or viewing time...
                     </span>
-                    <div className="ml-auto flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[linear-gradient(135deg,#4f46e5,#4338ca)] text-white shadow-[0_16px_32px_-18px_rgba(79,70,229,0.7)]">
+                    <div className="ml-auto flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[linear-gradient(135deg,#4f46e5,#4338ca)] text-white shadow-[0_16px_32px_-18px_rgba(79,70,229,0.7)] sm:h-9 sm:w-9">
                       <Send className="h-4 w-4" />
                     </div>
                   </div>
@@ -310,6 +305,7 @@ export default function ChatbotShowcase() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
+            className="order-1 lg:order-2"
           >
             <p className="mb-3 text-sm font-semibold uppercase tracking-[0.28em] text-indigo-700">
               Website chat
@@ -343,19 +339,19 @@ export default function ChatbotShowcase() {
               </button>
             </div>
 
-            <div className="mt-6 grid gap-3.5 sm:grid-cols-2">
+            <div className="mt-6 grid grid-cols-2 gap-3 sm:gap-3.5">
               {features.map((item) => (
                 <div
                   key={item.title}
-                  className="rounded-[1.55rem] border border-white/80 bg-white/76 p-4 shadow-[0_20px_40px_-34px_rgba(15,23,42,0.2)]"
+                  className="rounded-[1.35rem] border border-white/80 bg-white/76 p-3 shadow-[0_20px_40px_-34px_rgba(15,23,42,0.2)] sm:rounded-[1.55rem] sm:p-4"
                 >
-                  <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-indigo-50 text-primary">
+                  <div className="flex h-9 w-9 items-center justify-center rounded-2xl bg-indigo-50 text-primary sm:h-10 sm:w-10">
                     <item.icon className="h-4 w-4" />
                   </div>
-                  <h3 className="mt-3 text-[1.15rem] font-display font-medium leading-[1.02] tracking-[-0.02em] text-slate-950">
+                  <h3 className="mt-3 text-[0.98rem] font-display font-medium leading-[1.02] tracking-[-0.02em] text-slate-950 sm:text-[1.15rem]">
                     {item.title}
                   </h3>
-                  <p className="mt-2 text-[13px] leading-relaxed text-slate-600">{item.description}</p>
+                  <p className="mt-2 text-[11px] leading-relaxed text-slate-600 sm:text-[13px]">{item.description}</p>
                 </div>
               ))}
             </div>
